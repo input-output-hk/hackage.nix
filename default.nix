@@ -8940,6 +8940,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "int-interval-map" = import ./nix/int-interval-map.nix;
   "int-like" = import ./nix/int-like.nix;
   "int-multimap" = import ./nix/int-multimap.nix;
+  "int-supply" = import ./nix/int-supply.nix;
   "intcode" = import ./nix/intcode.nix;
   "integer-conversion" = import ./nix/integer-conversion.nix;
   "integer-gmp" = import ./nix/integer-gmp.nix;
@@ -16514,6 +16515,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "uu-options" = import ./nix/uu-options.nix;
   "uu-parsinglib" = import ./nix/uu-parsinglib.nix;
   "uu-tc" = import ./nix/uu-tc.nix;
+  "uu-tc-error" = import ./nix/uu-tc-error.nix;
+  "uu-tc-error-error" = import ./nix/uu-tc-error-error.nix;
   "uuagc" = import ./nix/uuagc.nix;
   "uuagc-bootstrap" = import ./nix/uuagc-bootstrap.nix;
   "uuagc-cabal" = import ./nix/uuagc-cabal.nix;

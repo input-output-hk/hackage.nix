@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "01c15dab53b065443ed65ad3e67a5f87faea2609811d93abafbeb96e97f6c1d9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/distributed-closure-0.5.0.0-r0-beeae8c7905518d7d16a30d74453d50e8223c484df5e7fb65edf9707d8d32f1e.nix;
+        revNum = 0;
+        sha256 = "beeae8c7905518d7d16a30d74453d50e8223c484df5e7fb65edf9707d8d32f1e";
+        };
+      default = "r0";
+      };
+    };
   }

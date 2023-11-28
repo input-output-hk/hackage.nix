@@ -461,7 +461,17 @@
         revNum = 1;
         sha256 = "094dbd5179b046b68550bc1147ed350d2c3643f1d15cfc4dfa564384562a44d0";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/servant-swagger-1.2-r2-7ddab07f71930b738cf6cbacfac5e7f0a0b0e443a5ecd15a4510a44a54bfdc77.nix;
+        revNum = 2;
+        sha256 = "7ddab07f71930b738cf6cbacfac5e7f0a0b0e443a5ecd15a4510a44a54bfdc77";
+        };
+      r3 = {
+        nix = import ../hackage/servant-swagger-1.2-r3-f235e4584cd9aa4b9074391c94021ae24f6d412658ed66debb8a7e2581b3a7be.nix;
+        revNum = 3;
+        sha256 = "f235e4584cd9aa4b9074391c94021ae24f6d412658ed66debb8a7e2581b3a7be";
+        };
+      default = "r3";
       };
     };
   }

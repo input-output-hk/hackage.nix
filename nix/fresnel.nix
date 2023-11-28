@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.0.3" = {
+    sha256 = "8a65162757f02292237e509c7b17443865c8ab28978e915d1f28ace1c4b435be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fresnel-0.0.0.3-r0-575169b023e8fe1242eb8004a51a51bda3c970155f3fd191158a36084d6bf5e6.nix;
+        revNum = 0;
+        sha256 = "575169b023e8fe1242eb8004a51a51bda3c970155f3fd191158a36084d6bf5e6";
+        };
+      default = "r0";
+      };
+    };
   }

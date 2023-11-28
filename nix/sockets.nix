@@ -91,4 +91,15 @@
       default = "r0";
       };
     };
+  "0.7.0.0" = {
+    sha256 = "5c19d32b98d08c2160a9b126838f3d6e4124081d1d7a93956fde227329b03e66";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sockets-0.7.0.0-r0-90b698c84e087539dcba3e283e45e0f4474cd57f564f40f80a33178f30681cbc.nix;
+        revNum = 0;
+        sha256 = "90b698c84e087539dcba3e283e45e0f4474cd57f564f40f80a33178f30681cbc";
+        };
+      default = "r0";
+      };
+    };
   }

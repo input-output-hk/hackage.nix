@@ -76,7 +76,12 @@
         revNum = 0;
         sha256 = "e3c03bbe1d57bbaad889c2c53dbbf66a090eec5d4efc65c2159958cd91e1c7b2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/servant-pipes-0.16-r1-c348afb008e911d311bed98bdbee19aabe25ed1795a08f6e8f4080a517095458.nix;
+        revNum = 1;
+        sha256 = "c348afb008e911d311bed98bdbee19aabe25ed1795a08f6e8f4080a517095458";
+        };
+      default = "r1";
       };
     };
   }
