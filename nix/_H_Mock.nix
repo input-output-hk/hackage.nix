@@ -81,4 +81,15 @@
       default = "r1";
       };
     };
+  "0.5.1.2" = {
+    sha256 = "bac9058476d1b301d1e3b482b6dca15f95c4ac7ed25534e891035e75277453f8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HMock-0.5.1.2-r0-783d424216fe507fd17ff010c630782fc392e9348569d778c40a379e29dd9e31.nix;
+        revNum = 0;
+        sha256 = "783d424216fe507fd17ff010c630782fc392e9348569d778c40a379e29dd9e31";
+        };
+      default = "r0";
+      };
+    };
   }

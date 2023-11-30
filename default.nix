@@ -6100,6 +6100,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gemini-router" = import ./nix/gemini-router.nix;
   "gemini-server" = import ./nix/gemini-server.nix;
   "gemini-textboard" = import ./nix/gemini-textboard.nix;
+  "gemmula" = import ./nix/gemmula.nix;
   "gemstone" = import ./nix/gemstone.nix;
   "gen-imports" = import ./nix/gen-imports.nix;
   "gen-passwd" = import ./nix/gen-passwd.nix;
@@ -9164,6 +9165,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "javascript-extras" = import ./nix/javascript-extras.nix;
   "javasf" = import ./nix/javasf.nix;
   "javav" = import ./nix/javav.nix;
+  "javelin" = import ./nix/javelin.nix;
   "jbi" = import ./nix/jbi.nix;
   "jcdecaux-vls" = import ./nix/jcdecaux-vls.nix;
   "jdi" = import ./nix/jdi.nix;
@@ -11531,6 +11533,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "openapi-typed" = import ./nix/openapi-typed.nix;
   "openapi3" = import ./nix/openapi3.nix;
   "openapi3-code-generator" = import ./nix/openapi3-code-generator.nix;
+  "opencascade-hs" = import ./nix/opencascade-hs.nix;
   "opencc" = import ./nix/opencc.nix;
   "opench-meteo" = import ./nix/opench-meteo.nix;
   "opencog-atomspace" = import ./nix/opencog-atomspace.nix;
@@ -16859,6 +16862,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "watchdog" = import ./nix/watchdog.nix;
   "watcher" = import ./nix/watcher.nix;
   "watchit" = import ./nix/watchit.nix;
+  "waterfall-cad" = import ./nix/waterfall-cad.nix;
+  "waterfall-cad-examples" = import ./nix/waterfall-cad-examples.nix;
   "wavconvert" = import ./nix/wavconvert.nix;
   "wave" = import ./nix/wave.nix;
   "wavefront" = import ./nix/wavefront.nix;

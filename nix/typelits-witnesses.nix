@@ -208,4 +208,15 @@
       default = "r1";
       };
     };
+  "0.4.0.1" = {
+    sha256 = "70d1c1cfc67995a4420e4e1b2495cd5c5723272fd186690a0c09ce6fb77139ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelits-witnesses-0.4.0.1-r0-864d566dfcfa8a7173ced437ec398e050985cd278535dd40539fc1d3e8df681c.nix;
+        revNum = 0;
+        sha256 = "864d566dfcfa8a7173ced437ec398e050985cd278535dd40539fc1d3e8df681c";
+        };
+      default = "r0";
+      };
+    };
   }

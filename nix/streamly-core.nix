@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "9fe280b777b7b38138d9bede92c792dc7b7c23458978305663808337d7332424";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/streamly-core-0.2.0-r0-73d0b5dcc1cda6b42f463d1fd69517b6a5af7a03163c1aa61aefebc454542a50.nix;
+        revNum = 0;
+        sha256 = "73d0b5dcc1cda6b42f463d1fd69517b6a5af7a03163c1aa61aefebc454542a50";
+        };
+      default = "r0";
+      };
+    };
   }

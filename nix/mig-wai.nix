@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "753da3ebf9c8c43d86b56e8323eb595b4dfc19d2a029af11d0106f3a18ab738c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mig-wai-0.1.1.0-r0-76cfb44ad2e272947940dfd6df0411118aaaf090781dc12fddf171eb104dd1ae.nix;
+        revNum = 0;
+        sha256 = "76cfb44ad2e272947940dfd6df0411118aaaf090781dc12fddf171eb104dd1ae";
+        };
+      default = "r0";
+      };
+    };
   }

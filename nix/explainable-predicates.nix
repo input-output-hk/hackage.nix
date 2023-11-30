@@ -70,4 +70,15 @@
       default = "r1";
       };
     };
+  "0.1.2.4" = {
+    sha256 = "f34245f08dd54ca2175964c344e3f148cdfa2ddea6f00a540922dffbed368448";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/explainable-predicates-0.1.2.4-r0-69125c622d19b4e5ca44c384e354a615aef13605756a77d2fd371307ae092586.nix;
+        revNum = 0;
+        sha256 = "69125c622d19b4e5ca44c384e354a615aef13605756a77d2fd371307ae092586";
+        };
+      default = "r0";
+      };
+    };
   }

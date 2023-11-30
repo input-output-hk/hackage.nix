@@ -28,7 +28,12 @@
         revNum = 0;
         sha256 = "694c92ed8d5f9b994ff41c8e3a2461469109a8169727dcbb1f0bb591b0ab104a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/language-gemini-0.1.0.1-r1-4ea081faccea09f043b645f8fd2bc29c4150b9f64829288f6faf294b7c816a28.nix;
+        revNum = 1;
+        sha256 = "4ea081faccea09f043b645f8fd2bc29c4150b9f64829288f6faf294b7c816a28";
+        };
+      default = "r1";
       };
     };
   }
