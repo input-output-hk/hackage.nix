@@ -150,7 +150,12 @@
         revNum = 0;
         sha256 = "d5d24fd625439063998a16026fca0b62b251d07a837115aa969edfcf7031f914";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warc-1.0.5-r1-719df68672bc29a02c66ebd769c3f7e99c3a063d6aee587864fc04202465fcce.nix;
+        revNum = 1;
+        sha256 = "719df68672bc29a02c66ebd769c3f7e99c3a063d6aee587864fc04202465fcce";
+        };
+      default = "r1";
       };
     };
   }

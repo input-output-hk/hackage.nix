@@ -81,7 +81,12 @@
         revNum = 3;
         sha256 = "a8c42822fb6ed587a970386375030aee0d2f3be4322655942a38d0e3453231f7";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/b-tree-0.1.4-r4-9816b890eaa3dba721ac9c6d56a763ef7777adba9cdd463364dda984136195db.nix;
+        revNum = 4;
+        sha256 = "9816b890eaa3dba721ac9c6d56a763ef7777adba9cdd463364dda984136195db";
+        };
+      default = "r4";
       };
     };
   }

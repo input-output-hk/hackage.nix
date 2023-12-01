@@ -105,7 +105,12 @@
         revNum = 1;
         sha256 = "98d90fd2a27cd2b637f01351088a0fe4b0b4fc14c1726bf1beb4d6cfe84e6f1b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/pipes-interleave-1.1.3-r2-a8db6823e50b0abea3e0487c353759616755fcd4d64a33f95ab6ee99e4f3367c.nix;
+        revNum = 2;
+        sha256 = "a8db6823e50b0abea3e0487c353759616755fcd4d64a33f95ab6ee99e4f3367c";
+        };
+      default = "r2";
       };
     };
   }
