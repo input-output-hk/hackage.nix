@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.0.1.0" = {
+    sha256 = "beff2237739c04c1d5e459af97b0f5ed832c437dd8b12cb8c67f193534561a3c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bugsnag-yesod-1.0.1.0-r0-eeed7d4b66377ca9a350bc3e293362926f3e64c4595fbdd5f10be0d719c8f1b6.nix;
+        revNum = 0;
+        sha256 = "eeed7d4b66377ca9a350bc3e293362926f3e64c4595fbdd5f10be0d719c8f1b6";
+        };
+      default = "r0";
+      };
+    };
   }

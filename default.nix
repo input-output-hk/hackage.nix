@@ -5462,6 +5462,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "extism-manifest" = import ./nix/extism-manifest.nix;
   "extism-pdk" = import ./nix/extism-pdk.nix;
   "extra" = import ./nix/extra.nix;
+  "extra-data-yj" = import ./nix/extra-data-yj.nix;
   "extract-dependencies" = import ./nix/extract-dependencies.nix;
   "extractable-singleton" = import ./nix/extractable-singleton.nix;
   "extractelf" = import ./nix/extractelf.nix;
@@ -5906,6 +5907,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "freer-converse" = import ./nix/freer-converse.nix;
   "freer-effects" = import ./nix/freer-effects.nix;
   "freer-indexed" = import ./nix/freer-indexed.nix;
+  "freer-par-monad" = import ./nix/freer-par-monad.nix;
   "freer-simple" = import ./nix/freer-simple.nix;
   "freer-simple-catching" = import ./nix/freer-simple-catching.nix;
   "freer-simple-http" = import ./nix/freer-simple-http.nix;
@@ -10630,6 +10632,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "modulo" = import ./nix/modulo.nix;
   "moe" = import ./nix/moe.nix;
   "moesocks" = import ./nix/moesocks.nix;
+  "moffy" = import ./nix/moffy.nix;
   "mohws" = import ./nix/mohws.nix;
   "mole" = import ./nix/mole.nix;
   "mollie-api-haskell" = import ./nix/mollie-api-haskell.nix;
@@ -16150,6 +16153,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-equality-check" = import ./nix/type-equality-check.nix;
   "type-errors" = import ./nix/type-errors.nix;
   "type-errors-pretty" = import ./nix/type-errors-pretty.nix;
+  "type-flip" = import ./nix/type-flip.nix;
   "type-fun" = import ./nix/type-fun.nix;
   "type-functions" = import ./nix/type-functions.nix;
   "type-hint" = import ./nix/type-hint.nix;
@@ -16181,6 +16185,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-reflection" = import ./nix/type-reflection.nix;
   "type-rig" = import ./nix/type-rig.nix;
   "type-safe-avl" = import ./nix/type-safe-avl.nix;
+  "type-set" = import ./nix/type-set.nix;
   "type-sets" = import ./nix/type-sets.nix;
   "type-settheory" = import ./nix/type-settheory.nix;
   "type-spec" = import ./nix/type-spec.nix;
