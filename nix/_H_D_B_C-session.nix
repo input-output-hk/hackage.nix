@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "c3f3bbdbde7574d4d3967f385b434781f2d65311686bcef6bb32acc67d19818a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HDBC-session-0.1.2.1-r0-7601a14a1671ada48193398e714a297e908373c9d16ebfd416bb96ca422703d6.nix;
+        revNum = 0;
+        sha256 = "7601a14a1671ada48193398e714a297e908373c9d16ebfd416bb96ca422703d6";
+        };
+      default = "r0";
+      };
+    };
   }

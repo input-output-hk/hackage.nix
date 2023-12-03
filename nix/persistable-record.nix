@@ -469,4 +469,15 @@
       default = "r0";
       };
     };
+  "0.6.0.6" = {
+    sha256 = "b24638bb7d116bb866d750824bed76ca5850c2a2b78127599904385199b73b5e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistable-record-0.6.0.6-r0-8dd1b640cf7823fa7b36db9a2b1f104089f8c3f055a5189670c00cb69e084762.nix;
+        revNum = 0;
+        sha256 = "8dd1b640cf7823fa7b36db9a2b1f104089f8c3f055a5189670c00cb69e084762";
+        };
+      default = "r0";
+      };
+    };
   }

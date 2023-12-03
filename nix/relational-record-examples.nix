@@ -219,4 +219,15 @@
       default = "r0";
       };
     };
+  "0.6.0.1" = {
+    sha256 = "f7ac7b25786d2105dceabd6a07bc3e55437d0f0f615fe26a9262f2595c095d5f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/relational-record-examples-0.6.0.1-r0-d919deeb5eb3185dbf646014d25375097c93e68006c0db4d8d1e78ed23fa58fd.nix;
+        revNum = 0;
+        sha256 = "d919deeb5eb3185dbf646014d25375097c93e68006c0db4d8d1e78ed23fa58fd";
+        };
+      default = "r0";
+      };
+    };
   }

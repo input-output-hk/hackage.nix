@@ -69,4 +69,15 @@
       default = "r0";
       };
     };
+  "0.3.3.0" = {
+    sha256 = "01d4532dae253637d9f123fe03d000934c19181cf97d61bcc9b4e8a31c4414c3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elm-syntax-0.3.3.0-r0-4a03c1778c38b9c924e7e9aca07de294ec675bafa9d9184e91a574c50a3ca40c.nix;
+        revNum = 0;
+        sha256 = "4a03c1778c38b9c924e7e9aca07de294ec675bafa9d9184e91a574c50a3ca40c";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -383,7 +383,12 @@
         revNum = 0;
         sha256 = "f51d7062b2732115cb8b9c63ded0c7a94467ee4fc68ebbde18687a836b74bcd5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/scotty-0.20.1-r1-c6c38727407c1e925ba44b55686f7a18526dbddb138317eb637a1cb1df3cff09.nix;
+        revNum = 1;
+        sha256 = "c6c38727407c1e925ba44b55686f7a18526dbddb138317eb637a1cb1df3cff09";
+        };
+      default = "r1";
       };
     };
   "0.3.0" = {

@@ -210,4 +210,15 @@
       default = "r0";
       };
     };
+  "0.1.6.5" = {
+    sha256 = "cd54dd055e5e332ae0f77df262f788f27dc697802bdb6b05727eaea8c151bfbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sql-words-0.1.6.5-r0-6ba84722066ed973ef5ae99412295c83ec2356488e7972796179699236f4e7b2.nix;
+        revNum = 0;
+        sha256 = "6ba84722066ed973ef5ae99412295c83ec2356488e7972796179699236f4e7b2";
+        };
+      default = "r0";
+      };
+    };
   }

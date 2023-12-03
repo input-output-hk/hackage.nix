@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.1.0.9" = {
+    sha256 = "26fbe4dd98d976615176e2467c2fd3c86ed6de7bf1a2d90c5b2fc014e433eb57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/list-fusion-probe-0.1.0.9-r0-5cafbd22c2f9932e13bfd49a4bf96b8923e4830c3ff932cf28765b62288e6b77.nix;
+        revNum = 0;
+        sha256 = "5cafbd22c2f9932e13bfd49a4bf96b8923e4830c3ff932cf28765b62288e6b77";
+        };
+      default = "r0";
+      };
+    };
   }

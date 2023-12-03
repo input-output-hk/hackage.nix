@@ -610,4 +610,15 @@
       default = "r0";
       };
     };
+  "0.7.2.1" = {
+    sha256 = "c7116fc43b335912ce0efddf6883630eec5c703a7236fe167df2e509e1391268";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/relational-query-HDBC-0.7.2.1-r0-79f2da4bf16f54ff212adf9bbe6742b1dc54df81e0761cac1c650ff34d1c4ee7.nix;
+        revNum = 0;
+        sha256 = "79f2da4bf16f54ff212adf9bbe6742b1dc54df81e0761cac1c650ff34d1c4ee7";
+        };
+      default = "r0";
+      };
+    };
   }

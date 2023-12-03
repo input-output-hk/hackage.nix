@@ -75,4 +75,15 @@
       default = "r0";
       };
     };
+  "0.2.5" = {
+    sha256 = "fc21e85f3421efa214c48b53c336bb3572e34eaba0bfb94bda31e16c4b01de64";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/frisby-0.2.5-r0-9ea627fcc433ccac4f887a109546d4f13130ebebc72f7f2d6f7f5ca0a107a33b.nix;
+        revNum = 0;
+        sha256 = "9ea627fcc433ccac4f887a109546d4f13130ebebc72f7f2d6f7f5ca0a107a33b";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "02085cf6ac5c1c696c1dc923033b5f01509fcbed67c32cc79139704888821e60";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/haskell-to-elm-0.3.2.0-r1-441d57a2ffc23dbf25cd6f9991aaaac8ce671b6b4c5077f6fb35e25a84258dc4.nix;
+        revNum = 1;
+        sha256 = "441d57a2ffc23dbf25cd6f9991aaaac8ce671b6b4c5077f6fb35e25a84258dc4";
+        };
+      default = "r1";
       };
     };
   }

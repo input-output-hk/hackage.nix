@@ -368,4 +368,15 @@
       default = "r0";
       };
     };
+  "0.1.8.1" = {
+    sha256 = "622d2b17eb2e9b92a9238c3db8bb5f72d5896d6b5ca9f16328c9ffe78c8a335a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/relational-schemas-0.1.8.1-r0-d930c71f5481d621007a7a94f0042c843a3aee1aec966808d0e80da0f4634653.nix;
+        revNum = 0;
+        sha256 = "d930c71f5481d621007a7a94f0042c843a3aee1aec966808d0e80da0f4634653";
+        };
+      default = "r0";
+      };
+    };
   }
