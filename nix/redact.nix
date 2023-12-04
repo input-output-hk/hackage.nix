@@ -28,7 +28,12 @@
         revNum = 1;
         sha256 = "ce36676701fe46aaa66ff5636333ae9366c93a5812c101d2e5d0d15aae3281e9";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/redact-0.5.0.0-r2-2ae4a98c22fa7474763c3f3a469c3cd3545815ee733a4dfd5ef0b8cbcfa39d9a.nix;
+        revNum = 2;
+        sha256 = "2ae4a98c22fa7474763c3f3a469c3cd3545815ee733a4dfd5ef0b8cbcfa39d9a";
+        };
+      default = "r2";
       };
     };
   }

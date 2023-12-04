@@ -3174,6 +3174,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cairo-appbase" = import ./nix/cairo-appbase.nix;
   "cairo-canvas" = import ./nix/cairo-canvas.nix;
   "cairo-core" = import ./nix/cairo-core.nix;
+  "cairo-image" = import ./nix/cairo-image.nix;
   "cake" = import ./nix/cake.nix;
   "cake3" = import ./nix/cake3.nix;
   "cakyrespa" = import ./nix/cakyrespa.nix;
@@ -6503,6 +6504,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glazier-react-widget" = import ./nix/glazier-react-widget.nix;
   "gli" = import ./nix/gli.nix;
   "glib" = import ./nix/glib.nix;
+  "glib-stopgap" = import ./nix/glib-stopgap.nix;
   "glicko" = import ./nix/glicko.nix;
   "glider-nlp" = import ./nix/glider-nlp.nix;
   "glintcollider" = import ./nix/glintcollider.nix;
@@ -14303,6 +14305,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "simple-bluetooth" = import ./nix/simple-bluetooth.nix;
   "simple-c-value" = import ./nix/simple-c-value.nix;
   "simple-cabal" = import ./nix/simple-cabal.nix;
+  "simple-cairo" = import ./nix/simple-cairo.nix;
   "simple-cmd" = import ./nix/simple-cmd.nix;
   "simple-cmd-args" = import ./nix/simple-cmd-args.nix;
   "simple-conduit" = import ./nix/simple-conduit.nix;
@@ -14331,6 +14334,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "simple-neural-networks" = import ./nix/simple-neural-networks.nix;
   "simple-nix" = import ./nix/simple-nix.nix;
   "simple-observer" = import ./nix/simple-observer.nix;
+  "simple-pango" = import ./nix/simple-pango.nix;
   "simple-parser" = import ./nix/simple-parser.nix;
   "simple-pascal" = import ./nix/simple-pascal.nix;
   "simple-pipe" = import ./nix/simple-pipe.nix;
