@@ -241,4 +241,15 @@
       default = "r0";
       };
     };
+  "0.8.2.2" = {
+    sha256 = "d749645dc972e0b00e762f3478a823c849b97f74928e1b4986d78a4ff542a066";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/composite-aeson-refined-0.8.2.2-r0-410b16f9c262ae12f66d8ec36c3da3ecd7e845f04ddfedaff97b40d80fa57ef1.nix;
+        revNum = 0;
+        sha256 = "410b16f9c262ae12f66d8ec36c3da3ecd7e845f04ddfedaff97b40d80fa57ef1";
+        };
+      default = "r0";
+      };
+    };
   }

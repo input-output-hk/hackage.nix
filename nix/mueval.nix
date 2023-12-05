@@ -388,4 +388,15 @@
       default = "r0";
       };
     };
+  "0.9.4" = {
+    sha256 = "f37f4ed525e9d45432aad4426225abadfc7de59ae19b41b771744d975ba8cfe4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mueval-0.9.4-r0-58961d1f42538955f562ea6de9087ef675f7d930ab651137d5568140474b610d.nix;
+        revNum = 0;
+        sha256 = "58961d1f42538955f562ea6de9087ef675f7d930ab651137d5568140474b610d";
+        };
+      default = "r0";
+      };
+    };
   }

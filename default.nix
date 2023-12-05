@@ -2495,6 +2495,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bash" = import ./nix/bash.nix;
   "basic" = import ./nix/basic.nix;
   "basic-cpuid" = import ./nix/basic-cpuid.nix;
+  "basic-gps" = import ./nix/basic-gps.nix;
   "basic-lens" = import ./nix/basic-lens.nix;
   "basic-prelude" = import ./nix/basic-prelude.nix;
   "basic-sop" = import ./nix/basic-sop.nix;
@@ -4025,6 +4026,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "corebot-bliki" = import ./nix/corebot-bliki.nix;
   "corecursive-main" = import ./nix/corecursive-main.nix;
   "corenlp-parser" = import ./nix/corenlp-parser.nix;
+  "corenlp-types" = import ./nix/corenlp-types.nix;
   "cornea" = import ./nix/cornea.nix;
   "coroutine-enumerator" = import ./nix/coroutine-enumerator.nix;
   "coroutine-iteratee" = import ./nix/coroutine-iteratee.nix;

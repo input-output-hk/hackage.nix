@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "1.0.1" = {
+    sha256 = "4db54be773eebaec101905ec6ddc5e53846e57aff518b8cdc2d3397ca541a960";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fast-bech32-1.0.1-r0-2c104584a56b4d77efb6cb59fe3b980806c6ca2b088e4de08317e309343ce1ed.nix;
+        revNum = 0;
+        sha256 = "2c104584a56b4d77efb6cb59fe3b980806c6ca2b088e4de08317e309343ce1ed";
+        };
+      default = "r0";
+      };
+    };
   }

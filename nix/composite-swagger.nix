@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "0.8.2.2" = {
+    sha256 = "86530c272862d7652e095d85be27a7bb41898c59b2c7a5d990ecffbcf5484b33";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/composite-swagger-0.8.2.2-r0-888c7be1e88d8134fee87da8a82725c8b2773b9c03cb32e61632db198b53b223.nix;
+        revNum = 0;
+        sha256 = "888c7be1e88d8134fee87da8a82725c8b2773b9c03cb32e61632db198b53b223";
+        };
+      default = "r0";
+      };
+    };
   }

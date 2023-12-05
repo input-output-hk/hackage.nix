@@ -212,4 +212,15 @@
       default = "r1";
       };
     };
+  "0.8.0" = {
+    sha256 = "bb6f3334783ea0dec642c72497ff2404d06f5fa377ef6588bc99400638bc0ec4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-0.8.0-r0-39ff2db10848483078e513dc0d45cc102cfc31bdf5645d0afe649d4644e0ad9b.nix;
+        revNum = 0;
+        sha256 = "39ff2db10848483078e513dc0d45cc102cfc31bdf5645d0afe649d4644e0ad9b";
+        };
+      default = "r0";
+      };
+    };
   }
