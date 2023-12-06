@@ -36,4 +36,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "ad79039743744b6f1abaf3a032de1111f6c7842bacb2e7bc60ed8a808098ecbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nix-freeze-tree-0.1.1.0-r0-d32bc5de2569087a60c3c27fbecf367c298c07222023391723ab93e09484c247.nix;
+        revNum = 0;
+        sha256 = "d32bc5de2569087a60c3c27fbecf367c298c07222023391723ab93e09484c247";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -166,4 +166,15 @@
       default = "r2";
       };
     };
+  "1.6.0.0" = {
+    sha256 = "ece272eb9e701af41936761a9c6e0188b106d4756066067bc27e40ddf8f29795";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monomer-1.6.0.0-r0-ae58f6c6fcd859204002824ed11fe1e82bdcc3ac91c644b3978323788ea73e41.nix;
+        revNum = 0;
+        sha256 = "ae58f6c6fcd859204002824ed11fe1e82bdcc3ac91c644b3978323788ea73e41";
+        };
+      default = "r0";
+      };
+    };
   }

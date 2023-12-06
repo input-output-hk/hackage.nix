@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.1.0.6" = {
+    sha256 = "a7b6852350f711b9187011b77fa65d8cfc5800c009e491b0149ab7f5c923b4c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-logging-1.1.0.6-r0-62eb43fb4157c9184c882b012d2d763472b71bd4061f7990f3cf7b453bd4c7f8.nix;
+        revNum = 0;
+        sha256 = "62eb43fb4157c9184c882b012d2d763472b71bd4061f7990f3cf7b453bd4c7f8";
+        };
+      default = "r0";
+      };
+    };
   }
