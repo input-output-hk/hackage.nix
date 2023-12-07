@@ -237,4 +237,15 @@
       default = "r0";
       };
     };
+  "0.6.1.0" = {
+    sha256 = "74b78ef91ac1240d685db7f2e4e1d8e1f2f89d372acc1bc3e63980be1c819dfa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-typescript-0.6.1.0-r0-a22847f337ab7767b705643ca74485cfc105ea9ba05505134bd9d9e9f6854c1d.nix;
+        revNum = 0;
+        sha256 = "a22847f337ab7767b705643ca74485cfc105ea9ba05505134bd9d9e9f6854c1d";
+        };
+      default = "r0";
+      };
+    };
   }
