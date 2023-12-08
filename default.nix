@@ -10637,6 +10637,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "moe" = import ./nix/moe.nix;
   "moesocks" = import ./nix/moesocks.nix;
   "moffy" = import ./nix/moffy.nix;
+  "moffy-samples" = import ./nix/moffy-samples.nix;
+  "moffy-samples-events" = import ./nix/moffy-samples-events.nix;
+  "moffy-samples-gtk4" = import ./nix/moffy-samples-gtk4.nix;
+  "moffy-samples-gtk4-run" = import ./nix/moffy-samples-gtk4-run.nix;
   "mohws" = import ./nix/mohws.nix;
   "mole" = import ./nix/mole.nix;
   "mollie-api-haskell" = import ./nix/mollie-api-haskell.nix;
@@ -11628,6 +11632,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "optparse-helper" = import ./nix/optparse-helper.nix;
   "optparse-simple" = import ./nix/optparse-simple.nix;
   "optparse-text" = import ./nix/optparse-text.nix;
+  "optparse-th" = import ./nix/optparse-th.nix;
   "optparse-version" = import ./nix/optparse-version.nix;
   "optstream" = import ./nix/optstream.nix;
   "opusfile" = import ./nix/opusfile.nix;
