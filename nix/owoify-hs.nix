@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.1.0.0" = {
+    sha256 = "73dbb1e7f309b852f0a4d50fba0e0cdd31b16c7f4f3e0d2b5da7898aa8920003";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/owoify-hs-1.1.0.0-r0-736def37c41f7ea279f598018414194c15d316769b2db159f520fd1c1af03845.nix;
+        revNum = 0;
+        sha256 = "736def37c41f7ea279f598018414194c15d316769b2db159f520fd1c1af03845";
+        };
+      default = "r0";
+      };
+    };
   }

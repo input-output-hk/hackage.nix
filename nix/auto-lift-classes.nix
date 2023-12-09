@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "1.1" = {
+    sha256 = "b2607a8c951d6ef7e4e594e93e05c2c6f35a3becff820fa5b060d93064ae17e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/auto-lift-classes-1.1-r0-87785c7a49fb1ae9aa9e512eb24fa1506ce1a946f6672b3821e4d4c5f5046fb1.nix;
+        revNum = 0;
+        sha256 = "87785c7a49fb1ae9aa9e512eb24fa1506ce1a946f6672b3821e4d4c5f5046fb1";
+        };
+      default = "r0";
+      };
+    };
   }

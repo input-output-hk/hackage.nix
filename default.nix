@@ -3274,6 +3274,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cassava-megaparsec" = import ./nix/cassava-megaparsec.nix;
   "cassava-records" = import ./nix/cassava-records.nix;
   "cassava-streams" = import ./nix/cassava-streams.nix;
+  "cassava-th" = import ./nix/cassava-th.nix;
   "cassette" = import ./nix/cassette.nix;
   "cassy" = import ./nix/cassy.nix;
   "cast" = import ./nix/cast.nix;

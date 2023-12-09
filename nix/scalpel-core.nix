@@ -85,4 +85,15 @@
       default = "r0";
       };
     };
+  "0.6.2.2" = {
+    sha256 = "6a35620abc9d90249c5f0ef19e627c117b53b78a2baf4ebb22e0d7114fcc7e1d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scalpel-core-0.6.2.2-r0-703de024e3c2abc90d1e86dec583456d60d7f594904abab4f923715ac20e56bd.nix;
+        revNum = 0;
+        sha256 = "703de024e3c2abc90d1e86dec583456d60d7f594904abab4f923715ac20e56bd";
+        };
+      default = "r0";
+      };
+    };
   }
