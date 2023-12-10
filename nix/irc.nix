@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.6.1.1" = {
+    sha256 = "06512091e5b8f5c141967a4d2a2a823de73c4f9acd1fb9e7b286281d79acff19";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/irc-0.6.1.1-r0-88112b940d76d2f01f527667259b4d70f1951ed24fca67071fa988d1ac28ce55.nix;
+        revNum = 0;
+        sha256 = "88112b940d76d2f01f527667259b4d70f1951ed24fca67071fa988d1ac28ce55";
+        };
+      default = "r0";
+      };
+    };
   }

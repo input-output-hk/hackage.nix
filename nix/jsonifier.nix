@@ -164,4 +164,15 @@
       default = "r0";
       };
     };
+  "0.2.1.3" = {
+    sha256 = "96c363c1b5f941344e8ca829374ecf2f933e6bd75657671a4aaed35a1d8aece2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsonifier-0.2.1.3-r0-e1ea6e20270d290d2e8a1050e49f057fc8b7dd77cdffa11c0d31f905f017600e.nix;
+        revNum = 0;
+        sha256 = "e1ea6e20270d290d2e8a1050e49f057fc8b7dd77cdffa11c0d31f905f017600e";
+        };
+      default = "r0";
+      };
+    };
   }
