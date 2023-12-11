@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.3.0.1" = {
+    sha256 = "a75c2807f33ee9076d4fa15d236af910774e35d5fcd714d61ba63301adaebd2f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/alsa-mixer-0.3.0.1-r0-e6e8d8f33fe549e72fe8cab54cfbc438e153286d013be2d149b31d145ba2f1d4.nix;
+        revNum = 0;
+        sha256 = "e6e8d8f33fe549e72fe8cab54cfbc438e153286d013be2d149b31d145ba2f1d4";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -4526,6 +4526,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "definitive-parser" = import ./nix/definitive-parser.nix;
   "definitive-reactive" = import ./nix/definitive-reactive.nix;
   "definitive-sound" = import ./nix/definitive-sound.nix;
+  "defun-bool" = import ./nix/defun-bool.nix;
+  "defun-core" = import ./nix/defun-core.nix;
+  "defun-sop" = import ./nix/defun-sop.nix;
   "deiko-config" = import ./nix/deiko-config.nix;
   "dejafu" = import ./nix/dejafu.nix;
   "deka" = import ./nix/deka.nix;

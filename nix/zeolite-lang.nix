@@ -428,6 +428,17 @@
       default = "r0";
       };
     };
+  "0.24.0.0" = {
+    sha256 = "c7147146fcd72746ffd034842e44594621527868770e5397bc499f28998f5046";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zeolite-lang-0.24.0.0-r0-5dd8c7c22d3ede7d1154c53656798ebd6c0c4f49a77ded5a43603a72ba0111ec.nix;
+        revNum = 0;
+        sha256 = "5dd8c7c22d3ede7d1154c53656798ebd6c0c4f49a77ded5a43603a72ba0111ec";
+        };
+      default = "r0";
+      };
+    };
   "0.3.0.0" = {
     sha256 = "77b1470c94a16036cdc09dace7c716b7ab4ef2dcda9bbb99e07ab33519132210";
     revisions = {

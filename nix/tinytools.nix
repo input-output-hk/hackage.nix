@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.0.6" = {
+    sha256 = "8ccc22f91b38ab7756b1c7f35087c492dc7e6347f1e463ac83f50a345de8c958";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tinytools-0.1.0.6-r0-40470efaa5ab66c773e7275a895603760ea47f28340546d066767b5533951a7e.nix;
+        revNum = 0;
+        sha256 = "40470efaa5ab66c773e7275a895603760ea47f28340546d066767b5533951a7e";
+        };
+      default = "r0";
+      };
+    };
   }
