@@ -158,4 +158,15 @@
       default = "r0";
       };
     };
+  "2.5.0.0" = {
+    sha256 = "f9b98e7ef1c28f57631f3e58f7c4deff9144cea31a8fdf9a2a7235760cf865f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-graph-2.5.0.0-r0-f99fe96e4cd3a9d572eace80f645c3f5169d727003a45291653233582bdbcf3e.nix;
+        revNum = 0;
+        sha256 = "f99fe96e4cd3a9d572eace80f645c3f5169d727003a45291653233582bdbcf3e";
+        };
+      default = "r0";
+      };
+    };
   }

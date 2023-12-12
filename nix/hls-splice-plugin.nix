@@ -234,4 +234,15 @@
       default = "r0";
       };
     };
+  "2.5.0.0" = {
+    sha256 = "1034db5d6bcf9a82fb723e03a524284bae6c7809334ca94aefd36e56c289cfd3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-splice-plugin-2.5.0.0-r0-2f050164cc0ba5ebc6c43e0cef63cfb7d55cbd9dc2f1f501da52be7ddeb23c05.nix;
+        revNum = 0;
+        sha256 = "2f050164cc0ba5ebc6c43e0cef63cfb7d55cbd9dc2f1f501da52be7ddeb23c05";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -274,4 +274,26 @@
       default = "r0";
       };
     };
+  "0.2.8.5" = {
+    sha256 = "e51c28cc41804ac2ad0cf8f2e8975ef40cc638ecb0ec3200b88ddc60e3dc9761";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/advent-of-code-api-0.2.8.5-r0-40c4310fcf55577e97dcfbeff6d84fe46d01cc21cc74314b1753616bd112fbd0.nix;
+        revNum = 0;
+        sha256 = "40c4310fcf55577e97dcfbeff6d84fe46d01cc21cc74314b1753616bd112fbd0";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.9.0" = {
+    sha256 = "dbcd33668c6abf22a32c8d1f65808ce21d0b1a64e685394e0b0346008420d66d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/advent-of-code-api-0.2.9.0-r0-c10d628b084a5198b5345893cdad13562286dee2a298203b53acf7c1241d9ddc.nix;
+        revNum = 0;
+        sha256 = "c10d628b084a5198b5345893cdad13562286dee2a298203b53acf7c1241d9ddc";
+        };
+      default = "r0";
+      };
+    };
   }

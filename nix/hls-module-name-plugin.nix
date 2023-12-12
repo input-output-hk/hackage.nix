@@ -163,4 +163,15 @@
       default = "r0";
       };
     };
+  "2.5.0.0" = {
+    sha256 = "1d785625c1c998c172650f3dbfb47d50714d1aed322385b7269e73b030a99739";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-module-name-plugin-2.5.0.0-r0-13fee6569aa936d17e8070b5dd06dc2e62bf39ed6670baabc83cbf942707ac09.nix;
+        revNum = 0;
+        sha256 = "13fee6569aa936d17e8070b5dd06dc2e62bf39ed6670baabc83cbf942707ac09";
+        };
+      default = "r0";
+      };
+    };
   }

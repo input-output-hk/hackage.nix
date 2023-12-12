@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "2.5.0.0" = {
+    sha256 = "0bb3261dc724fd12c77f96bdc8c7d7eead415cd04a1c9ca45be9b7f372b88524";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-explicit-record-fields-plugin-2.5.0.0-r0-047867bd42f9fbcfe5ef5dad6c9ee92a1323aee9b80d25d2d8f4dc399310c8e8.nix;
+        revNum = 0;
+        sha256 = "047867bd42f9fbcfe5ef5dad6c9ee92a1323aee9b80d25d2d8f4dc399310c8e8";
+        };
+      default = "r0";
+      };
+    };
   }
