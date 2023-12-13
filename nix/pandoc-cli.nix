@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "3.1.10" = {
+    sha256 = "f1ffb5396df4600279f544f4e1782ae4f53408151c5a1ac09cef6880f3345d89";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-cli-3.1.10-r0-b39f0242ff4f6d368d1f019d35d1f699ee183466dd6aa946718df4a497f2995d.nix;
+        revNum = 0;
+        sha256 = "b39f0242ff4f6d368d1f019d35d1f699ee183466dd6aa946718df4a497f2995d";
+        };
+      default = "r0";
+      };
+    };
   }

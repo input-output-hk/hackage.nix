@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2.1.2" = {
+    sha256 = "c19e350589654fc616f52e3c2a62afc5a36ed4f5b00285e7c9317171189f7597";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moffy-samples-gtk4-run-0.2.1.2-r0-67a8b2dd0c830619899922dbeb11201d70f72ff47887ba5f283584f15dfd4abf.nix;
+        revNum = 0;
+        sha256 = "67a8b2dd0c830619899922dbeb11201d70f72ff47887ba5f283584f15dfd4abf";
+        };
+      default = "r0";
+      };
+    };
   }

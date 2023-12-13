@@ -4526,6 +4526,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "definitive-parser" = import ./nix/definitive-parser.nix;
   "definitive-reactive" = import ./nix/definitive-reactive.nix;
   "definitive-sound" = import ./nix/definitive-sound.nix;
+  "defun" = import ./nix/defun.nix;
   "defun-bool" = import ./nix/defun-bool.nix;
   "defun-core" = import ./nix/defun-core.nix;
   "defun-sop" = import ./nix/defun-sop.nix;
@@ -8372,6 +8373,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hspec-expectations-pretty" = import ./nix/hspec-expectations-pretty.nix;
   "hspec-expectations-pretty-diff" = import ./nix/hspec-expectations-pretty-diff.nix;
   "hspec-experimental" = import ./nix/hspec-experimental.nix;
+  "hspec-formatter-github" = import ./nix/hspec-formatter-github.nix;
   "hspec-golden" = import ./nix/hspec-golden.nix;
   "hspec-golden-aeson" = import ./nix/hspec-golden-aeson.nix;
   "hspec-hashable" = import ./nix/hspec-hashable.nix;
@@ -8719,6 +8721,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hyper" = import ./nix/hyper.nix;
   "hyper-extra" = import ./nix/hyper-extra.nix;
   "hyper-haskell-server" = import ./nix/hyper-haskell-server.nix;
+  "hyperbole" = import ./nix/hyperbole.nix;
   "hyperdrive" = import ./nix/hyperdrive.nix;
   "hyperfunctions" = import ./nix/hyperfunctions.nix;
   "hypergeomatrix" = import ./nix/hypergeomatrix.nix;
@@ -13446,6 +13449,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "resource-simple" = import ./nix/resource-simple.nix;
   "resourcet" = import ./nix/resourcet.nix;
   "resourcet-effectful" = import ./nix/resourcet-effectful.nix;
+  "resourcet-extra" = import ./nix/resourcet-extra.nix;
   "resourcet-pool" = import ./nix/resourcet-pool.nix;
   "respond" = import ./nix/respond.nix;
   "rest-client" = import ./nix/rest-client.nix;

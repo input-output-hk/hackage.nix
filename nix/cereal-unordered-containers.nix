@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "9358fbf432e8e40e7fab2471b03e6146e22583ead671457f34f7af54097df61d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cereal-unordered-containers-0.1.0.1-r0-2fc46a576f03b71349817605b009de5dcf9b08165f64fb4b521df7eee42fe698.nix;
+        revNum = 0;
+        sha256 = "2fc46a576f03b71349817605b009de5dcf9b08165f64fb4b521df7eee42fe698";
+        };
+      default = "r0";
+      };
+    };
   }
