@@ -1098,7 +1098,12 @@
         revNum = 0;
         sha256 = "d9f0533c272ac92bd7b18699077038b6b51b3552e91b65743af4ce646286b4f8";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-core-2.0-r1-f781ca0b5b9777f48cb1e4d611b4aad449be79bc0a1400e50fa7daf468a211f1.nix;
+        revNum = 1;
+        sha256 = "f781ca0b5b9777f48cb1e4d611b4aad449be79bc0a1400e50fa7daf468a211f1";
+        };
+      default = "r1";
       };
     };
   }

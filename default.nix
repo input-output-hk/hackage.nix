@@ -1490,6 +1490,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-flowtyped" = import ./nix/aeson-flowtyped.nix;
   "aeson-gadt-th" = import ./nix/aeson-gadt-th.nix;
   "aeson-generic-compat" = import ./nix/aeson-generic-compat.nix;
+  "aeson-generics-typescript" = import ./nix/aeson-generics-typescript.nix;
   "aeson-helper" = import ./nix/aeson-helper.nix;
   "aeson-injector" = import ./nix/aeson-injector.nix;
   "aeson-iproute" = import ./nix/aeson-iproute.nix;

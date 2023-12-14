@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.0.4" = {
+    sha256 = "3c39fbb63ff439f0a8857b1e7d5da4c54ffd58fa203ef13d0783b2c3c16a52ea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/domain-optics-0.1.0.4-r0-319893e38cef735d41acb04ffc8d8fe75dec759d571d7384e17d252e65f34817.nix;
+        revNum = 0;
+        sha256 = "319893e38cef735d41acb04ffc8d8fe75dec759d571d7384e17d252e65f34817";
+        };
+      default = "r0";
+      };
+    };
   }

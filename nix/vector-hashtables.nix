@@ -95,4 +95,15 @@
       default = "r0";
       };
     };
+  "0.1.1.4" = {
+    sha256 = "4c5d75a3384e76ea4c02587c2bd8123cff3c5c8aab182cee58aea38d824c715b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vector-hashtables-0.1.1.4-r0-e11585296b395f78c0e75e7642c9a5461dd91064a28e62b79ac2a079776f4807.nix;
+        revNum = 0;
+        sha256 = "e11585296b395f78c0e75e7642c9a5461dd91064a28e62b79ac2a079776f4807";
+        };
+      default = "r0";
+      };
+    };
   }
