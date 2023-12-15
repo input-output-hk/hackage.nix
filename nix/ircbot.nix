@@ -307,4 +307,15 @@
       default = "r0";
       };
     };
+  "0.6.6.2" = {
+    sha256 = "fe03b583a225e0b080d3156a8cd2e0dd2956c6cb252028a5522cacb5b73ebc20";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ircbot-0.6.6.2-r0-21d07e01da6ccc9ef411b3536c4f9ae885214b1f0ea349adc016c205d26bae5f.nix;
+        revNum = 0;
+        sha256 = "21d07e01da6ccc9ef411b3536c4f9ae885214b1f0ea349adc016c205d26bae5f";
+        };
+      default = "r0";
+      };
+    };
   }

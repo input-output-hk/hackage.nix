@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.4.0.5" = {
+    sha256 = "661e0bc984ae61f2b6bb6ed2557f27178682709754f57e764d58fd34a8b3b471";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/optima-0.4.0.5-r0-faaa1530dc608fc1ca42175a3f20866acd8fa6f630475d15796788c6bd893570.nix;
+        revNum = 0;
+        sha256 = "faaa1530dc608fc1ca42175a3f20866acd8fa6f630475d15796788c6bd893570";
+        };
+      default = "r0";
+      };
+    };
   }

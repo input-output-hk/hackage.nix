@@ -13993,6 +13993,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "serv-wai" = import ./nix/serv-wai.nix;
   "servant" = import ./nix/servant.nix;
   "servant-JuicyPixels" = import ./nix/servant-_Juicy_Pixels.nix;
+  "servant-aeson-generics-typescript" = import ./nix/servant-aeson-generics-typescript.nix;
   "servant-aeson-specs" = import ./nix/servant-aeson-specs.nix;
   "servant-auth" = import ./nix/servant-auth.nix;
   "servant-auth-client" = import ./nix/servant-auth-client.nix;

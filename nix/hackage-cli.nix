@@ -59,7 +59,12 @@
         revNum = 4;
         sha256 = "5062da916474dba1ae111309156b45e0f17bb81d78d9fdabf573c4fc4aa2e06d";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/hackage-cli-0.1.0.1-r5-69df60ec285aa59827851c9c85d0a6a2b5c582dc8ff0020f03c8af335344f4e9.nix;
+        revNum = 5;
+        sha256 = "69df60ec285aa59827851c9c85d0a6a2b5c582dc8ff0020f03c8af335344f4e9";
+        };
+      default = "r5";
       };
     };
   }

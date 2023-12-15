@@ -1809,4 +1809,15 @@
       default = "r1";
       };
     };
+  "7.9.0" = {
+    sha256 = "8681d97d61d0b71f2b0546e32816dcf52322b15edef8b783f6a6dd54275211b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happstack-server-7.9.0-r0-f9eab05ac1fc4ef0aa9489c291683496fa0c15e700a1b6ae09f8f920110237a7.nix;
+        revNum = 0;
+        sha256 = "f9eab05ac1fc4ef0aa9489c291683496fa0c15e700a1b6ae09f8f920110237a7";
+        };
+      default = "r0";
+      };
+    };
   }

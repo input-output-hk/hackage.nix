@@ -88,7 +88,12 @@
         revNum = 0;
         sha256 = "1cf2a01e83d155fabc6ae3e686c75dfe174cbc3addbe7c8ec55fe17368a3458c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hasql-interpolate-0.2.1.0-r1-72221891ec529c8bdf2156f84ea18070588bd9391a4611f43026fbdb9f231922.nix;
+        revNum = 1;
+        sha256 = "72221891ec529c8bdf2156f84ea18070588bd9391a4611f43026fbdb9f231922";
+        };
+      default = "r1";
       };
     };
   }
