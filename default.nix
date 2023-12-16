@@ -332,6 +332,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "FTGL" = import ./nix/_F_T_G_L.nix;
   "FTGL-bytestring" = import ./nix/_F_T_G_L-bytestring.nix;
   "FTPLine" = import ./nix/_F_T_P_Line.nix;
+  "FULE" = import ./nix/_F_U_L_E.nix;
   "Facebook-Password-Hacker-Online-Latest-Version" = import ./nix/_Facebook-_Password-_Hacker-_Online-_Latest-_Version.nix;
   "Facts" = import ./nix/_Facts.nix;
   "FailT" = import ./nix/_Fail_T.nix;
