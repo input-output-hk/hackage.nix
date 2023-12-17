@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "e541528af602d2d71a3dcec9feb5cc02b04bbcc86352f389a12ecfcd41fd0ddc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ebird-api-0.2.0.0-r0-d62eadf7ec3d632f9ef85eb0eb089ecb774541706dcac977335a98fec989119e.nix;
+        revNum = 0;
+        sha256 = "d62eadf7ec3d632f9ef85eb0eb089ecb774541706dcac977335a98fec989119e";
+        };
+      default = "r0";
+      };
+    };
   }
