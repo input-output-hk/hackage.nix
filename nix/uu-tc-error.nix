@@ -26,4 +26,15 @@
       default = "r1";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "a531f81ef2126357b1ba79e2e4b460b4c7aec70a1ec9a615206e32daa9bd5845";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uu-tc-error-0.3.0.0-r0-87c6451d6a5879ced9375c30e361d46a2a9f8cf87c931e2bd3116474c4985dec.nix;
+        revNum = 0;
+        sha256 = "87c6451d6a5879ced9375c30e361d46a2a9f8cf87c931e2bd3116474c4985dec";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -12341,6 +12341,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polimorf" = import ./nix/polimorf.nix;
   "poll" = import ./nix/poll.nix;
   "polling-cache" = import ./nix/polling-cache.nix;
+  "pollock" = import ./nix/pollock.nix;
   "poly" = import ./nix/poly.nix;
   "poly-arity" = import ./nix/poly-arity.nix;
   "poly-cont" = import ./nix/poly-cont.nix;

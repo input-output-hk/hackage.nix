@@ -73,4 +73,15 @@
       default = "r2";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "f6dab739557d5b00936e3621fd557968db5707015218f45875c7534f377a17b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-handler-hal-0.3.0.0-r0-7a0510f868b332bc14baf097c802979e0ae8ed5c999d359e42a6417afdccff55.nix;
+        revNum = 0;
+        sha256 = "7a0510f868b332bc14baf097c802979e0ae8ed5c999d359e42a6417afdccff55";
+        };
+      default = "r0";
+      };
+    };
   }
