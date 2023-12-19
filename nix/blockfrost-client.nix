@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.8.0.0" = {
+    sha256 = "c8c62a40fd3c9aa3df96bce4cdd93853c27670fbc216eeff5e47e829bf1c13ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blockfrost-client-0.8.0.0-r0-eab9cfd3d0abbd19391ac1561f933dd2e50582ba2ad0bc53a919c1f79797e14b.nix;
+        revNum = 0;
+        sha256 = "eab9cfd3d0abbd19391ac1561f933dd2e50582ba2ad0bc53a919c1f79797e14b";
+        };
+      default = "r0";
+      };
+    };
   }

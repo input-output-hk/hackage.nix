@@ -218,7 +218,23 @@
         revNum = 1;
         sha256 = "9588afce95bb60f21d8726c5a7cfc348f95688f582b7c7463d2d5bd96a2afe7d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/EdisonCore-1.3.3-r2-65ed49e3e472e0784ae1fbe49c31fe8452d7196801d7c7c24a6f392505d2cc38.nix;
+        revNum = 2;
+        sha256 = "65ed49e3e472e0784ae1fbe49c31fe8452d7196801d7c7c24a6f392505d2cc38";
+        };
+      default = "r2";
+      };
+    };
+  "1.3.3.1" = {
+    sha256 = "6b4acc53573f9429ec85a51f6d81341f6ce71e6831463e852d9cc40263f283f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/EdisonCore-1.3.3.1-r0-720bcc36aa7815443b57a0f808f1a4f4fc2abe085e6afc075de3c22af49e6437.nix;
+        revNum = 0;
+        sha256 = "720bcc36aa7815443b57a0f808f1a4f4fc2abe085e6afc075de3c22af49e6437";
+        };
+      default = "r0";
       };
     };
   }

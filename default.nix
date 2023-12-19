@@ -2904,6 +2904,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "boundingboxes" = import ./nix/boundingboxes.nix;
   "bower-json" = import ./nix/bower-json.nix;
   "bowntz" = import ./nix/bowntz.nix;
+  "bowtie" = import ./nix/bowtie.nix;
   "box" = import ./nix/box.nix;
   "box-csv" = import ./nix/box-csv.nix;
   "box-socket" = import ./nix/box-socket.nix;

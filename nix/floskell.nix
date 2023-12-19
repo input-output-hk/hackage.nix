@@ -114,6 +114,17 @@
       default = "r0";
       };
     };
+  "0.11.1" = {
+    sha256 = "76b3272f7ace57e8498f22d60c8ec12da9ce91915c97d606165fbb66e8f6a9bd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/floskell-0.11.1-r0-605dcba736400498c2c1701221f4c86091bc27b6569e6222906bf1624a164e22.nix;
+        revNum = 0;
+        sha256 = "605dcba736400498c2c1701221f4c86091bc27b6569e6222906bf1624a164e22";
+        };
+      default = "r0";
+      };
+    };
   "0.9.0" = {
     sha256 = "5badda565b0767d834a2ac2eb4fe431ad5a6779355e9e6c95974bdf70c0da67f";
     revisions = {

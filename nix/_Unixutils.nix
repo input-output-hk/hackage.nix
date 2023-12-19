@@ -319,4 +319,15 @@
       default = "r1";
       };
     };
+  "1.54.3" = {
+    sha256 = "dcc85256fceb92b7e4db38b1871ea5a177f28f8e061f950da089c647ceb6c3c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Unixutils-1.54.3-r0-d2190aeb16ffdf9fe4deb5d6bcbdff7d05655d915f432d2e26cbcd9c75f287a7.nix;
+        revNum = 0;
+        sha256 = "d2190aeb16ffdf9fe4deb5d6bcbdff7d05655d915f432d2e26cbcd9c75f287a7";
+        };
+      default = "r0";
+      };
+    };
   }
