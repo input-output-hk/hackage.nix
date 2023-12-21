@@ -2994,6 +2994,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bulmex" = import ./nix/bulmex.nix;
   "bumper" = import ./nix/bumper.nix;
   "bunz" = import ./nix/bunz.nix;
+  "bureaucromancy" = import ./nix/bureaucromancy.nix;
   "burnt-explorer" = import ./nix/burnt-explorer.nix;
   "burrito" = import ./nix/burrito.nix;
   "burst-detection" = import ./nix/burst-detection.nix;
@@ -10649,6 +10650,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "moffy" = import ./nix/moffy.nix;
   "moffy-samples" = import ./nix/moffy-samples.nix;
   "moffy-samples-events" = import ./nix/moffy-samples-events.nix;
+  "moffy-samples-gtk3" = import ./nix/moffy-samples-gtk3.nix;
+  "moffy-samples-gtk3-run" = import ./nix/moffy-samples-gtk3-run.nix;
   "moffy-samples-gtk4" = import ./nix/moffy-samples-gtk4.nix;
   "moffy-samples-gtk4-run" = import ./nix/moffy-samples-gtk4-run.nix;
   "mohws" = import ./nix/mohws.nix;
@@ -13232,6 +13235,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "references" = import ./nix/references.nix;
   "refh" = import ./nix/refh.nix;
   "refined" = import ./nix/refined.nix;
+  "refined-containers" = import ./nix/refined-containers.nix;
   "refined-http-api-data" = import ./nix/refined-http-api-data.nix;
   "refined-with" = import ./nix/refined-with.nix;
   "refined1" = import ./nix/refined1.nix;

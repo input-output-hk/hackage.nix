@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.3.0" = {
+    sha256 = "2f4edbc73395b01c508c337bc31ef7ae6095d88290806846df2f1c62669c13fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libphonenumber-0.1.3.0-r0-300e0493813d19fa3ad9760b7565709b17a90e97a1f1ec765edefd2a4504dabb.nix;
+        revNum = 0;
+        sha256 = "300e0493813d19fa3ad9760b7565709b17a90e97a1f1ec765edefd2a4504dabb";
+        };
+      default = "r0";
+      };
+    };
   }

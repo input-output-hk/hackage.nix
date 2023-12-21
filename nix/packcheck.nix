@@ -120,4 +120,15 @@
       default = "r0";
       };
     };
+  "0.7.0" = {
+    sha256 = "661bc41b813bd50c210d6bdb130230b690e49005597e9def5e932e67970491a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/packcheck-0.7.0-r0-79f794c88e7398c234f0b1626b5f49fef393388aa7a4b6c8f81a19dc5bbf3676.nix;
+        revNum = 0;
+        sha256 = "79f794c88e7398c234f0b1626b5f49fef393388aa7a4b6c8f81a19dc5bbf3676";
+        };
+      default = "r0";
+      };
+    };
   }

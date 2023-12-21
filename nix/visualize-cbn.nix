@@ -47,4 +47,15 @@
       default = "r3";
       };
     };
+  "0.2.0" = {
+    sha256 = "bbaf5142504e2e5484c83cf9e819531a079c44128f12f87df147f84b1b38e00e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/visualize-cbn-0.2.0-r0-a959cde168dea921e13154f559521e6b4bde0fc1d670cf52b01e55f66334f89d.nix;
+        revNum = 0;
+        sha256 = "a959cde168dea921e13154f559521e6b4bde0fc1d670cf52b01e55f66334f89d";
+        };
+      default = "r0";
+      };
+    };
   }
