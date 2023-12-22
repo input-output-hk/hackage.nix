@@ -2086,4 +2086,26 @@
       default = "r0";
       };
     };
+  "2.3" = {
+    sha256 = "c6f189b616591b3b33945d2f4b810a2497349ca89987aadd81909555ba815934";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-2.3-r0-0748c752671d5fa5bb42495a8945fa8a7ca6fac120ef5750a04de7d49086296c.nix;
+        revNum = 0;
+        sha256 = "0748c752671d5fa5bb42495a8945fa8a7ca6fac120ef5750a04de7d49086296c";
+        };
+      default = "r0";
+      };
+    };
+  "2.3.1" = {
+    sha256 = "65f0ad1a65da643ce69014d9cfc2fe431b01a21989f973c09d8ed5f017b81698";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-2.3.1-r0-4c36e5d77dc360641a5aa9361949d981e4aecc7f1372c862e0b2451d614b5f5c.nix;
+        revNum = 0;
+        sha256 = "4c36e5d77dc360641a5aa9361949d981e4aecc7f1372c862e0b2451d614b5f5c";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0" = {
+    sha256 = "25b4044927ede69fe01f671c4d30ad31c09d36cf5959c4df01456e92a007abee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/resourcet-extra-0.1.0-r0-2969ab3b3b8de0171f40799b504d8c9a28075510493ccaf18f8ab384d9814cf5.nix;
+        revNum = 0;
+        sha256 = "2969ab3b3b8de0171f40799b504d8c9a28075510493ccaf18f8ab384d9814cf5";
+        };
+      default = "r0";
+      };
+    };
   }

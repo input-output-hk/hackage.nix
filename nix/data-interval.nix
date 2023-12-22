@@ -296,4 +296,15 @@
       default = "r2";
       };
     };
+  "2.1.2" = {
+    sha256 = "4e0e9075437c0e4dbd238d966ea1fe2f92e203cb0822e61664544678cb4bd906";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/data-interval-2.1.2-r0-1babc74557df0b8a32d43536cc0a0cb32ff354a6d57de52f5a0e88636a16f3b0.nix;
+        revNum = 0;
+        sha256 = "1babc74557df0b8a32d43536cc0a0cb32ff354a6d57de52f5a0e88636a16f3b0";
+        };
+      default = "r0";
+      };
+    };
   }

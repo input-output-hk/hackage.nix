@@ -32,4 +32,48 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "f8485673851d64091dc25d08df442365523ccd781729624f29025974ed8538ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moffy-samples-gtk3-run-0.1.0.3-r0-ede63db7758827c43252d2b9febf0a12a108ee394110c9af386f2d6fe8703fb7.nix;
+        revNum = 0;
+        sha256 = "ede63db7758827c43252d2b9febf0a12a108ee394110c9af386f2d6fe8703fb7";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.4" = {
+    sha256 = "a7b7d16b16c9e1ea0fca7c06f243f1cc1038f11233be73a668c79e4b99736370";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moffy-samples-gtk3-run-0.1.0.4-r0-b343536decad0bda6f50c1938283ad4393c6c639874013da12a306f7015ed473.nix;
+        revNum = 0;
+        sha256 = "b343536decad0bda6f50c1938283ad4393c6c639874013da12a306f7015ed473";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.6" = {
+    sha256 = "7ac1428a98c90147177990048146e5c0c21b60f414047aeb6d380a9cc0e46219";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moffy-samples-gtk3-run-0.1.0.6-r0-b6aa44f67b4cc043d49b01b94cf9846fac84050b55f4cf07fba767e5aa13cb71.nix;
+        revNum = 0;
+        sha256 = "b6aa44f67b4cc043d49b01b94cf9846fac84050b55f4cf07fba767e5aa13cb71";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.0.7" = {
+    sha256 = "8da625256cab8e3786cccce51b86c3942fa7e3ba664652cbc32ea45a4c4c387d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moffy-samples-gtk3-run-0.1.0.7-r0-cd41984be6c358f530bfab8ecaf97bdcab16b4970c17d993ec0d26e212e9348e.nix;
+        revNum = 0;
+        sha256 = "cd41984be6c358f530bfab8ecaf97bdcab16b4970c17d993ec0d26e212e9348e";
+        };
+      default = "r0";
+      };
+    };
   }

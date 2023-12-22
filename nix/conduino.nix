@@ -68,6 +68,17 @@
       default = "r1";
       };
     };
+  "0.2.3.0" = {
+    sha256 = "3f62e8641aec5fb8942be41e08b244f116981780520cc8112c7461aa4e0ba045";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduino-0.2.3.0-r0-a546d8504ea2964ee67720e66cb39475cdb4056339933407fe72774c1686d7ec.nix;
+        revNum = 0;
+        sha256 = "a546d8504ea2964ee67720e66cb39475cdb4056339933407fe72774c1686d7ec";
+        };
+      default = "r0";
+      };
+    };
   "0.2.4.0" = {
     sha256 = "f222d9f1c8590c71faa501c3d1963eaaf2e12f4d884baa8bafae32365165b277";
     revisions = {

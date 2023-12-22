@@ -9895,6 +9895,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "linear-circuit" = import ./nix/linear-circuit.nix;
   "linear-code" = import ./nix/linear-code.nix;
   "linear-generics" = import ./nix/linear-generics.nix;
+  "linear-geo" = import ./nix/linear-geo.nix;
   "linear-grammar" = import ./nix/linear-grammar.nix;
   "linear-maps" = import ./nix/linear-maps.nix;
   "linear-opengl" = import ./nix/linear-opengl.nix;
@@ -15373,6 +15374,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tahoe-chk" = import ./nix/tahoe-chk.nix;
   "tahoe-directory" = import ./nix/tahoe-directory.nix;
   "tahoe-great-black-swamp" = import ./nix/tahoe-great-black-swamp.nix;
+  "tahoe-great-black-swamp-testing" = import ./nix/tahoe-great-black-swamp-testing.nix;
+  "tahoe-great-black-swamp-types" = import ./nix/tahoe-great-black-swamp-types.nix;
   "tahoe-ssk" = import ./nix/tahoe-ssk.nix;
   "tai" = import ./nix/tai.nix;
   "tai64" = import ./nix/tai64.nix;

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0" = {
+    sha256 = "b2e58c7508c03ab4e63cbf1ac8f03cf0e2c71aa784101d11c26e8302bff52a2c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypto-token-0.1.0-r0-79752abb8c09ad6a5f3f278041c1401fb8b44d2619c1bedeac3ad1bb0f4348f6.nix;
+        revNum = 0;
+        sha256 = "79752abb8c09ad6a5f3f278041c1401fb8b44d2619c1bedeac3ad1bb0f4348f6";
+        };
+      default = "r0";
+      };
+    };
   }
