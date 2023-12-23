@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "95b0d6272a89223ce054c4fb9eef9e858d30dd7b3a7c30b8442dfbc2472f7076";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/comfort-array-shape-0.0-r1-e4180d4a43c76622745cdaadc0311655985062bbf306ba46c857659b7548e35e.nix;
+        revNum = 1;
+        sha256 = "e4180d4a43c76622745cdaadc0311655985062bbf306ba46c857659b7548e35e";
+        };
+      default = "r1";
       };
     };
   }

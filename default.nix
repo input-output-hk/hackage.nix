@@ -7800,6 +7800,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "highlighter" = import ./nix/highlighter.nix;
   "highlighter2" = import ./nix/highlighter2.nix;
   "highlighting-kate" = import ./nix/highlighting-kate.nix;
+  "highs-lp" = import ./nix/highs-lp.nix;
   "hills" = import ./nix/hills.nix;
   "himerge" = import ./nix/himerge.nix;
   "himg" = import ./nix/himg.nix;

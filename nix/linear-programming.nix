@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.0.1" = {
+    sha256 = "7fec8518d72c23586304ee18a9efd1b1f5e8ae128ee0e7158a8f03022026d538";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linear-programming-0.0.1-r0-14623d6c2f1bb3a14856cc5c367ff66b40d167692b3771a2b1f77d436e990920.nix;
+        revNum = 0;
+        sha256 = "14623d6c2f1bb3a14856cc5c367ff66b40d167692b3771a2b1f77d436e990920";
+        };
+      default = "r0";
+      };
+    };
   }

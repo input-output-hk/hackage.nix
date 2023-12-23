@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.0.2.1" = {
+    sha256 = "d3664422dadf6c67b4b8c0882c8dd7bfa8e234480bdaaf28ac748cf7c8992615";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/toilet-0.0.2.1-r0-7d2f33142b31e6eb4395be06c90d641bdfcee4c87fd86290995aebc43cc356e8.nix;
+        revNum = 0;
+        sha256 = "7d2f33142b31e6eb4395be06c90d641bdfcee4c87fd86290995aebc43cc356e8";
+        };
+      default = "r0";
+      };
+    };
   }
