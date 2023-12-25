@@ -4407,6 +4407,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-store" = import ./nix/data-store.nix;
   "data-stringmap" = import ./nix/data-stringmap.nix;
   "data-structure-inferrer" = import ./nix/data-structure-inferrer.nix;
+  "data-svd" = import ./nix/data-svd.nix;
   "data-sword" = import ./nix/data-sword.nix;
   "data-tensor" = import ./nix/data-tensor.nix;
   "data-textual" = import ./nix/data-textual.nix;
@@ -4610,6 +4611,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "detour-via-uom" = import ./nix/detour-via-uom.nix;
   "detrospector" = import ./nix/detrospector.nix;
   "deunicode" = import ./nix/deunicode.nix;
+  "devanagari-transliterations" = import ./nix/devanagari-transliterations.nix;
   "devil" = import ./nix/devil.nix;
   "devtools" = import ./nix/devtools.nix;
   "dewdrop" = import ./nix/dewdrop.nix;

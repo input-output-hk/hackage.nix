@@ -42,4 +42,15 @@
       default = "r0";
       };
     };
+  "0.3.1.0" = {
+    sha256 = "a41a36a1c47893523940d021373208cc6f0970e7e87c8abcc9937bccd4bbd21a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/floating-bits-0.3.1.0-r0-68ac5bf8516f74991b37c5a80407abd78ec8c0525c04d2cfc22d78e893989cb1.nix;
+        revNum = 0;
+        sha256 = "68ac5bf8516f74991b37c5a80407abd78ec8c0525c04d2cfc22d78e893989cb1";
+        };
+      default = "r0";
+      };
+    };
   }
