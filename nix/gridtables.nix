@@ -45,7 +45,12 @@
         revNum = 0;
         sha256 = "d76a3bc6a0e6719471e38beadef657e8e31f7fb927899407fcd09b39f3c2636d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gridtables-0.1.0.0-r1-20f6faa3d75724133253d970daee8ee1e6fb77841d4be4e82273168e22f7c42b.nix;
+        revNum = 1;
+        sha256 = "20f6faa3d75724133253d970daee8ee1e6fb77841d4be4e82273168e22f7c42b";
+        };
+      default = "r1";
       };
     };
   }

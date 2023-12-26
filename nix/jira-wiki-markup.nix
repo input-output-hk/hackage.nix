@@ -210,7 +210,12 @@
         revNum = 0;
         sha256 = "67607e71ce89e216f9cef40659dd1c4e3b3d1a1616e87bf5b6256469b1a59f5c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jira-wiki-markup-1.5.1-r1-142a88f49a61911046d5077b05b47cde1e6567d6bcb17e9eccc54b0cffcf93a6.nix;
+        revNum = 1;
+        sha256 = "142a88f49a61911046d5077b05b47cde1e6567d6bcb17e9eccc54b0cffcf93a6";
+        };
+      default = "r1";
       };
     };
   }
