@@ -525,7 +525,12 @@
         revNum = 1;
         sha256 = "4eb5254d65fe00e91f46a8bab5467669e6e95f6a0eb73a048b70a4aab1a5892e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/cgi-3001.5.0.1-r2-bc77d0d4b5431d04e42c1d29423a3984739c56db0c1748d1aae1c6f8fa4aa4ef.nix;
+        revNum = 2;
+        sha256 = "bc77d0d4b5431d04e42c1d29423a3984739c56db0c1748d1aae1c6f8fa4aa4ef";
+        };
+      default = "r2";
       };
     };
   }

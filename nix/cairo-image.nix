@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "e2da91625d01174d9f20c70ada61a2b0e3d8d74abfd263346d0c9da62ddbf77a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cairo-image-0.1.0.3-r0-dbd5f26a91e797ea01d3a23203ca7a753959255c040c2d9d8c4e7105e9679540.nix;
+        revNum = 0;
+        sha256 = "dbd5f26a91e797ea01d3a23203ca7a753959255c040c2d9d8c4e7105e9679540";
+        };
+      default = "r0";
+      };
+    };
   }

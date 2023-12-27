@@ -230,4 +230,15 @@
       default = "r0";
       };
     };
+  "0.5.0.5" = {
+    sha256 = "8a68bd9f2688163fd157a20dbf505932019556f0056f5448d742cb079e79c96b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ihaskell-hvega-0.5.0.5-r0-b50af094966fabb36da77b18bf0995db2a14979fb162f789b7893ad1dcd075ad.nix;
+        revNum = 0;
+        sha256 = "b50af094966fabb36da77b18bf0995db2a14979fb162f789b7893ad1dcd075ad";
+        };
+      default = "r0";
+      };
+    };
   }

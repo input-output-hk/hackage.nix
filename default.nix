@@ -8006,6 +8006,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hob" = import ./nix/hob.nix;
   "hobbes" = import ./nix/hobbes.nix;
   "hobbits" = import ./nix/hobbits.nix;
+  "hocd" = import ./nix/hocd.nix;
   "hocilib" = import ./nix/hocilib.nix;
   "hocker" = import ./nix/hocker.nix;
   "hocon" = import ./nix/hocon.nix;

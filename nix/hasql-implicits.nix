@@ -78,7 +78,12 @@
         revNum = 0;
         sha256 = "f670506601863904d8086a0ef5add45b7579472714aa1b0d9bdd0bd8d1b97f36";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hasql-implicits-0.1.1-r1-f9a5f37cd126702b78d6b5dfd29a8b0cf65856e7321a3d5b4f78ec08db1559b8.nix;
+        revNum = 1;
+        sha256 = "f9a5f37cd126702b78d6b5dfd29a8b0cf65856e7321a3d5b4f78ec08db1559b8";
+        };
+      default = "r1";
       };
     };
   }

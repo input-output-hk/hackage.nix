@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.7.3.0" = {
+    sha256 = "5b0c25afe133b782b136d725b1f3f582aca5f640436945b45ef30ef5d853ab01";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/singletons-presburger-0.7.3.0-r0-752f387766936643abf97ca3b0bd2f719698a7b54179af9358b2ea74c94120be.nix;
+        revNum = 0;
+        sha256 = "752f387766936643abf97ca3b0bd2f719698a7b54179af9358b2ea74c94120be";
+        };
+      default = "r0";
+      };
+    };
   }

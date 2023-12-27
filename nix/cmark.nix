@@ -330,7 +330,12 @@
         revNum = 0;
         sha256 = "79b1d093fafcbd65a2d3c7f0a74b8384dca3c983552042157ff82f432d27a7d6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cmark-0.6.1-r1-5994e5d56d286e857063375154eac4128aea835ec867955963c27237823b8085.nix;
+        revNum = 1;
+        sha256 = "5994e5d56d286e857063375154eac4128aea835ec867955963c27237823b8085";
+        };
+      default = "r1";
       };
     };
   }
