@@ -4002,6 +4002,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cookie" = import ./nix/cookie.nix;
   "cookie-tray" = import ./nix/cookie-tray.nix;
   "cookies" = import ./nix/cookies.nix;
+  "cooklang-hs" = import ./nix/cooklang-hs.nix;
   "coordinate" = import ./nix/coordinate.nix;
   "copilot" = import ./nix/copilot.nix;
   "copilot-c99" = import ./nix/copilot-c99.nix;
@@ -5204,6 +5205,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "embroidery" = import ./nix/embroidery.nix;
   "emd" = import ./nix/emd.nix;
   "emgm" = import ./nix/emgm.nix;
+  "emhell" = import ./nix/emhell.nix;
   "emoji" = import ./nix/emoji.nix;
   "emojis" = import ./nix/emojis.nix;
   "empty" = import ./nix/empty.nix;
@@ -7471,6 +7473,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-cursor-query" = import ./nix/hasql-cursor-query.nix;
   "hasql-cursor-transaction" = import ./nix/hasql-cursor-transaction.nix;
   "hasql-dynamic-statements" = import ./nix/hasql-dynamic-statements.nix;
+  "hasql-effectful" = import ./nix/hasql-effectful.nix;
   "hasql-explain-tests" = import ./nix/hasql-explain-tests.nix;
   "hasql-generic" = import ./nix/hasql-generic.nix;
   "hasql-implicits" = import ./nix/hasql-implicits.nix;

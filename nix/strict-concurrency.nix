@@ -135,7 +135,12 @@
         revNum = 0;
         sha256 = "6aa645ca638e9a61e14146cec06e6b52187e3da3149314338002e41dd290fb48";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/strict-concurrency-0.2.4.3-r1-fede3d515b877b56623ac1ccacbf17c326baded87640af0f10c27c66dd742f49.nix;
+        revNum = 1;
+        sha256 = "fede3d515b877b56623ac1ccacbf17c326baded87640af0f10c27c66dd742f49";
+        };
+      default = "r1";
       };
     };
   }

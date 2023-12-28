@@ -1445,7 +1445,12 @@
         revNum = 2;
         sha256 = "e34857c9770a88c6322acd23e3687e4c5adae82be7135f06a732c43b9c3431b5";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hakyll-4.16.2.0-r3-8c505d1ac43bb9a2e3567ce683f504d136abef1c55d03c09ed4e916ff738af39.nix;
+        revNum = 3;
+        sha256 = "8c505d1ac43bb9a2e3567ce683f504d136abef1c55d03c09ed4e916ff738af39";
+        };
+      default = "r3";
       };
     };
   "4.2.0.0" = {

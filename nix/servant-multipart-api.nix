@@ -32,7 +32,12 @@
         revNum = 5;
         sha256 = "24aa033b22a783778f10eb5e703150686c1c14c4516bbc73b9872d7da81d4414";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/servant-multipart-api-0.12.1-r6-e0d714be3da9b2e50e78d799abacb0312b87d0914b3414cbc7f838db146c1bf4.nix;
+        revNum = 6;
+        sha256 = "e0d714be3da9b2e50e78d799abacb0312b87d0914b3414cbc7f838db146c1bf4";
+        };
+      default = "r6";
       };
     };
   }
