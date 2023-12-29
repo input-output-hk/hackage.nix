@@ -269,7 +269,12 @@
         revNum = 1;
         sha256 = "d0825378a1f6ff0004b9dd6f1bd282f6e146b4168eea41bc2a6cc777babf958d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hedn-0.3.0.4-r2-a9496b442066908e0442d3447040c4da7c07117f44ce40818f936239eda041f3.nix;
+        revNum = 2;
+        sha256 = "a9496b442066908e0442d3447040c4da7c07117f44ce40818f936239eda041f3";
+        };
+      default = "r2";
       };
     };
   }

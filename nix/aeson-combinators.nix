@@ -120,4 +120,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "0e9a83d3bed30f20cede5c38ed82dde322c084d2d3e83c0259603554920ee036";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-combinators-0.1.2.0-r0-cdc1dee95d566ac90d78d408a41b6a9ad519c0151ce95d94b67b8e64714e8f04.nix;
+        revNum = 0;
+        sha256 = "cdc1dee95d566ac90d78d408a41b6a9ad519c0151ce95d94b67b8e64714e8f04";
+        };
+      default = "r0";
+      };
+    };
   }

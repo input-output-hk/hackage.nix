@@ -89,7 +89,12 @@
         revNum = 0;
         sha256 = "c466b42367166d3fb9ce3e32f8b68bd4bd3ada06cf88dc5a5348c0c09a5c987c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fix-whitespace-0.1-r1-114a1a04169b33d57b71b6d07b192ffe58e2f2543a9f60a46f231bafb25492ea.nix;
+        revNum = 1;
+        sha256 = "114a1a04169b33d57b71b6d07b192ffe58e2f2543a9f60a46f231bafb25492ea";
+        };
+      default = "r1";
       };
     };
   }
