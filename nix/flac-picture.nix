@@ -47,4 +47,15 @@
       default = "r1";
       };
     };
+  "0.1.3" = {
+    sha256 = "b45d2cf2436a11deddf9f62c3c8a227beff97ee51c97ee3e8217488e9bdd57cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flac-picture-0.1.3-r0-a81dc966fe09f8f6454f6700421e1e0256d911e4b4284e6ed15c1110ddbc0f08.nix;
+        revNum = 0;
+        sha256 = "a81dc966fe09f8f6454f6700421e1e0256d911e4b4284e6ed15c1110ddbc0f08";
+        };
+      default = "r0";
+      };
+    };
   }

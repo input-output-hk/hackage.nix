@@ -16970,6 +16970,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "webgear-core" = import ./nix/webgear-core.nix;
   "webgear-openapi" = import ./nix/webgear-openapi.nix;
   "webgear-server" = import ./nix/webgear-server.nix;
+  "webgear-swagger" = import ./nix/webgear-swagger.nix;
+  "webgear-swagger-ui" = import ./nix/webgear-swagger-ui.nix;
   "webidl" = import ./nix/webidl.nix;
   "webify" = import ./nix/webify.nix;
   "webkit" = import ./nix/webkit.nix;

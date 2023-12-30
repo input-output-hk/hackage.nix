@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.3.1" = {
+    sha256 = "c210164a2a3e7040e319ccc4bbc2613b4a628f4a8167744636cd0930a4933ff5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/daytripper-0.3.1-r0-225a6e9348c2b5b6e0a55d408559b55df06f1365d5741d2f9d1856d8632769ae.nix;
+        revNum = 0;
+        sha256 = "225a6e9348c2b5b6e0a55d408559b55df06f1365d5741d2f9d1856d8632769ae";
+        };
+      default = "r0";
+      };
+    };
   }

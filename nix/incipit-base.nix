@@ -106,6 +106,22 @@
         revNum = 0;
         sha256 = "be2ad5b7aab434a39fef9ddb15f88de0c819fbcde3093711b0cc5b362c3c6b24";
         };
+      r1 = {
+        nix = import ../hackage/incipit-base-0.5.1.0-r1-4c26319851bdd7a080fda70e6773153eb983c5b7ff7563585cfe0547c5ee5dfb.nix;
+        revNum = 1;
+        sha256 = "4c26319851bdd7a080fda70e6773153eb983c5b7ff7563585cfe0547c5ee5dfb";
+        };
+      default = "r1";
+      };
+    };
+  "0.6.0.0" = {
+    sha256 = "aceb3b5bce7a9a3feb28aa478e616bf09fb127c20c53a70a14c35b427bb4b596";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/incipit-base-0.6.0.0-r0-9747c4c99248f879faa1b7f113a838e64cdab3e9fe22c733735b72eca17f6c8e.nix;
+        revNum = 0;
+        sha256 = "9747c4c99248f879faa1b7f113a838e64cdab3e9fe22c733735b72eca17f6c8e";
+        };
       default = "r0";
       };
     };

@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.5.1" = {
+    sha256 = "3667bfb190a866784dcea5cfd8f70986718dfc3259bd6ee6a105d214c6c9d41e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dahdit-network-0.5.1-r0-9a5aed2baed0f5122e613f5533416151fe894478a480cfa274a95dbe781324af.nix;
+        revNum = 0;
+        sha256 = "9a5aed2baed0f5122e613f5533416151fe894478a480cfa274a95dbe781324af";
+        };
+      default = "r0";
+      };
+    };
   }
