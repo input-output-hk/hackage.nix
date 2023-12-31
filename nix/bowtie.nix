@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "70faded70579da770463413e50c176056cfbf3891e2a6c312a3b79241579c962";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bowtie-0.2.0-r0-1fea0ef4521f8c77544aa885f47d6999acf75db8f0b093fe639d24004a1fbe6f.nix;
+        revNum = 0;
+        sha256 = "1fea0ef4521f8c77544aa885f47d6999acf75db8f0b093fe639d24004a1fbe6f";
+        };
+      default = "r0";
+      };
+    };
   }

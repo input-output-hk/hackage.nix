@@ -14868,6 +14868,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "staf" = import ./nix/staf.nix;
   "staged-gg" = import ./nix/staged-gg.nix;
   "stagen" = import ./nix/stagen.nix;
+  "stamina" = import ./nix/stamina.nix;
   "stan" = import ./nix/stan.nix;
   "standalone-derive-topdown" = import ./nix/standalone-derive-topdown.nix;
   "standalone-haddock" = import ./nix/standalone-haddock.nix;
