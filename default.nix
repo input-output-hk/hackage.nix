@@ -6293,6 +6293,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-lib" = import ./nix/ghc-lib.nix;
   "ghc-lib-parser" = import ./nix/ghc-lib-parser.nix;
   "ghc-lib-parser-ex" = import ./nix/ghc-lib-parser-ex.nix;
+  "ghc-magic-dict-compat" = import ./nix/ghc-magic-dict-compat.nix;
   "ghc-make" = import ./nix/ghc-make.nix;
   "ghc-man-completion" = import ./nix/ghc-man-completion.nix;
   "ghc-mod" = import ./nix/ghc-mod.nix;
@@ -11388,6 +11389,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nri-redis" = import ./nix/nri-redis.nix;
   "nri-test-encoding" = import ./nix/nri-test-encoding.nix;
   "nsis" = import ./nix/nsis.nix;
+  "nspace" = import ./nix/nspace.nix;
   "nth-prime" = import ./nix/nth-prime.nix;
   "ntha" = import ./nix/ntha.nix;
   "nthable" = import ./nix/nthable.nix;

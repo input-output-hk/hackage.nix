@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "f262390bbc715c4daddd6444cb10bca3c77783e5d5f8528fe61c015e63a71135";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bbcode-0.2.0.1-r0-cb0ff77e951754a54e57024b7a7b203fe3b921df279a31179f066a7a18dbd8eb.nix;
+        revNum = 0;
+        sha256 = "cb0ff77e951754a54e57024b7a7b203fe3b921df279a31179f066a7a18dbd8eb";
+        };
+      default = "r0";
+      };
+    };
   }

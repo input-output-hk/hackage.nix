@@ -148,7 +148,12 @@
         revNum = 2;
         sha256 = "bdbbb9a5a9088fdc44b496aec78c0565ec9570a46009741e60975d9d2a433163";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/cue-sheet-2.0.2-r3-5e64d0d8ff0138a7518990ff1f3d8e9b651c20e20a562437fd6b8ce96c3342e3.nix;
+        revNum = 3;
+        sha256 = "5e64d0d8ff0138a7518990ff1f3d8e9b651c20e20a562437fd6b8ce96c3342e3";
+        };
+      default = "r3";
       };
     };
   }
