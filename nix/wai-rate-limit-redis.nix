@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "d38fb09b347405f319f4ff479d201d9fde21b37e6947eda7868440438e478479";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-rate-limit-redis-0.2.0.1-r1-4fd1297f905b287eb5470ad1a0619100e98fc62b9dfb4a226398c4a906063f9f.nix;
+        revNum = 1;
+        sha256 = "4fd1297f905b287eb5470ad1a0619100e98fc62b9dfb4a226398c4a906063f9f";
+        };
+      default = "r1";
       };
     };
   }

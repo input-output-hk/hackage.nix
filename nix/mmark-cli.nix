@@ -125,4 +125,15 @@
       default = "r3";
       };
     };
+  "0.0.5.2" = {
+    sha256 = "46ec39c1a116dd9dddc8446601a19506ef079bf78afc5671b8ce68fa87e72816";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmark-cli-0.0.5.2-r0-8f3f5f594b651430257ac66e31458702e85beb456bd523f25c633d222930ab9c.nix;
+        revNum = 0;
+        sha256 = "8f3f5f594b651430257ac66e31458702e85beb456bd523f25c633d222930ab9c";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.1.1" = {
+    sha256 = "2cf1a5645233bc4394388234b535c8f35dd4cfe0bcaa4916255309b8e1a22c75";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webgear-swagger-ui-1.1.1-r0-7e1b9c697c253a7aabcb49e10a2172d358bdf72709cecd57ce69f2b1772907e2.nix;
+        revNum = 0;
+        sha256 = "7e1b9c697c253a7aabcb49e10a2172d358bdf72709cecd57ce69f2b1772907e2";
+        };
+      default = "r0";
+      };
+    };
   }
