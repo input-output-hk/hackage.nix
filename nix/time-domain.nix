@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "01ad7f432a45c52565fc19b2f949c911d407fb2973f3fb5d290c6d07dec390f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/time-domain-0.1.0.3-r0-b1bd39599c1f3b8a5ee2b99262d3ebe91e15eff7b6af70ff468edd450232cf6b.nix;
+        revNum = 0;
+        sha256 = "b1bd39599c1f3b8a5ee2b99262d3ebe91e15eff7b6af70ff468edd450232cf6b";
+        };
+      default = "r0";
+      };
+    };
   }

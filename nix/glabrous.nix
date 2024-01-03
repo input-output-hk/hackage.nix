@@ -323,4 +323,15 @@
       default = "r0";
       };
     };
+  "2.0.6.3" = {
+    sha256 = "e85ab9751333b931de3fca909e13ef23c8f6d0e9eed8fec52d376fb75615bc59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glabrous-2.0.6.3-r0-a102a90982b43d30475cccc6f829f33f918fbbd8a558f5c80ec53a95ee3128f8.nix;
+        revNum = 0;
+        sha256 = "a102a90982b43d30475cccc6f829f33f918fbbd8a558f5c80ec53a95ee3128f8";
+        };
+      default = "r0";
+      };
+    };
   }

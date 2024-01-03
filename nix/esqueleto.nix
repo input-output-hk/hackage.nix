@@ -1420,7 +1420,12 @@
         revNum = 0;
         sha256 = "24cf7056e4d6b2a831dfb09f133e23dc83ef7e467fc77d105216dec73e61c160";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/esqueleto-3.5.10.3-r1-2ddb7b2b0fae1725e441e84d06d6dc0dfdd22d74f741f0f5fc136aa6eed10dd3.nix;
+        revNum = 1;
+        sha256 = "2ddb7b2b0fae1725e441e84d06d6dc0dfdd22d74f741f0f5fc136aa6eed10dd3";
+        };
+      default = "r1";
       };
     };
   "3.5.11.0" = {
@@ -1430,6 +1435,22 @@
         nix = import ../hackage/esqueleto-3.5.11.0-r0-32b76c2198489eb3ec5e30e5de66157cc3ba4f26040df120ba00d0009de287cd.nix;
         revNum = 0;
         sha256 = "32b76c2198489eb3ec5e30e5de66157cc3ba4f26040df120ba00d0009de287cd";
+        };
+      r1 = {
+        nix = import ../hackage/esqueleto-3.5.11.0-r1-452d4cf2b5e15bca1a22869fdf26484cfdb3a84ae2be6016ce2eace0f70fb417.nix;
+        revNum = 1;
+        sha256 = "452d4cf2b5e15bca1a22869fdf26484cfdb3a84ae2be6016ce2eace0f70fb417";
+        };
+      default = "r1";
+      };
+    };
+  "3.5.11.1" = {
+    sha256 = "13286b32380d7ff7897706256759244d51c9a2bd5a0f40b44ef896ac22b68a90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-3.5.11.1-r0-0721b72053946d06d49a63e768117cf7da8efaf28849eff466212386d9b6e480.nix;
+        revNum = 0;
+        sha256 = "0721b72053946d06d49a63e768117cf7da8efaf28849eff466212386d9b6e480";
         };
       default = "r0";
       };
@@ -1644,7 +1665,12 @@
         revNum = 0;
         sha256 = "63937d474e8b613a5487823520fc58d7f5a68bb9aabc5f9fb396fe08347de807";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/esqueleto-3.5.9.1-r1-648a9dcd5e216b2894ddf394058b91cba54cc1768bb32a89f82102666000ec53.nix;
+        revNum = 1;
+        sha256 = "648a9dcd5e216b2894ddf394058b91cba54cc1768bb32a89f82102666000ec53";
+        };
+      default = "r1";
       };
     };
   }

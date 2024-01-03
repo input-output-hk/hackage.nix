@@ -42,4 +42,15 @@
       default = "r1";
       };
     };
+  "0.5.2" = {
+    sha256 = "0d1a9ae712f278b9b880cb451a422c222e5abe315d2924225a5c98d069d8f004";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unexceptionalio-trans-0.5.2-r0-74089f21411795ba04ce6ccea760735b795c7a4ee86e30ab7c11a1262053d4d8.nix;
+        revNum = 0;
+        sha256 = "74089f21411795ba04ce6ccea760735b795c7a4ee86e30ab7c11a1262053d4d8";
+        };
+      default = "r0";
+      };
+    };
   }
