@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "4.0.0" = {
+    sha256 = "dd152394d199a79fec83be637bab1731f9e6ed4375de9f5a05d0161df8286fd7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/souffle-haskell-4.0.0-r0-2771282d801bb4376558b1f9455323381871c3f913e58228ded81267219f7ada.nix;
+        revNum = 0;
+        sha256 = "2771282d801bb4376558b1f9455323381871c3f913e58228ded81267219f7ada";
+        };
+      default = "r0";
+      };
+    };
   }

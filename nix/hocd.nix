@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "68984fc72d21597fbd5418d10de5345639b3d919550935405cfedfd8915cdd26";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hocd-0.1.2.0-r0-246968b0e1b481c60f21bfcad32a27f3992fb53922261b2db3ee64ba3d5bb3b6.nix;
+        revNum = 0;
+        sha256 = "246968b0e1b481c60f21bfcad32a27f3992fb53922261b2db3ee64ba3d5bb3b6";
+        };
+      default = "r0";
+      };
+    };
   }

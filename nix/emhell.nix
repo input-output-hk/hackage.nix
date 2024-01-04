@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "2b6e1f61fe4b955401dcb87d3f9c5a1d98a1a37ff5abef0b3f6c63168ac3dfd9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/emhell-0.1.1.0-r0-3eb1221825ce79f346869d63db350a71bd620c82ffdb3f2aea4ec59ad12a3ba0.nix;
+        revNum = 0;
+        sha256 = "3eb1221825ce79f346869d63db350a71bd620c82ffdb3f2aea4ec59ad12a3ba0";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -5906,6 +5906,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "free-functors" = import ./nix/free-functors.nix;
   "free-game" = import ./nix/free-game.nix;
   "free-http" = import ./nix/free-http.nix;
+  "free-listt" = import ./nix/free-listt.nix;
   "free-operational" = import ./nix/free-operational.nix;
   "free-theorems" = import ./nix/free-theorems.nix;
   "free-theorems-counterexamples" = import ./nix/free-theorems-counterexamples.nix;
