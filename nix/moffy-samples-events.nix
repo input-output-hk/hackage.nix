@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.2.2.5" = {
+    sha256 = "c5353ac2ad3e7a4a061a9c5f7fd56dba6f30011b9284720a16631fcb661f83dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moffy-samples-events-0.2.2.5-r0-220f167c20e5af70b149b6918dd6677bc7f91e1404a3d0c0de1168b651772167.nix;
+        revNum = 0;
+        sha256 = "220f167c20e5af70b149b6918dd6677bc7f91e1404a3d0c0de1168b651772167";
+        };
+      default = "r0";
+      };
+    };
   }

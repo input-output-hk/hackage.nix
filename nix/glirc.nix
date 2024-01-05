@@ -706,6 +706,17 @@
       default = "r1";
       };
     };
+  "2.40.1" = {
+    sha256 = "907d805165c1eed804fc913ed0ef1e95de4d9f89b3186589247f467f89c92488";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glirc-2.40.1-r0-9576d63114f182bc546269978037cf963fe753603c7f6f00c2cf0d8ec31a4444.nix;
+        revNum = 0;
+        sha256 = "9576d63114f182bc546269978037cf963fe753603c7f6f00c2cf0d8ec31a4444";
+        };
+      default = "r0";
+      };
+    };
   "2.5" = {
     sha256 = "56ac1bfcbc26bd0c38353823125ba7950c811794f5b6e479b3de4f8197b60b4a";
     revisions = {

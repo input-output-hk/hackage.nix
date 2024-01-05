@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "28b6b90288e08cfb522279e2002ee5252558908cd12634755cf2e84a975f2d2c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moffy-samples-0.1.0.3-r0-4155b1483475e901f2ab727d3d53cae68cd0498a41131fc437e45f2bdaf7d0b1.nix;
+        revNum = 0;
+        sha256 = "4155b1483475e901f2ab727d3d53cae68cd0498a41131fc437e45f2bdaf7d0b1";
+        };
+      default = "r0";
+      };
+    };
   }

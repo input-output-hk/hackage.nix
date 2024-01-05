@@ -1287,6 +1287,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "WordNet-ghc74" = import ./nix/_Word_Net-ghc74.nix;
   "Wordlint" = import ./nix/_Wordlint.nix;
   "Workflow" = import ./nix/_Workflow.nix;
+  "WringTwistree" = import ./nix/_Wring_Twistree.nix;
   "WxGeneric" = import ./nix/_Wx_Generic.nix;
   "X" = import ./nix/_X.nix;
   "X11" = import ./nix/_X11.nix;
@@ -5216,6 +5217,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "encoding" = import ./nix/encoding.nix;
   "encoding-io" = import ./nix/encoding-io.nix;
   "encryptable" = import ./nix/encryptable.nix;
+  "end-of-exe" = import ./nix/end-of-exe.nix;
   "endo" = import ./nix/endo.nix;
   "eng-stemmer" = import ./nix/eng-stemmer.nix;
   "engine-io" = import ./nix/engine-io.nix;
