@@ -8991,6 +8991,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "interleave" = import ./nix/interleave.nix;
   "interlude" = import ./nix/interlude.nix;
   "interlude-l" = import ./nix/interlude-l.nix;
+  "intermediate-structures" = import ./nix/intermediate-structures.nix;
   "intern" = import ./nix/intern.nix;
   "internetmarke" = import ./nix/internetmarke.nix;
   "intero" = import ./nix/intero.nix;

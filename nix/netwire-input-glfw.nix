@@ -32,6 +32,17 @@
       default = "r0";
       };
     };
+  "0.0.12" = {
+    sha256 = "1bc42bb287568996c07cf8ca583319c082a6e8e038c8b03187650e8b381aaf79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/netwire-input-glfw-0.0.12-r0-e8ca58679e72700d262746075bb4f5bf9e1950ae9745119a23b0986a1a139eec.nix;
+        revNum = 0;
+        sha256 = "e8ca58679e72700d262746075bb4f5bf9e1950ae9745119a23b0986a1a139eec";
+        };
+      default = "r0";
+      };
+    };
   "0.0.2" = {
     sha256 = "7d4bc90ad6cac7927963032cef1e3611677fef6ca2a73b38a37eaf30d217359f";
     revisions = {

@@ -205,7 +205,12 @@
         revNum = 0;
         sha256 = "4c7fc6187aadc2f3905a8fae7318ceccbb2af88134922536e3f4cae8640978dc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pango-0.13.10.0-r1-ee239950b2eb97cfa8029c173f459f7d4d7fdb4937e546c67e9f11698dcdea59.nix;
+        revNum = 1;
+        sha256 = "ee239950b2eb97cfa8029c173f459f7d4d7fdb4937e546c67e9f11698dcdea59";
+        };
+      default = "r1";
       };
     };
   "0.13.2.0" = {
@@ -282,7 +287,12 @@
         revNum = 0;
         sha256 = "177c9b6d865dc8f1634742497c6807a7c37a11e86c0dc93fbc047981d546738a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pango-0.13.6.1-r1-d7987e37430c2942b26e61b49e1f5bdb18b7616bd93efb32a9a839dc7ce81bbc.nix;
+        revNum = 1;
+        sha256 = "d7987e37430c2942b26e61b49e1f5bdb18b7616bd93efb32a9a839dc7ce81bbc";
+        };
+      default = "r1";
       };
     };
   "0.13.8.0" = {
@@ -293,7 +303,12 @@
         revNum = 0;
         sha256 = "690149ea2efb03c783937b69a5ec6ac854806146fd760e28e800634a6c2243c1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pango-0.13.8.0-r1-f8f9256f4e17f2f3f042531ead989daaa57378824a359c1594b157ff5928291b.nix;
+        revNum = 1;
+        sha256 = "f8f9256f4e17f2f3f042531ead989daaa57378824a359c1594b157ff5928291b";
+        };
+      default = "r1";
       };
     };
   "0.13.8.1" = {
@@ -304,7 +319,12 @@
         revNum = 0;
         sha256 = "877b121c0bf87c96d3619effae6751ecfd74b7f7f3227cf3fde012597aed5ed9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pango-0.13.8.1-r1-239dc14a22ae2d081f10729efffdff4f471c617a2d341152f025d3482142b089.nix;
+        revNum = 1;
+        sha256 = "239dc14a22ae2d081f10729efffdff4f471c617a2d341152f025d3482142b089";
+        };
+      default = "r1";
       };
     };
   "0.13.8.2" = {
@@ -315,7 +335,12 @@
         revNum = 0;
         sha256 = "d4057ebddade4cde3e25d7755b5e030e7a7e56fe7365afd37916a7bba46d3fd9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pango-0.13.8.2-r1-8b80e6310a8f6a1a6ef71a15239b1a1c3e4aecdbcbfd02c2a4effc5c0234d18b.nix;
+        revNum = 1;
+        sha256 = "8b80e6310a8f6a1a6ef71a15239b1a1c3e4aecdbcbfd02c2a4effc5c0234d18b";
+        };
+      default = "r1";
       };
     };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "193f60d709bea8ece44f2b4da1db5fa3cc6e0eee4fa2be9842c9cac9a7de2149";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linenoise-0.4.0-r0-16bc53ca89c5c46dae47c098a345402f5b85be1e47527b76f86f9b15563d915b.nix;
+        revNum = 0;
+        sha256 = "16bc53ca89c5c46dae47c098a345402f5b85be1e47527b76f86f9b15563d915b";
+        };
+      default = "r0";
+      };
+    };
   }
