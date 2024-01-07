@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "9.8.1" = {
+    sha256 = "185abd93724ba92eead76f8ec044e98ce78512176d310d743f6c3fcfa11e828a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sbvPlugin-9.8.1-r0-76d01cb914b2dddacba830d9a64450fa686640fda9f424891ebb63873458be83.nix;
+        revNum = 0;
+        sha256 = "76d01cb914b2dddacba830d9a64450fa686640fda9f424891ebb63873458be83";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.4.4.0" = {
+    sha256 = "f05d2325df4894c5f8e769492ac33c7169c7bc5553d27360a6a24cdc6baac530";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pinch-gen-0.4.4.0-r0-9184f4ecfb5a4dc087d774d504689f3fa14f88be80f62b2da98d817948a68650.nix;
+        revNum = 0;
+        sha256 = "9184f4ecfb5a4dc087d774d504689f3fa14f88be80f62b2da98d817948a68650";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -251,4 +251,26 @@
       default = "r0";
       };
     };
+  "3.3.9.0" = {
+    sha256 = "b4db50f888d8f131c5619a89b13eb07fd002878620e5ca0a516f987c394fcc35";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-GLFW-3.3.9.0-r0-78f7452c92445cdfcf9f044dd8f2ccc83b4fe71d8f96167b0213f4800d4e8886.nix;
+        revNum = 0;
+        sha256 = "78f7452c92445cdfcf9f044dd8f2ccc83b4fe71d8f96167b0213f4800d4e8886";
+        };
+      default = "r0";
+      };
+    };
+  "3.3.9.1" = {
+    sha256 = "851f31b1dd1ccca26cce45b4fe48c31f74ef21fc7c74e7fba0162d11939a1b48";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-GLFW-3.3.9.1-r0-4a28ae8d916b85e1a59aa8910c8cf2e416488ff72183011e6646e36b1837fa88.nix;
+        revNum = 0;
+        sha256 = "4a28ae8d916b85e1a59aa8910c8cf2e416488ff72183011e6646e36b1837fa88";
+        };
+      default = "r0";
+      };
+    };
   }
