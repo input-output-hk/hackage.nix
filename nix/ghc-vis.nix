@@ -329,4 +329,15 @@
       default = "r0";
       };
     };
+  "0.9.3.1" = {
+    sha256 = "ea77f363b4c251bff3afa8a2889f92ef94c53b3379605bf482f94ea14906309a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-vis-0.9.3.1-r0-8bb5d717db339ea4cabc63f25f45114a3d5c3e7a07da85d6ab9b08b58b8a485f.nix;
+        revNum = 0;
+        sha256 = "8bb5d717db339ea4cabc63f25f45114a3d5c3e7a07da85d6ab9b08b58b8a485f";
+        };
+      default = "r0";
+      };
+    };
   }

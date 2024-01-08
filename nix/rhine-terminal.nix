@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.2" = {
+    sha256 = "0fca9c5f5695300984f21499b16bdedcc576aa1cd5d74c1084605a7db862f1ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhine-terminal-1.2-r0-1b7c4c79df327f2b8781e91453bbd921122b4af8308516cc95eeec3c88cbb1b7.nix;
+        revNum = 0;
+        sha256 = "1b7c4c79df327f2b8781e91453bbd921122b4af8308516cc95eeec3c88cbb1b7";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -230,4 +230,15 @@
       default = "r0";
       };
     };
+  "0.3.0.5" = {
+    sha256 = "6d3c6c1a67ede3df3c2d713dc3df706d8c9c29f7d4047021a148f5992c23b32a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xdot-0.3.0.5-r0-61450e3165cf8f187797304e84010ab1263dc055d7cdfdb84b5ea5508a68f527.nix;
+        revNum = 0;
+        sha256 = "61450e3165cf8f187797304e84010ab1263dc055d7cdfdb84b5ea5508a68f527";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -309,7 +309,12 @@
         revNum = 0;
         sha256 = "95a9cc25976992aea0c4d0482b4f98ef165eca9ec2ccd553e2ce646bb0d8c66d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gio-0.13.8.2-r1-7458b19369d2269c9e1ffa7a50f4be81e3dd38c4b3d37ad7272e281e7ce1e213.nix;
+        revNum = 1;
+        sha256 = "7458b19369d2269c9e1ffa7a50f4be81e3dd38c4b3d37ad7272e281e7ce1e213";
+        };
+      default = "r1";
       };
     };
   }

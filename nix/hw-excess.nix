@@ -163,7 +163,12 @@
         revNum = 5;
         sha256 = "33bcc0d3793cbe1f3a738d6f88623952caa1e9f466b1ff125d48cb3a71e88725";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/hw-excess-0.2.3.0-r6-6d8a6ebda94fc48cd25f18961cca6b0acfe0b08aa83c594f7815ab82e0c5fa89.nix;
+        revNum = 6;
+        sha256 = "6d8a6ebda94fc48cd25f18961cca6b0acfe0b08aa83c594f7815ab82e0c5fa89";
+        };
+      default = "r6";
       };
     };
   }
