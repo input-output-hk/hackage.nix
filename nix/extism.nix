@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.0.0.0" = {
+    sha256 = "47f4f0c80308f986f966a510e2d28823572418b49a5a892fba64d9d7534cddbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/extism-1.0.0.0-r0-cfb0c0b2700fec7885369d4f1c26cb8cb7bfdf3d0c4b16bba67f5aac940516e1.nix;
+        revNum = 0;
+        sha256 = "cfb0c0b2700fec7885369d4f1c26cb8cb7bfdf3d0c4b16bba67f5aac940516e1";
+        };
+      default = "r0";
+      };
+    };
   }

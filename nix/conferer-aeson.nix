@@ -70,7 +70,17 @@
         revNum = 4;
         sha256 = "8a7e03fabbd8d676be6493897c901954f22738721cca2d2e138af8470b9dab3c";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/conferer-aeson-1.1.0.2-r5-5fe6649c8ef82b62120e4d3bb1d5bfe4824049a6e4fc3af39f2872fab5206bfe.nix;
+        revNum = 5;
+        sha256 = "5fe6649c8ef82b62120e4d3bb1d5bfe4824049a6e4fc3af39f2872fab5206bfe";
+        };
+      r6 = {
+        nix = import ../hackage/conferer-aeson-1.1.0.2-r6-7f39384e9c436d262996f7aad9d150bdeea69138a8ca1216dceed5af6f120e9a.nix;
+        revNum = 6;
+        sha256 = "7f39384e9c436d262996f7aad9d150bdeea69138a8ca1216dceed5af6f120e9a";
+        };
+      default = "r6";
       };
     };
   }

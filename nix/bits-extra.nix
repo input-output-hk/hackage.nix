@@ -184,7 +184,12 @@
         revNum = 2;
         sha256 = "10cddc0db4b27455e4c91db2cddfb6c67594afe73db31b16331f6ba0d233feeb";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/bits-extra-0.0.2.3-r3-c969c44f0f49ca8c098771a715b4c921671cebaeba78d437e26c8bf28ed0ba32.nix;
+        revNum = 3;
+        sha256 = "c969c44f0f49ca8c098771a715b4c921671cebaeba78d437e26c8bf28ed0ba32";
+        };
+      default = "r3";
       };
     };
   }

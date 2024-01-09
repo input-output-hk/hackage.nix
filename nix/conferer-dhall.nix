@@ -33,7 +33,12 @@
         revNum = 2;
         sha256 = "213e36576a4120ea7e7e03bf8a12223f9d5a417e03a459746e06e09aaa1901b5";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/conferer-dhall-1.1.0.0-r3-18166aa2f92faf9dca877c38550affd63a276995b65dcd6e8f946b14b4500c3c.nix;
+        revNum = 3;
+        sha256 = "18166aa2f92faf9dca877c38550affd63a276995b65dcd6e8f946b14b4500c3c";
+        };
+      default = "r3";
       };
     };
   }

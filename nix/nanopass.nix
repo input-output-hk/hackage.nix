@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.0.3.0" = {
+    sha256 = "4c63c5889872fd7cd37e7b9e194fe6599ebb2080646b731ff65be88df91bd2a1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nanopass-0.0.3.0-r0-99109fd9cb662fe419f4b97a27cd07737dfe5b8197866201b079723832598466.nix;
+        revNum = 0;
+        sha256 = "99109fd9cb662fe419f4b97a27cd07737dfe5b8197866201b079723832598466";
+        };
+      default = "r0";
+      };
+    };
   }

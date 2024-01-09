@@ -51,7 +51,17 @@
         revNum = 0;
         sha256 = "9184f4ecfb5a4dc087d774d504689f3fa14f88be80f62b2da98d817948a68650";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/pinch-gen-0.4.4.0-r1-7054684f4d614f8b6e470b1acf91570477278397535a9f1f8adeca47f15bca4e.nix;
+        revNum = 1;
+        sha256 = "7054684f4d614f8b6e470b1acf91570477278397535a9f1f8adeca47f15bca4e";
+        };
+      r2 = {
+        nix = import ../hackage/pinch-gen-0.4.4.0-r2-38e41194ad4371b2569569f81dd7c8e5e734eb28ffa1c44bd5862d4b3465761f.nix;
+        revNum = 2;
+        sha256 = "38e41194ad4371b2569569f81dd7c8e5e734eb28ffa1c44bd5862d4b3465761f";
+        };
+      default = "r2";
       };
     };
   }

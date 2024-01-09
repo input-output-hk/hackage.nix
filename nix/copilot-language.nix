@@ -290,6 +290,28 @@
       default = "r0";
       };
     };
+  "3.18" = {
+    sha256 = "d7099657a4546b4c89a2f6244e6c59d1cd67ad22f77ac920520c1707aff0b0e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-language-3.18-r0-8bbf9cf48454b0140b4b99c5afdb85388d4c35c8670e3274ebb288f79d9eb279.nix;
+        revNum = 0;
+        sha256 = "8bbf9cf48454b0140b4b99c5afdb85388d4c35c8670e3274ebb288f79d9eb279";
+        };
+      default = "r0";
+      };
+    };
+  "3.18.1" = {
+    sha256 = "628cbfced526887365d1d6a5c30c368faec0aadd25ab916c6bd1e73412f573ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-language-3.18.1-r0-b5ded585931da625adf0638eb194dec7257b207f17da0592fe7bd7c9196aaae4.nix;
+        revNum = 0;
+        sha256 = "b5ded585931da625adf0638eb194dec7257b207f17da0592fe7bd7c9196aaae4";
+        };
+      default = "r0";
+      };
+    };
   "3.2" = {
     sha256 = "eadacae3ec0ac1793350ce8b52c6634dd4b8c4b45c1441df590cde668188a2ef";
     revisions = {

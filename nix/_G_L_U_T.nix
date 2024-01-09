@@ -410,7 +410,12 @@
         revNum = 1;
         sha256 = "89eaed81a1dd3f2230c2291b3df2f7e2db3396f8a63836f8504c18dc838b1479";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/GLUT-2.7.0.16-r2-2ad7c698acbe1e45f8335ba55cc5bb86f74726c58129cb27c128a918f6b17c9f.nix;
+        revNum = 2;
+        sha256 = "2ad7c698acbe1e45f8335ba55cc5bb86f74726c58129cb27c128a918f6b17c9f";
+        };
+      default = "r2";
       };
     };
   "2.7.0.2" = {

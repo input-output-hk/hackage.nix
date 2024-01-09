@@ -237,7 +237,12 @@
         revNum = 1;
         sha256 = "93901b0e0e13bd729207eca5963bbd4eb95ebbcd74f13c5646bb7cd7e91c0c3e";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/bmp-1.2.6.3-r2-3d4fed2515b501d98196bb56edfdf6e59cba3671e967d81e0b5ca6a7e9a3dc17.nix;
+        revNum = 2;
+        sha256 = "3d4fed2515b501d98196bb56edfdf6e59cba3671e967d81e0b5ca6a7e9a3dc17";
+        };
+      default = "r2";
       };
     };
   }

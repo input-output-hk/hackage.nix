@@ -105,7 +105,12 @@
         revNum = 2;
         sha256 = "ddb9c24d2d35e1e298833b59d9adc7f9c13197ac58a065a2eb72cfed222ea4f6";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/conferer-snap-1.0.0.0-r3-c78c6601badf92390ae3d5cad71825130621ad5c794f7db672ea21b38f5e0380.nix;
+        revNum = 3;
+        sha256 = "c78c6601badf92390ae3d5cad71825130621ad5c794f7db672ea21b38f5e0380";
+        };
+      default = "r3";
       };
     };
   }

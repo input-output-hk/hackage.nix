@@ -5809,6 +5809,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fmt-terminal-colors" = import ./nix/fmt-terminal-colors.nix;
   "fn" = import ./nix/fn.nix;
   "fn-extra" = import ./nix/fn-extra.nix;
+  "fnmatch" = import ./nix/fnmatch.nix;
   "focus" = import ./nix/focus.nix;
   "focuslist" = import ./nix/focuslist.nix;
   "fold-debounce" = import ./nix/fold-debounce.nix;

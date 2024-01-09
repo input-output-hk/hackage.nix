@@ -76,4 +76,26 @@
       default = "r0";
       };
     };
+  "3.18" = {
+    sha256 = "3fe40786494eabbb3c98012fe1ef1b679a84ab55850cef5559a6f116d2ab476a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-prettyprinter-3.18-r0-edf6d0f253b8f7327d8673080eea5954d5889b501e1e2ec46cc8274829eeedbc.nix;
+        revNum = 0;
+        sha256 = "edf6d0f253b8f7327d8673080eea5954d5889b501e1e2ec46cc8274829eeedbc";
+        };
+      default = "r0";
+      };
+    };
+  "3.18.1" = {
+    sha256 = "53f0c56701964ea131c041aef12950712e3464e9295bbec8a0254689cacc727c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-prettyprinter-3.18.1-r0-202d4aaf9e3f1d04b75ab69d22dbd5e3a62c390b7968d1364a0ab63dc0583ccc.nix;
+        revNum = 0;
+        sha256 = "202d4aaf9e3f1d04b75ab69d22dbd5e3a62c390b7968d1364a0ab63dc0583ccc";
+        };
+      default = "r0";
+      };
+    };
   }

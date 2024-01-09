@@ -87,4 +87,26 @@
       default = "r0";
       };
     };
+  "3.18" = {
+    sha256 = "a7405bbde39572a9e189e735cbcf427111de3dc42de7b977bd1f678a74b656e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-interpreter-3.18-r0-668a1dfacdc492077d9f18320e04e3bb398c713d04beaabf4ccfac9da0676d87.nix;
+        revNum = 0;
+        sha256 = "668a1dfacdc492077d9f18320e04e3bb398c713d04beaabf4ccfac9da0676d87";
+        };
+      default = "r0";
+      };
+    };
+  "3.18.1" = {
+    sha256 = "0f5246aacba88416627cc7bf08df97ba13f17aa11885cd1081c6af2c383ad255";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-interpreter-3.18.1-r0-ce6cf2870fb90b0f5f37466b98f7ff92217968ed0c25bfee72a57a116dfdc70a.nix;
+        revNum = 0;
+        sha256 = "ce6cf2870fb90b0f5f37466b98f7ff92217968ed0c25bfee72a57a116dfdc70a";
+        };
+      default = "r0";
+      };
+    };
   }

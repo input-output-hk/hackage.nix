@@ -203,7 +203,12 @@
         revNum = 0;
         sha256 = "cdb17d6c2f7cc32dc0893e60d6c047f12adeb1a7279064e0def9fdfd97477bee";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gloss-1.13.2.2-r1-e1a017c22fa337b2eec594dd62db6c9e20cbf02d9e8d98ffd970a1d639a42913.nix;
+        revNum = 1;
+        sha256 = "e1a017c22fa337b2eec594dd62db6c9e20cbf02d9e8d98ffd970a1d639a42913";
+        };
+      default = "r1";
       };
     };
   "1.2.0.0" = {
