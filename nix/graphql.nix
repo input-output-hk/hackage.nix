@@ -252,4 +252,26 @@
       default = "r0";
       };
     };
+  "1.2.0.2" = {
+    sha256 = "c0570356a2412c681530380cf6302bc0d4c7f321ed1c084024f3eca89fd39c0c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphql-1.2.0.2-r0-793071eba9b21e4cc971d445499caa93a0caa52aaae438a36a9313476c115b34.nix;
+        revNum = 0;
+        sha256 = "793071eba9b21e4cc971d445499caa93a0caa52aaae438a36a9313476c115b34";
+        };
+      default = "r0";
+      };
+    };
+  "1.2.0.3" = {
+    sha256 = "68fcbf651e1fdaa29e3f67dc97f2ee21f378750333f2fb80777619b305c00160";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphql-1.2.0.3-r0-435bf0285c97f753d960bbb4f4bf58a1a44cf2aab80409e019bff48974d799dd.nix;
+        revNum = 0;
+        sha256 = "435bf0285c97f753d960bbb4f4bf58a1a44cf2aab80409e019bff48974d799dd";
+        };
+      default = "r0";
+      };
+    };
   }

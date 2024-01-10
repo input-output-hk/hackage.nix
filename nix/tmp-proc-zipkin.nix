@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "ca943b03063c9d14bb3907cdced0dfe2dde391a1ad3efa557e93f220d8f84c05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tmp-proc-zipkin-0.6.0.0-r0-c235666a63e2fb54b4373108a9cbc0b883d1be91d0f0ecf1759ea42d796869eb.nix;
+        revNum = 0;
+        sha256 = "c235666a63e2fb54b4373108a9cbc0b883d1be91d0f0ecf1759ea42d796869eb";
+        };
+      default = "r0";
+      };
+    };
   }

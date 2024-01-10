@@ -43,4 +43,26 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "a2492d9d7da1f8b0aa677effdde09d0dcc6e7c07384b166a2a397e80d75e4943";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opencascade-hs-0.1.2.1-r0-99b76f88eebe6946390243ea7f63c74ebc6a1f9dc31c68fd28ce0f9d4830b866.nix;
+        revNum = 0;
+        sha256 = "99b76f88eebe6946390243ea7f63c74ebc6a1f9dc31c68fd28ce0f9d4830b866";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.2.2" = {
+    sha256 = "cffa730dba9613c0ea62499aff9a8afa77a96a108ae424bfeba65f98d657252e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opencascade-hs-0.1.2.2-r0-8db0e435e4cfc383780a6fb0ef4e741887b3b048cfe28ec7d785449bc579f91f.nix;
+        revNum = 0;
+        sha256 = "8db0e435e4cfc383780a6fb0ef4e741887b3b048cfe28ec7d785449bc579f91f";
+        };
+      default = "r0";
+      };
+    };
   }
