@@ -58,4 +58,15 @@
       default = "r0";
       };
     };
+  "0.2.1" = {
+    sha256 = "fa8d1be01a5af069100492e1c8984f37f2256131aa00a19f942ff6db4926ec21";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/visualize-cbn-0.2.1-r0-f9dfe97a9eda37b010499f4d21431e1aadb1ff6910e1fffe94a8bc1766d1f1e8.nix;
+        revNum = 0;
+        sha256 = "f9dfe97a9eda37b010499f4d21431e1aadb1ff6910e1fffe94a8bc1766d1f1e8";
+        };
+      default = "r0";
+      };
+    };
   }

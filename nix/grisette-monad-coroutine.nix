@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "416a0e2ac1f997bb47beb08ef911b82bf041669f46fe8b9e9445006d6723fb7e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/grisette-monad-coroutine-0.2.0.0-r0-c0160cbf181cb6caa945d71d5506d61556bb3e8555394f5e3e4c1f91eb1f0e6b.nix;
+        revNum = 0;
+        sha256 = "c0160cbf181cb6caa945d71d5506d61556bb3e8555394f5e3e4c1f91eb1f0e6b";
+        };
+      default = "r0";
+      };
+    };
   }

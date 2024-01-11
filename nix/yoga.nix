@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.0.0.7" = {
+    sha256 = "2ddd8116814fae0da3006c4dd0ee0f14be6216b170e739174c7354f521ce0f31";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yoga-0.0.0.7-r0-508bddb9066ad5f5eb816d23056c85bc884ff6d856c9c6dd42f0514e1443be1d.nix;
+        revNum = 0;
+        sha256 = "508bddb9066ad5f5eb816d23056c85bc884ff6d856c9c6dd42f0514e1443be1d";
+        };
+      default = "r0";
+      };
+    };
   }

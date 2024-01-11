@@ -566,4 +566,15 @@
       default = "r0";
       };
     };
+  "1.3.2.5" = {
+    sha256 = "2b33db6972afade1e77e587a5793e1d5cafbc27ec6738bd9e8b91bd1cff49c5b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-json-1.3.2.5-r0-46db9d444f2a8254b7d391382d3ffbb2acb7fc19c8d9ecec559c6523bc71d2d6.nix;
+        revNum = 0;
+        sha256 = "46db9d444f2a8254b7d391382d3ffbb2acb7fc19c8d9ecec559c6523bc71d2d6";
+        };
+      default = "r0";
+      };
+    };
   }
