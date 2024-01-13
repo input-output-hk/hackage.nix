@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.0.2" = {
+    sha256 = "a65fa8ea2f18907a6e91a11bd63a64a5d03055380e272fc4da1dd27da22282eb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/comfort-blas-0.0.2-r0-f6b99a808d99dcf55db58acc938f18ff43ec0ba61c2dec28dd1aa2e1a2d87fe6.nix;
+        revNum = 0;
+        sha256 = "f6b99a808d99dcf55db58acc938f18ff43ec0ba61c2dec28dd1aa2e1a2d87fe6";
+        };
+      default = "r0";
+      };
+    };
   }

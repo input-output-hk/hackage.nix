@@ -183,7 +183,12 @@
         revNum = 0;
         sha256 = "64aff3bb527aa484256b8c04c6469185ba307c7bd48ecb663103eff61ffa1c4b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/svgcairo-0.13.2.1-r1-edd668cb4262b853c0e7eededc70454e7a48362d1026167a4e4bf7ffaaf5ad1c.nix;
+        revNum = 1;
+        sha256 = "edd668cb4262b853c0e7eededc70454e7a48362d1026167a4e4bf7ffaaf5ad1c";
+        };
+      default = "r1";
       };
     };
   }

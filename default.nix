@@ -15169,6 +15169,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sugar-scheme" = import ./nix/sugar-scheme.nix;
   "sugarhaskell" = import ./nix/sugarhaskell.nix;
   "suitable" = import ./nix/suitable.nix;
+  "sum-pyramid" = import ./nix/sum-pyramid.nix;
   "sum-type-boilerplate" = import ./nix/sum-type-boilerplate.nix;
   "summer" = import ./nix/summer.nix;
   "summoner" = import ./nix/summoner.nix;

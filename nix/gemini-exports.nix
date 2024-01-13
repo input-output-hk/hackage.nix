@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "f5a010845511927f837627eef21ccad837595c2dc0179b842b1efe7458ba6bc2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gemini-exports-0.1.0.1-r0-9a5e4257d1bc853b659d7912aee455191a545a277c0441d96b1b0c8903e65ad1.nix;
+        revNum = 0;
+        sha256 = "9a5e4257d1bc853b659d7912aee455191a545a277c0441d96b1b0c8903e65ad1";
+        };
+      default = "r0";
+      };
+    };
   }

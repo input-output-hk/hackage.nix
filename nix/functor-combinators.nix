@@ -290,7 +290,12 @@
         revNum = 1;
         sha256 = "dff24fe090f75fe856d7833b7e5f2f5266c2db9f97121554aac5595c188b4b11";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/functor-combinators-0.4.1.2-r2-4f2c0f96936a95841e2092b3249781f961a6212d6139b64cd8035cebb873b484.nix;
+        revNum = 2;
+        sha256 = "4f2c0f96936a95841e2092b3249781f961a6212d6139b64cd8035cebb873b484";
+        };
+      default = "r2";
       };
     };
   "0.4.1.3" = {
