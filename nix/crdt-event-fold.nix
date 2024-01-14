@@ -98,4 +98,26 @@
       default = "r0";
       };
     };
+  "1.8.0.1" = {
+    sha256 = "6180310c7d1eda66c7ed3a1eacf5498379045b82810ef135b98c4652d90ebb1d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crdt-event-fold-1.8.0.1-r0-87fb2ca96e1020f38118fb3479070d39cc2a68725670bff7e7b43234fd7f24be.nix;
+        revNum = 0;
+        sha256 = "87fb2ca96e1020f38118fb3479070d39cc2a68725670bff7e7b43234fd7f24be";
+        };
+      default = "r0";
+      };
+    };
+  "1.8.0.2" = {
+    sha256 = "4cbd02d2a5639c0190010f0aa9e4bac9319c9df22a51d85368e06987cc578997";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crdt-event-fold-1.8.0.2-r0-c108ae7905455a5579bb9c906a35ce3398e385a0b63d92d4b9344a178fe14cd9.nix;
+        revNum = 0;
+        sha256 = "c108ae7905455a5579bb9c906a35ce3398e385a0b63d92d4b9344a178fe14cd9";
+        };
+      default = "r0";
+      };
+    };
   }

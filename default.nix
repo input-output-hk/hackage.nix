@@ -10583,6 +10583,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "miniutter" = import ./nix/miniutter.nix;
   "minizinc-process" = import ./nix/minizinc-process.nix;
   "minlen" = import ./nix/minlen.nix;
+  "minmax" = import ./nix/minmax.nix;
   "minst-idx" = import ./nix/minst-idx.nix;
   "mintty" = import ./nix/mintty.nix;
   "mios" = import ./nix/mios.nix;
@@ -10797,6 +10798,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoid" = import ./nix/monoid.nix;
   "monoid-absorbing" = import ./nix/monoid-absorbing.nix;
   "monoid-extras" = import ./nix/monoid-extras.nix;
+  "monoid-insertleft" = import ./nix/monoid-insertleft.nix;
   "monoid-map" = import ./nix/monoid-map.nix;
   "monoid-owns" = import ./nix/monoid-owns.nix;
   "monoid-record" = import ./nix/monoid-record.nix;
@@ -11856,6 +11858,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "parameterized" = import ./nix/parameterized.nix;
   "parameterized-data" = import ./nix/parameterized-data.nix;
   "parameterized-utils" = import ./nix/parameterized-utils.nix;
+  "parametric-functor" = import ./nix/parametric-functor.nix;
   "paramtree" = import ./nix/paramtree.nix;
   "paranoia" = import ./nix/paranoia.nix;
   "parco" = import ./nix/parco.nix;

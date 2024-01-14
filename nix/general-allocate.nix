@@ -120,4 +120,15 @@
       default = "r0";
       };
     };
+  "0.2.3.1" = {
+    sha256 = "65918b6aeaf08ba5eb6bb4e4bc84a5c46904ea78166c736a49184185b68754f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/general-allocate-0.2.3.1-r0-1305722997fc069e214925a3ed7b5c2d4fac5fe238faf0efcc452ab45b8f21ab.nix;
+        revNum = 0;
+        sha256 = "1305722997fc069e214925a3ed7b5c2d4fac5fe238faf0efcc452ab45b8f21ab";
+        };
+      default = "r0";
+      };
+    };
   }
