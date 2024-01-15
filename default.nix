@@ -6123,6 +6123,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gemini-server" = import ./nix/gemini-server.nix;
   "gemini-textboard" = import ./nix/gemini-textboard.nix;
   "gemmula" = import ./nix/gemmula.nix;
+  "gemmula-altera" = import ./nix/gemmula-altera.nix;
   "gemstone" = import ./nix/gemstone.nix;
   "gen-imports" = import ./nix/gen-imports.nix;
   "gen-passwd" = import ./nix/gen-passwd.nix;
@@ -16648,6 +16649,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "variadic" = import ./nix/variadic.nix;
   "variadic-function" = import ./nix/variadic-function.nix;
   "variation" = import ./nix/variation.nix;
+  "vary" = import ./nix/vary.nix;
   "varying" = import ./nix/varying.nix;
   "vault" = import ./nix/vault.nix;
   "vault-tool" = import ./nix/vault-tool.nix;

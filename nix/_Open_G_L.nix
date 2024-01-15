@@ -28,7 +28,12 @@
         revNum = 1;
         sha256 = "48da236d9be46588bd9878daf590c071189400564f79b943c118e46f07a8a9c3";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.10.0.0-r2-b0ed7a9a19f71791b53678a85e22c76f84562c9d98a970c44d940b701242ccb0.nix;
+        revNum = 2;
+        sha256 = "b0ed7a9a19f71791b53678a85e22c76f84562c9d98a970c44d940b701242ccb0";
+        };
+      default = "r2";
       };
     };
   "2.10.0.1" = {
@@ -44,7 +49,12 @@
         revNum = 1;
         sha256 = "27753134ec78977291f0a34af89010067057e035862d05e537a9ced4bd844af9";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.10.0.1-r2-4f1f36ed349f6f9f2b034c304b55c03e459adbb877ef353ad2040efa06e1edd3.nix;
+        revNum = 2;
+        sha256 = "4f1f36ed349f6f9f2b034c304b55c03e459adbb877ef353ad2040efa06e1edd3";
+        };
+      default = "r2";
       };
     };
   "2.10.0.2" = {
@@ -60,7 +70,12 @@
         revNum = 1;
         sha256 = "ae9318bd061a58a690928d2d33714c21ed6e4f0005864f64529b7a3f8003b4d5";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.10.0.2-r2-04064119a5c651af3370783973a9a8d29a106d9e056daecb7aae611a19e4de37.nix;
+        revNum = 2;
+        sha256 = "04064119a5c651af3370783973a9a8d29a106d9e056daecb7aae611a19e4de37";
+        };
+      default = "r2";
       };
     };
   "2.11.0.0" = {
@@ -76,7 +91,12 @@
         revNum = 1;
         sha256 = "b2aabbcc4f4978a77968d67e5e05b29d5aff1103c916c4c5d8458609b7b79b32";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.11.0.0-r2-9bfd0bc27ce28aa562b3bc8e7a0ae589ace78867e9cfce145e8c70d95ee66558.nix;
+        revNum = 2;
+        sha256 = "9bfd0bc27ce28aa562b3bc8e7a0ae589ace78867e9cfce145e8c70d95ee66558";
+        };
+      default = "r2";
       };
     };
   "2.11.1.0" = {
@@ -92,7 +112,12 @@
         revNum = 1;
         sha256 = "4cae0d1066319f935b6854b024bf3f83a7ba6468d530402989b6771192cb1370";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.11.1.0-r2-0332d7a5bc1c397b108dd497e86e6f4e5b314200a319b19070dcc9309410c926.nix;
+        revNum = 2;
+        sha256 = "0332d7a5bc1c397b108dd497e86e6f4e5b314200a319b19070dcc9309410c926";
+        };
+      default = "r2";
       };
     };
   "2.12.0.0" = {
@@ -103,7 +128,12 @@
         revNum = 0;
         sha256 = "17bac4e87ad44009c61834ab7a54b84006b8b7adaf935c5bd72eebbe8ad583ad";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-2.12.0.0-r1-2b1db50ccf78aabc952aa517b93a83c16485248ad80138705d7e11262290df15.nix;
+        revNum = 1;
+        sha256 = "2b1db50ccf78aabc952aa517b93a83c16485248ad80138705d7e11262290df15";
+        };
+      default = "r1";
       };
     };
   "2.12.0.1" = {
@@ -114,7 +144,12 @@
         revNum = 0;
         sha256 = "49a45f179c48b30cbecfcd13508f832acda03c1427f806b66b700e1283169359";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-2.12.0.1-r1-29828b7d291d14439cd674673c68405722b3d6b74cab6659e9fc561ceaf59ad4.nix;
+        revNum = 1;
+        sha256 = "29828b7d291d14439cd674673c68405722b3d6b74cab6659e9fc561ceaf59ad4";
+        };
+      default = "r1";
       };
     };
   "2.13.0.0" = {
@@ -125,7 +160,12 @@
         revNum = 0;
         sha256 = "a79bf6de05bd60c04cf2be0cc67d7739ab99ab76573b5adcf020e865d53ea922";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-2.13.0.0-r1-bf5b79fabaf8aedd03a4f9412c3c8c94c85e876c0d5bd584cd1dbe58f6cb229c.nix;
+        revNum = 1;
+        sha256 = "bf5b79fabaf8aedd03a4f9412c3c8c94c85e876c0d5bd584cd1dbe58f6cb229c";
+        };
+      default = "r1";
       };
     };
   "2.13.1.0" = {
@@ -141,7 +181,12 @@
         revNum = 1;
         sha256 = "bdc4f2e358096e0e4b366ea47b27beb312337a4f2b6f3b60f8af9f84fc3f9952";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.13.1.0-r2-3071307c14b24fe37550ce3a68d707ae0593787c702d3513493e741ab2a68ef4.nix;
+        revNum = 2;
+        sha256 = "3071307c14b24fe37550ce3a68d707ae0593787c702d3513493e741ab2a68ef4";
+        };
+      default = "r2";
       };
     };
   "2.13.1.1" = {
@@ -152,7 +197,12 @@
         revNum = 0;
         sha256 = "a698d415e0472c67a38e9d7115a8044df211c53ff467036fef4b65085e540467";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-2.13.1.1-r1-95885eb303d95bd577408f41360c73f14a19797263cb7f04b28973950642c79c.nix;
+        revNum = 1;
+        sha256 = "95885eb303d95bd577408f41360c73f14a19797263cb7f04b28973950642c79c";
+        };
+      default = "r1";
       };
     };
   "2.13.2.0" = {
@@ -163,7 +213,12 @@
         revNum = 0;
         sha256 = "0143b6a19ab9a570fa8583fc629f94eb408d0996309f97300d643ffa5cd28dd4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-2.13.2.0-r1-cc7345abe5f98fb225e6f7be017c8d0f1ab23f7d76ae873fb96061c831209eca.nix;
+        revNum = 1;
+        sha256 = "cc7345abe5f98fb225e6f7be017c8d0f1ab23f7d76ae873fb96061c831209eca";
+        };
+      default = "r1";
       };
     };
   "2.13.2.1" = {
@@ -323,7 +378,12 @@
         revNum = 1;
         sha256 = "8604d241c9cc7c3416d261cee233981c63b70995840fa02e0916f712c8a74e2c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.5.0.0-r2-50a0bd6685525d201688ff85ddd218a8bf5c2beed63de3c61721e62ed3ca3e9c.nix;
+        revNum = 2;
+        sha256 = "50a0bd6685525d201688ff85ddd218a8bf5c2beed63de3c61721e62ed3ca3e9c";
+        };
+      default = "r2";
       };
     };
   "2.6.0.0" = {
@@ -339,7 +399,12 @@
         revNum = 1;
         sha256 = "f31ba1d7a34ee2a43eccf6bc74738d8feff61908dc1a3b2cf1e8eac25cf3a86d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/OpenGL-2.6.0.0-r2-e96deb97a82b5d716b8e9d16c910841915d02ce2bcbd0777b742b2f8dbc431b7.nix;
+        revNum = 2;
+        sha256 = "e96deb97a82b5d716b8e9d16c910841915d02ce2bcbd0777b742b2f8dbc431b7";
+        };
+      default = "r2";
       };
     };
   "2.6.0.1" = {
@@ -360,7 +425,12 @@
         revNum = 2;
         sha256 = "76f3703176a8e444fb31079cb2f4f5e201402c7a840ae8b6a9c8f94f055de87b";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/OpenGL-2.6.0.1-r3-6c94ddd8edefe1af3884898b9baf15d31600736edb2b75dd395af9061130d415.nix;
+        revNum = 3;
+        sha256 = "6c94ddd8edefe1af3884898b9baf15d31600736edb2b75dd395af9061130d415";
+        };
+      default = "r3";
       };
     };
   "2.8.0.0" = {
@@ -460,7 +530,12 @@
         revNum = 0;
         sha256 = "e9c4a9cc2c40e25b9e03a0c7eec4d5ac7e49cd465b8f082fe23b236991d77817";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-3.0.0.0-r1-fbb71d4766d38084d4f916aafe7a14e5f7073bf52ad0eb035063ab07ad399ec3.nix;
+        revNum = 1;
+        sha256 = "fbb71d4766d38084d4f916aafe7a14e5f7073bf52ad0eb035063ab07ad399ec3";
+        };
+      default = "r1";
       };
     };
   "3.0.0.1" = {
@@ -471,7 +546,12 @@
         revNum = 0;
         sha256 = "2820af483f56824c250ab8a3c19a96f8c4c8aa4f0cca4c33bb3d8e4d8778e76f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-3.0.0.1-r1-5278d95557b34b9964fa5f8f2b490183f2d8ce615c0c41394133bc6ec3e0fbd7.nix;
+        revNum = 1;
+        sha256 = "5278d95557b34b9964fa5f8f2b490183f2d8ce615c0c41394133bc6ec3e0fbd7";
+        };
+      default = "r1";
       };
     };
   "3.0.0.2" = {
@@ -482,7 +562,12 @@
         revNum = 0;
         sha256 = "803a725bf5a7e79794ba23f82bb37f6fcbc899f4efdbdf2d446d034395cdca84";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-3.0.0.2-r1-9e3362e0cbe7a0bdc1630b3a1ce8f8c800aa647d6e524f2531016809c9ebe9ae.nix;
+        revNum = 1;
+        sha256 = "9e3362e0cbe7a0bdc1630b3a1ce8f8c800aa647d6e524f2531016809c9ebe9ae";
+        };
+      default = "r1";
       };
     };
   "3.0.1.0" = {
@@ -493,7 +578,12 @@
         revNum = 0;
         sha256 = "ff4050e182d4656b782f397cad82af6f9af782385f36a0d21eb2f94df89d1a2d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-3.0.1.0-r1-121517417f580b5c18a2da9c6231a07b1fbd0a4e1e6a1b0a2fdacbabd86c8dfa.nix;
+        revNum = 1;
+        sha256 = "121517417f580b5c18a2da9c6231a07b1fbd0a4e1e6a1b0a2fdacbabd86c8dfa";
+        };
+      default = "r1";
       };
     };
   "3.0.2.0" = {
@@ -504,7 +594,12 @@
         revNum = 0;
         sha256 = "07a968ab2f2d49b12d327c12085743765ea2caa3a87638af5184713a39d0c3a6";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-3.0.2.0-r1-17a9e47d056b5c10630cf7ba9421b16234933c9ba4ecb71cc160db7fd349d604.nix;
+        revNum = 1;
+        sha256 = "17a9e47d056b5c10630cf7ba9421b16234933c9ba4ecb71cc160db7fd349d604";
+        };
+      default = "r1";
       };
     };
   "3.0.2.1" = {
@@ -515,7 +610,12 @@
         revNum = 0;
         sha256 = "d9267272e694870accb0f888187231a4e73bb5308755431c2784647549aff9dc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-3.0.2.1-r1-f22b3d13d285ed5195ce45a170bd4fa20d029b8db77d462b29e9aa198268e91d.nix;
+        revNum = 1;
+        sha256 = "f22b3d13d285ed5195ce45a170bd4fa20d029b8db77d462b29e9aa198268e91d";
+        };
+      default = "r1";
       };
     };
   "3.0.2.2" = {
@@ -526,7 +626,12 @@
         revNum = 0;
         sha256 = "9a016ca9d771485a4bd1dbc1e7578a78bee57d6e3f715f9d8fd57b97e55ca984";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/OpenGL-3.0.2.2-r1-d2a6262e062c9fd4779b87f0764d0324391b4a89e8b7df9f546022a74391d580.nix;
+        revNum = 1;
+        sha256 = "d2a6262e062c9fd4779b87f0764d0324391b4a89e8b7df9f546022a74391d580";
+        };
+      default = "r1";
       };
     };
   "3.0.3.0" = {
