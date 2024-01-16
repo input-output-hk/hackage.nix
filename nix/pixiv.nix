@@ -28,7 +28,12 @@
         revNum = 1;
         sha256 = "5e11bb7085bf5cb05d1217837a1ff1d8e283a59f7c235633835f11b8b15fd27d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/pixiv-0.1.1-r2-e64a7772e5b8592224369adde6f4f7850dd25265e20487dd4ad2beb7d2abc2dd.nix;
+        revNum = 2;
+        sha256 = "e64a7772e5b8592224369adde6f4f7850dd25265e20487dd4ad2beb7d2abc2dd";
+        };
+      default = "r2";
       };
     };
   }

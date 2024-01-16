@@ -3108,6 +3108,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabal-edit" = import ./nix/cabal-edit.nix;
   "cabal-file" = import ./nix/cabal-file.nix;
   "cabal-file-th" = import ./nix/cabal-file-th.nix;
+  "cabal-fix" = import ./nix/cabal-fix.nix;
   "cabal-flatpak" = import ./nix/cabal-flatpak.nix;
   "cabal-fmt" = import ./nix/cabal-fmt.nix;
   "cabal-ghc-dynflags" = import ./nix/cabal-ghc-dynflags.nix;
@@ -7205,6 +7206,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "happstack-util" = import ./nix/happstack-util.nix;
   "happstack-yui" = import ./nix/happstack-yui.nix;
   "happy" = import ./nix/happy.nix;
+  "happy-arbitrary" = import ./nix/happy-arbitrary.nix;
   "happy-dot" = import ./nix/happy-dot.nix;
   "happy-hour" = import ./nix/happy-hour.nix;
   "happy-meta" = import ./nix/happy-meta.nix;
@@ -7950,6 +7952,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hls-rename-plugin" = import ./nix/hls-rename-plugin.nix;
   "hls-retrie-plugin" = import ./nix/hls-retrie-plugin.nix;
   "hls-selection-range-plugin" = import ./nix/hls-selection-range-plugin.nix;
+  "hls-semantic-tokens-plugin" = import ./nix/hls-semantic-tokens-plugin.nix;
   "hls-splice-plugin" = import ./nix/hls-splice-plugin.nix;
   "hls-stan-plugin" = import ./nix/hls-stan-plugin.nix;
   "hls-stylish-haskell-plugin" = import ./nix/hls-stylish-haskell-plugin.nix;
@@ -8903,6 +8906,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "indexed-free" = import ./nix/indexed-free.nix;
   "indexed-list-literals" = import ./nix/indexed-list-literals.nix;
   "indexed-profunctors" = import ./nix/indexed-profunctors.nix;
+  "indexed-transformers" = import ./nix/indexed-transformers.nix;
   "indexed-traversable" = import ./nix/indexed-traversable.nix;
   "indexed-traversable-instances" = import ./nix/indexed-traversable-instances.nix;
   "indextype" = import ./nix/indextype.nix;

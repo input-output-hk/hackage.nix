@@ -108,4 +108,15 @@
       default = "r0";
       };
     };
+  "2.6.0.0" = {
+    sha256 = "4ad92d86e212633ecfe0b520430d88e1793b551e51b706643475fbde9f05a902";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-explicit-fixity-plugin-2.6.0.0-r0-b6076eb22717bab404c75b48da55d1325e9be975e790aaec96bbef46290127bd.nix;
+        revNum = 0;
+        sha256 = "b6076eb22717bab404c75b48da55d1325e9be975e790aaec96bbef46290127bd";
+        };
+      default = "r0";
+      };
+    };
   }

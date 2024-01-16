@@ -166,4 +166,26 @@
       default = "r0";
       };
     };
+  "0.5.3.0" = {
+    sha256 = "f1a6dbfcef411262b2dafec6141569a6f8376856284fbc0083d2b324e5bb6cb0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-family-th-0.5.3.0-r0-f319c8adcaae8fb6dc43707d5128f87d0ea6287e5ad89938db88c4e56eb91a86.nix;
+        revNum = 0;
+        sha256 = "f319c8adcaae8fb6dc43707d5128f87d0ea6287e5ad89938db88c4e56eb91a86";
+        };
+      default = "r0";
+      };
+    };
+  "0.5.3.1" = {
+    sha256 = "f4ec3c8c22168730718cd270f125b39fc5db20861cd638bc8abcbdb130211b3a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-family-th-0.5.3.1-r0-725700a89f26f790ee7d6630a4fa394ac0305ae8d2cff06c037ee47cb3499654.nix;
+        revNum = 0;
+        sha256 = "725700a89f26f790ee7d6630a4fa394ac0305ae8d2cff06c037ee47cb3499654";
+        };
+      default = "r0";
+      };
+    };
   }

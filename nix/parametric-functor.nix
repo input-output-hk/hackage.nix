@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "2b91605ac8978c842f27e48607d1e784206d1e2fa511b80e3e9b5cc68611648a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parametric-functor-0.1.1.0-r0-0328587daf91cc11b24cddd865098e10b9f13dddc51c537f90b7704f30a94639.nix;
+        revNum = 0;
+        sha256 = "0328587daf91cc11b24cddd865098e10b9f13dddc51c537f90b7704f30a94639";
+        };
+      default = "r0";
+      };
+    };
   }

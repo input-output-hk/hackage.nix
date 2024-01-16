@@ -114,4 +114,15 @@
       default = "r0";
       };
     };
+  "2.6.0.0" = {
+    sha256 = "2f3ff2a0da88bdc6e36b7201a13639c46c3e6b8f515c3b0464431301aa004629";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-gadt-plugin-2.6.0.0-r0-8b8bd4cc6ca11cabcb9148185e7c12affacabf5619dcf6c83e4751f6d529870c.nix;
+        revNum = 0;
+        sha256 = "8b8bd4cc6ca11cabcb9148185e7c12affacabf5619dcf6c83e4751f6d529870c";
+        };
+      default = "r0";
+      };
+    };
   }

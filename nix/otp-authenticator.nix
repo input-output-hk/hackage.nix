@@ -32,4 +32,26 @@
       default = "r0";
       };
     };
+  "0.1.2.0" = {
+    sha256 = "46459e6d37bcaecc0ce4a3a9a465345d7952cf22d9253ffade9b4b377e7f6f95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/otp-authenticator-0.1.2.0-r0-42f61efa23a82e004c82643f2ceee13e8367546cb659cf35c3547c40a056ae48.nix;
+        revNum = 0;
+        sha256 = "42f61efa23a82e004c82643f2ceee13e8367546cb659cf35c3547c40a056ae48";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.2.1" = {
+    sha256 = "2c045dcee55ff1c504edb0b130af71079fdc63d7c653fedde4f33c1c0bf45787";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/otp-authenticator-0.1.2.1-r0-c9e070e206e420c9837899a2b873307af682d84e6bc7c0eaed016855c546753c.nix;
+        revNum = 0;
+        sha256 = "c9e070e206e420c9837899a2b873307af682d84e6bc7c0eaed016855c546753c";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -241,4 +241,15 @@
       default = "r0";
       };
     };
+  "0.5.5" = {
+    sha256 = "7bae0df98ba71c76bdf51df400fa7d00defe35b74828a5362050a6d54577fdd5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/serialport-0.5.5-r0-5243520a42b71fbb39698993ce5fcfb28f81c2464b0728165b5913c61dd8a6b7.nix;
+        revNum = 0;
+        sha256 = "5243520a42b71fbb39698993ce5fcfb28f81c2464b0728165b5913c61dd8a6b7";
+        };
+      default = "r0";
+      };
+    };
   }

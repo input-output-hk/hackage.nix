@@ -163,4 +163,15 @@
       default = "r0";
       };
     };
+  "2.6.0.0" = {
+    sha256 = "8131d9a25ebfed1f44f7c8ed21014317f207916f26cf9528a29de61ef34c8b89";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hls-call-hierarchy-plugin-2.6.0.0-r0-ba52b4f64259259470aae13d4c804bc64ebf50afab9282f5afab110e8aa68fda.nix;
+        revNum = 0;
+        sha256 = "ba52b4f64259259470aae13d4c804bc64ebf50afab9282f5afab110e8aa68fda";
+        };
+      default = "r0";
+      };
+    };
   }
