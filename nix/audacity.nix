@@ -91,4 +91,15 @@
       default = "r3";
       };
     };
+  "0.0.2.2" = {
+    sha256 = "a8c1f1fcf977e08f486d933119d9a866e53e6858dda0da814644223c2b999bbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/audacity-0.0.2.2-r0-e7e2d463b71aa03b6fc124dd75e5457cb41c3f8f439d5f60f4d74aa12ba6b47f.nix;
+        revNum = 0;
+        sha256 = "e7e2d463b71aa03b6fc124dd75e5457cb41c3f8f439d5f60f4d74aa12ba6b47f";
+        };
+      default = "r0";
+      };
+    };
   }

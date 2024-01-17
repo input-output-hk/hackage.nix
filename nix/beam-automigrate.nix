@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.1.5.0" = {
+    sha256 = "ebaf1a4d6327fd0cf7e8d8a4e86e5c69dee8c0548be900f52131af162216abe3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/beam-automigrate-0.1.5.0-r0-9c8160605703f4100a2cab60dd3e3025cea88e3d4649ef9bbdf1c5cc2c6ba151.nix;
+        revNum = 0;
+        sha256 = "9c8160605703f4100a2cab60dd3e3025cea88e3d4649ef9bbdf1c5cc2c6ba151";
+        };
+      default = "r0";
+      };
+    };
   }

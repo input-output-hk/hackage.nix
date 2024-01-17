@@ -428,4 +428,15 @@
       default = "r0";
       };
     };
+  "1.1.2" = {
+    sha256 = "a2d69682448a3735fc6f8f70ef520b7216d7f21d7c38235b2486f9ce6130db21";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xlsx-1.1.2-r0-3a9ded033ad32536b81c3fdfe8a0773f9ff01f5ce588d39d4c1fb9c99926368b.nix;
+        revNum = 0;
+        sha256 = "3a9ded033ad32536b81c3fdfe8a0773f9ff01f5ce588d39d4c1fb9c99926368b";
+        };
+      default = "r0";
+      };
+    };
   }

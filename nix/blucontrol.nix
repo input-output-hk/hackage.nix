@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.7.1.0" = {
+    sha256 = "611bc24cf60ff9c43e3d39a316411e031bddf0662a0ae6a6f4bd81a60db8c136";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blucontrol-0.7.1.0-r0-f1cc926b4f179e65315790fa86718364076530036d2b25fecb71a86f7fc0979b.nix;
+        revNum = 0;
+        sha256 = "f1cc926b4f179e65315790fa86718364076530036d2b25fecb71a86f7fc0979b";
+        };
+      default = "r0";
+      };
+    };
   }

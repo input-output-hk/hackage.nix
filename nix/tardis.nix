@@ -95,4 +95,15 @@
       default = "r0";
       };
     };
+  "0.5.0" = {
+    sha256 = "f6006b60fe316820b61eb037e580f8a935d45401b1ade77b4017f4899b877fb2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tardis-0.5.0-r0-9eb3e42b73073686c5e5d0f35304f0dac3f7ad474c6b7aae0b44f9f7eb9b3003.nix;
+        revNum = 0;
+        sha256 = "9eb3e42b73073686c5e5d0f35304f0dac3f7ad474c6b7aae0b44f9f7eb9b3003";
+        };
+      default = "r0";
+      };
+    };
   }

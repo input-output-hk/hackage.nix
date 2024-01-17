@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.3.1.4" = {
+    sha256 = "9e8735fe788e9eff436942a87967245f9388018e3fe0fda934a2170be3d879a6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ice40-prim-0.3.1.4-r0-c1b5217b79a2aec1eff4ca1a5f3ecf4e2daf70a2e6d3219435086ac6fe4b70c4.nix;
+        revNum = 0;
+        sha256 = "c1b5217b79a2aec1eff4ca1a5f3ecf4e2daf70a2e6d3219435086ac6fe4b70c4";
+        };
+      default = "r0";
+      };
+    };
   }

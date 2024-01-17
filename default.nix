@@ -5036,6 +5036,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dywapitchtrack" = import ./nix/dywapitchtrack.nix;
   "dzen-dhall" = import ./nix/dzen-dhall.nix;
   "dzen-utils" = import ./nix/dzen-utils.nix;
+  "e11y" = import ./nix/e11y.nix;
+  "e11y-otel" = import ./nix/e11y-otel.nix;
   "each" = import ./nix/each.nix;
   "eager-sockets" = import ./nix/eager-sockets.nix;
   "eap" = import ./nix/eap.nix;

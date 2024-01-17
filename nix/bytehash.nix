@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "e7321f31864330023b4744a0805507462482f6eb87dd432fc3e3898c32a6df7d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bytehash-0.1.1.1-r1-995c95eebe86224e444dfe99e12446871a6ca58b960380e6dd4b4e12c9c7a141.nix;
+        revNum = 1;
+        sha256 = "995c95eebe86224e444dfe99e12446871a6ca58b960380e6dd4b4e12c9c7a141";
+        };
+      default = "r1";
       };
     };
   }
