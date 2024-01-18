@@ -21,6 +21,17 @@
       default = "r0";
       };
     };
+  "0.1.10" = {
+    sha256 = "b5bc761663596ed4d95b3aef619bda395b99d46158d4c73b76a351c8a407099a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-fmt-0.1.10-r0-32bfb08538677cd385e38ded6424f3a864de29d2f4f93125a2a3bafe48095f51.nix;
+        revNum = 0;
+        sha256 = "32bfb08538677cd385e38ded6424f3a864de29d2f4f93125a2a3bafe48095f51";
+        };
+      default = "r0";
+      };
+    };
   "0.1.2" = {
     sha256 = "aae556efbcaddfd65c6a1c1811b122b0d8c8d00624c8c2e36aabb5e9f9ea9840";
     revisions = {

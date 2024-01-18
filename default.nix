@@ -647,6 +647,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "HulkImport" = import ./nix/_Hulk_Import.nix;
   "Hungarian-Munkres" = import ./nix/_Hungarian-_Munkres.nix;
   "Hydrogen" = import ./nix/_Hydrogen.nix;
+  "HyloDP" = import ./nix/_Hylo_D_P.nix;
   "I1M" = import ./nix/_I1_M.nix;
   "IDynamic" = import ./nix/_I_Dynamic.nix;
   "IFS" = import ./nix/_I_F_S.nix;
@@ -10439,6 +10440,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mellon-gpio" = import ./nix/mellon-gpio.nix;
   "mellon-web" = import ./nix/mellon-web.nix;
   "melody" = import ./nix/melody.nix;
+  "mem-info" = import ./nix/mem-info.nix;
   "membership" = import ./nix/membership.nix;
   "membrain" = import ./nix/membrain.nix;
   "memcache" = import ./nix/memcache.nix;
@@ -17481,6 +17483,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yesod-rst" = import ./nix/yesod-rst.nix;
   "yesod-s3" = import ./nix/yesod-s3.nix;
   "yesod-sass" = import ./nix/yesod-sass.nix;
+  "yesod-session-persist" = import ./nix/yesod-session-persist.nix;
   "yesod-session-redis" = import ./nix/yesod-session-redis.nix;
   "yesod-sitemap" = import ./nix/yesod-sitemap.nix;
   "yesod-static" = import ./nix/yesod-static.nix;
