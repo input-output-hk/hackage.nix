@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "d556c96248791adc25a3934bc203cd596b57189e613483017ec17622db47cfac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/snap-stream-0.1.1.1-r0-308f5e3b6bf8668b2c6e5de9b284cf04b8a086b25531f5b57de5d423ca25f725.nix;
+        revNum = 0;
+        sha256 = "308f5e3b6bf8668b2c6e5de9b284cf04b8a086b25531f5b57de5d423ca25f725";
+        };
+      default = "r0";
+      };
+    };
   }

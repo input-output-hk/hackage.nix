@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "4d25193015c93b3f9815d6cacd809799f9fbfbca0457835efd8ff104801a4800";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fuzzy-time-0.3.0.0-r0-779c3387330fdb61a47cc159eab92ab1284025a2524bb5998f1d0e4ea9d95351.nix;
+        revNum = 0;
+        sha256 = "779c3387330fdb61a47cc159eab92ab1284025a2524bb5998f1d0e4ea9d95351";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "a8bbb95e3b823b0db3c2a580c83c076fbc1c6aa1c330b89751679d9f789e056e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lion-0.4.0.0-r0-24326685af8fc144651ef2f26603dc32f59871645354794da9964869b199a0a8.nix;
+        revNum = 0;
+        sha256 = "24326685af8fc144651ef2f26603dc32f59871645354794da9964869b199a0a8";
+        };
+      default = "r0";
+      };
+    };
   }

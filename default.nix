@@ -8577,6 +8577,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-rfc7807" = import ./nix/http-rfc7807.nix;
   "http-server" = import ./nix/http-server.nix;
   "http-shed" = import ./nix/http-shed.nix;
+  "http-slim" = import ./nix/http-slim.nix;
   "http-streams" = import ./nix/http-streams.nix;
   "http-test" = import ./nix/http-test.nix;
   "http-trace" = import ./nix/http-trace.nix;

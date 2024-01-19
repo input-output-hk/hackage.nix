@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "d2f9fd224b033fa4f1ed8c1ab3ac90e70aea995b419d2075aecf4af57edbfd89";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fuzzy-time-gen-0.3.0.0-r0-d63addcc9aeb1f36c710f20448b75fd76f93eb8e1278d5767965ff1ded831eaa.nix;
+        revNum = 0;
+        sha256 = "d63addcc9aeb1f36c710f20448b75fd76f93eb8e1278d5767965ff1ded831eaa";
+        };
+      default = "r0";
+      };
+    };
   }
