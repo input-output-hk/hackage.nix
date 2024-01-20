@@ -175,4 +175,26 @@
       default = "r0";
       };
     };
+  "0.2.3" = {
+    sha256 = "271460eb6e0501fb2313038e673e9243251fcae848b7d38761c904ae3ad068d1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-lua-marshal-0.2.3-r0-117b8eb9b7f47c7b7bf6a4fc1f6275f0ec01ce2c27bdd90372e5b6b85df722cf.nix;
+        revNum = 0;
+        sha256 = "117b8eb9b7f47c7b7bf6a4fc1f6275f0ec01ce2c27bdd90372e5b6b85df722cf";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.4" = {
+    sha256 = "d2fb3c5544fb0a07a8a1c3ec254ba6c3f992662ef04afc5ea6fd9f1189f71108";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-lua-marshal-0.2.4-r0-643c1b106d710f7fc7949726e6c78fae923c68b31b71e96d69eec60e6ec4d72b.nix;
+        revNum = 0;
+        sha256 = "643c1b106d710f7fc7949726e6c78fae923c68b31b71e96d69eec60e6ec4d72b";
+        };
+      default = "r0";
+      };
+    };
   }

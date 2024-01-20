@@ -249,7 +249,12 @@
         revNum = 0;
         sha256 = "3aae259265b8517fb7efe2a7681d846e01f52c22f49f193aff550a1630f182d0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/digestive-functors-blaze-0.6.2.0-r1-f0a12c4e7e37c2e52c805e676e1e990b0e9ab1ed41d0773a8aaf9dd1ce04f9cb.nix;
+        revNum = 1;
+        sha256 = "f0a12c4e7e37c2e52c805e676e1e990b0e9ab1ed41d0773a8aaf9dd1ce04f9cb";
+        };
+      default = "r1";
       };
     };
   }

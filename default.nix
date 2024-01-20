@@ -5655,6 +5655,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "file-modules" = import ./nix/file-modules.nix;
   "file-path-th" = import ./nix/file-path-th.nix;
   "file-templates" = import ./nix/file-templates.nix;
+  "file-uri" = import ./nix/file-uri.nix;
   "filecache" = import ./nix/filecache.nix;
   "filediff" = import ./nix/filediff.nix;
   "filelock" = import ./nix/filelock.nix;

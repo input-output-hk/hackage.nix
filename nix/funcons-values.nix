@@ -77,7 +77,12 @@
         revNum = 1;
         sha256 = "4c97be19157629df7b36e0d9ba69f202192031f08776b2c1871cfc4bc93a00bd";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/funcons-values-0.1.0.9-r2-f6f2b3f80b93d3aa9afb28cedf7825c8cfe4d3abfe2d63030f7c4001d85eba3f.nix;
+        revNum = 2;
+        sha256 = "f6f2b3f80b93d3aa9afb28cedf7825c8cfe4d3abfe2d63030f7c4001d85eba3f";
+        };
+      default = "r2";
       };
     };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "2.1.0" = {
+    sha256 = "5b6293944525fc245bab9680d2d70620304c105b4b24991979fc5f4c5a78ba14";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gemmula-altera-2.1.0-r0-4858f5c5172e8ca860926c3a364d117e6fec3fc3fa539531bf2631ce6801c9d3.nix;
+        revNum = 0;
+        sha256 = "4858f5c5172e8ca860926c3a364d117e6fec3fc3fa539531bf2631ce6801c9d3";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "091dfdde0c7586a2b3640016b8c4094e642f655fcf2e73947f63e45a7f3465a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bureaucromancy-0.1.0.2-r0-2dcd325a03b0ca2e5359601bcba9a8880b0cf53f12bd5bec79b3fa50f89d4ca8.nix;
+        revNum = 0;
+        sha256 = "2dcd325a03b0ca2e5359601bcba9a8880b0cf53f12bd5bec79b3fa50f89d4ca8";
+        };
+      default = "r0";
+      };
+    };
   }

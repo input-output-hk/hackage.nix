@@ -584,7 +584,12 @@
         revNum = 0;
         sha256 = "badff1797b6dcd860a48ed4558985b2f6bec501e1016fa5afd9d7d6b0d8e4c08";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/digestive-functors-0.8.4.2-r1-773b5e52ec4ca50f716bb1c0dcde8b2dd955153f37a7a3e5bb8415cee71ad46f.nix;
+        revNum = 1;
+        sha256 = "773b5e52ec4ca50f716bb1c0dcde8b2dd955153f37a7a3e5bb8415cee71ad46f";
+        };
+      default = "r1";
       };
     };
   }
