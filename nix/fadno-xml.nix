@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "1.2.1" = {
+    sha256 = "4e52d71af2a58ec33a4323c176d69f008d231e132ebfaa871d830f8ab5cc073c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fadno-xml-1.2.1-r0-97d6f5e88d2f5c480d4cd92fc632dc4b94dfc10dc5f4d8c318f13a18a47e342a.nix;
+        revNum = 0;
+        sha256 = "97d6f5e88d2f5c480d4cd92fc632dc4b94dfc10dc5f4d8c318f13a18a47e342a";
+        };
+      default = "r0";
+      };
+    };
   }

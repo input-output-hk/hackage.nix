@@ -254,7 +254,12 @@
         revNum = 1;
         sha256 = "8cacc0481199634d51760f00ecf0b6ac7b3ac34ebe2bd59d5bd7d5ef0c00da94";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/glib-0.13.10.0-r2-3a25d915289851c53bd38443d421fab9987874a0de795f023928fafdcb31efa7.nix;
+        revNum = 2;
+        sha256 = "3a25d915289851c53bd38443d421fab9987874a0de795f023928fafdcb31efa7";
+        };
+      default = "r2";
       };
     };
   "0.13.2.1" = {

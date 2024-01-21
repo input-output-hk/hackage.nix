@@ -210,7 +210,12 @@
         revNum = 1;
         sha256 = "ee239950b2eb97cfa8029c173f459f7d4d7fdb4937e546c67e9f11698dcdea59";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/pango-0.13.10.0-r2-21e1117896af8e91ea09462eecfb2cc9842d0a4b4b7b37ad0e83f55a8bbc8b18.nix;
+        revNum = 2;
+        sha256 = "21e1117896af8e91ea09462eecfb2cc9842d0a4b4b7b37ad0e83f55a8bbc8b18";
+        };
+      default = "r2";
       };
     };
   "0.13.2.0" = {

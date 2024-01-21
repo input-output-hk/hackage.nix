@@ -213,4 +213,15 @@
       default = "r0";
       };
     };
+  "0.0.7.4" = {
+    sha256 = "19695e9a63217d872b64260c35125af18347c97811b3577e2bd85204cb51aeba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tracing-0.0.7.4-r0-b342555fc982e96a8e910c1362122349444a749e54a063f61e2827275fe58205.nix;
+        revNum = 0;
+        sha256 = "b342555fc982e96a8e910c1362122349444a749e54a063f61e2827275fe58205";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.2" = {
+    sha256 = "e35172272cf500fea9db50ce65306cfbd2be28470a295e99bce1dccffb2787b6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fadno-braids-0.2-r0-6df9df1acf926588848f5023303c0cd0402ae8c5ee436e28a2ffcff236600817.nix;
+        revNum = 0;
+        sha256 = "6df9df1acf926588848f5023303c0cd0402ae8c5ee436e28a2ffcff236600817";
+        };
+      default = "r0";
+      };
+    };
   }
