@@ -277,4 +277,15 @@
       default = "r1";
       };
     };
+  "0.7.1" = {
+    sha256 = "f1806e00c92580680c40bf861911724338a5c01408c4f2066e98766696850ae0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cron-0.7.1-r0-fe138e48e7022be7f4f52c51768060eafb3d8f033b4fff65c0a9af78642c57b3.nix;
+        revNum = 0;
+        sha256 = "fe138e48e7022be7f4f52c51768060eafb3d8f033b4fff65c0a9af78642c57b3";
+        };
+      default = "r0";
+      };
+    };
   }

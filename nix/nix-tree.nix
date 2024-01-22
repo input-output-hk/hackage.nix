@@ -186,4 +186,15 @@
       default = "r0";
       };
     };
+  "0.4.0" = {
+    sha256 = "cd4cae00cf84ed65dc2fede4e70555b2df1fa233640ea93d8d2f144fbccdae05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nix-tree-0.4.0-r0-9ba213b02751f5269403536488eeca951ff7d0c5dab08a9d4f5c3686fbdfcf25.nix;
+        revNum = 0;
+        sha256 = "9ba213b02751f5269403536488eeca951ff7d0c5dab08a9d4f5c3686fbdfcf25";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "1.0.1" = {
+    sha256 = "1a3ebc00c3561ac76e5844c4696ae9fa1b008e4a1fac3362e5d9f2948546ed9e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/record-hasfield-1.0.1-r0-1997b0107e380d425ddbbecaca5086114558aa59ae1070633cf2b0eec033f181.nix;
+        revNum = 0;
+        sha256 = "1997b0107e380d425ddbbecaca5086114558aa59ae1070633cf2b0eec033f181";
+        };
+      default = "r0";
+      };
+    };
   }
