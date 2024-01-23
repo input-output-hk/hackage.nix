@@ -4266,6 +4266,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "daemons" = import ./nix/daemons.nix;
   "dag" = import ./nix/dag.nix;
   "dahdit" = import ./nix/dahdit.nix;
+  "dahdit-midi" = import ./nix/dahdit-midi.nix;
   "dahdit-network" = import ./nix/dahdit-network.nix;
   "dahdit-test" = import ./nix/dahdit-test.nix;
   "daino" = import ./nix/daino.nix;
@@ -6362,6 +6363,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghcide" = import ./nix/ghcide.nix;
   "ghcide-bench" = import ./nix/ghcide-bench.nix;
   "ghcide-test-utils" = import ./nix/ghcide-test-utils.nix;
+  "ghcitui" = import ./nix/ghcitui.nix;
   "ghcjs-ajax" = import ./nix/ghcjs-ajax.nix;
   "ghcjs-base" = import ./nix/ghcjs-base.nix;
   "ghcjs-base-stub" = import ./nix/ghcjs-base-stub.nix;
@@ -6536,6 +6538,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glintcollider" = import ./nix/glintcollider.nix;
   "glirc" = import ./nix/glirc.nix;
   "gll" = import ./nix/gll.nix;
+  "glob-imports" = import ./nix/glob-imports.nix;
   "glob-posix" = import ./nix/glob-posix.nix;
   "global" = import ./nix/global.nix;
   "global-config" = import ./nix/global-config.nix;
@@ -11108,6 +11111,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nanoparsec" = import ./nix/nanoparsec.nix;
   "nanopass" = import ./nix/nanopass.nix;
   "nanospec" = import ./nix/nanospec.nix;
+  "nanotime" = import ./nix/nanotime.nix;
   "nanovg" = import ./nix/nanovg.nix;
   "nanovg-simple" = import ./nix/nanovg-simple.nix;
   "nanq" = import ./nix/nanq.nix;
@@ -11515,7 +11519,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ogma-language-copilot" = import ./nix/ogma-language-copilot.nix;
   "ogma-language-fret-cs" = import ./nix/ogma-language-fret-cs.nix;
   "ogma-language-fret-reqs" = import ./nix/ogma-language-fret-reqs.nix;
+  "ogma-language-jsonspec" = import ./nix/ogma-language-jsonspec.nix;
   "ogma-language-smv" = import ./nix/ogma-language-smv.nix;
+  "ogma-spec" = import ./nix/ogma-spec.nix;
   "ogmarkup" = import ./nix/ogmarkup.nix;
   "ohloh-hs" = import ./nix/ohloh-hs.nix;
   "oi" = import ./nix/oi.nix;

@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "3.4" = {
+    sha256 = "5d4ffe2b8d998aa8d572c506ea1b3988edec19d07394221cfc1b01e5cffbf818";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskus-utils-variant-3.4-r0-174eaef20cc21cccfd55502ec3c9d5d022b3f154891d0b068d9417538210e6dc.nix;
+        revNum = 0;
+        sha256 = "174eaef20cc21cccfd55502ec3c9d5d022b3f154891d0b068d9417538210e6dc";
+        };
+      default = "r0";
+      };
+    };
   }

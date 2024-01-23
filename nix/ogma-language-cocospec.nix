@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "1.2.0" = {
+    sha256 = "11919b1cebbe04dbaee4a8a1b73a8b4be163394b5a31609ebfbb029409f3ed87";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ogma-language-cocospec-1.2.0-r0-b2078ec63e142a59c8ce40931da8dadfb3b0f4a488980f75719a48135bc82cc8.nix;
+        revNum = 0;
+        sha256 = "b2078ec63e142a59c8ce40931da8dadfb3b0f4a488980f75719a48135bc82cc8";
+        };
+      default = "r0";
+      };
+    };
   }

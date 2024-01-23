@@ -262,4 +262,26 @@
       default = "r0";
       };
     };
+  "0.5.0" = {
+    sha256 = "8409d56df9c6920041fcfc969badc9931c1777b0d9399cdbecf5721a19c67186";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-protocol-xmpp-0.5.0-r0-f695cbc6605b8518aa56d13db6097635be52de0accf54651780f62f83dbb0f00.nix;
+        revNum = 0;
+        sha256 = "f695cbc6605b8518aa56d13db6097635be52de0accf54651780f62f83dbb0f00";
+        };
+      default = "r0";
+      };
+    };
+  "0.5.1" = {
+    sha256 = "f1b47d79221b705aa001e75918b0816bf5ea03985843ad689b77d13204cea8b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-protocol-xmpp-0.5.1-r0-c29fa62443a7e75124a7817951e69e245ad814fc39dfe3f01eea1084e20af45b.nix;
+        revNum = 0;
+        sha256 = "c29fa62443a7e75124a7817951e69e245ad814fc39dfe3f01eea1084e20af45b";
+        };
+      default = "r0";
+      };
+    };
   }

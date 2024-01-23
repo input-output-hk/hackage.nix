@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "dc09352bbdc2ec113eef346d65656c18c8c0ff351a19e7107fc2aad1372c4b9a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tinyid-0.1.0.0-r1-09ccca7c3be3f313d9fa95d2dd66c8fdac668a6cefec9dda31eac4636881a733.nix;
+        revNum = 1;
+        sha256 = "09ccca7c3be3f313d9fa95d2dd66c8fdac668a6cefec9dda31eac4636881a733";
+        };
+      default = "r1";
       };
     };
   }

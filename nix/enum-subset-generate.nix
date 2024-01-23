@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "c48cabdd06dced478d94ed95ddfa9d2ed9cacdd49a61758bf775ac19e045b28e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/enum-subset-generate-0.1.0.3-r0-3dad1937444f41ceaaaac50906e5e0d6fb7ea855c5dffd27a53de460c4e65c96.nix;
+        revNum = 0;
+        sha256 = "3dad1937444f41ceaaaac50906e5e0d6fb7ea855c5dffd27a53de460c4e65c96";
+        };
+      default = "r0";
+      };
+    };
   }

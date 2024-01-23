@@ -124,4 +124,15 @@
       default = "r1";
       };
     };
+  "0.4.0" = {
+    sha256 = "d9ad50abd899cbb815a33d82af45de661cbbfc931adb679f27d6a69905b44bea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gsasl-0.4.0-r0-7d0b7f3393f454aab7add9b1a9923aefcc020922206a032d0a0540c255da283d.nix;
+        revNum = 0;
+        sha256 = "7d0b7f3393f454aab7add9b1a9923aefcc020922206a032d0a0540c255da283d";
+        };
+      default = "r0";
+      };
+    };
   }
