@@ -335,6 +335,17 @@
       default = "r0";
       };
     };
+  "2.3.29" = {
+    sha256 = "5f2ace38a7a926363fe72b1ad882764d68333bba88709c0f8f036d26c9b4d0af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/direct-sqlite-2.3.29-r0-6ff3969a6eae383c8a9ab093abfee7f7b0ed76dab045c984a1497b7e1d71279d.nix;
+        revNum = 0;
+        sha256 = "6ff3969a6eae383c8a9ab093abfee7f7b0ed76dab045c984a1497b7e1d71279d";
+        };
+      default = "r0";
+      };
+    };
   "2.3.3" = {
     sha256 = "74587f443f0e4d0f4d2f6e23d5661f1fda8c7ea3278b532cd28ec98b42ecaf7c";
     revisions = {

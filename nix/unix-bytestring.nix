@@ -194,7 +194,12 @@
         revNum = 0;
         sha256 = "2a48ef67a63daeb8cd2833fd58d05cc9e69fca3713c8a9b2468db834a0e8545f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unix-bytestring-0.4.0-r1-55a0a6bfb8f738ee0cfaaf813568c9b46b5aa66edb828be3856b3aa6789f2a5d.nix;
+        revNum = 1;
+        sha256 = "55a0a6bfb8f738ee0cfaaf813568c9b46b5aa66edb828be3856b3aa6789f2a5d";
+        };
+      default = "r1";
       };
     };
   }

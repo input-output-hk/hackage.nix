@@ -273,6 +273,17 @@
       default = "r0";
       };
     };
+  "0.4.19.0" = {
+    sha256 = "38727d16060909a2b65c15914ba58a68d88fe9919c547078e701e50635e9323a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sqlite-simple-0.4.19.0-r0-2996a0cef2ac99925ffb51cbf99d0a3fc129d67f3ece2294f14edb277d7b32d5.nix;
+        revNum = 0;
+        sha256 = "2996a0cef2ac99925ffb51cbf99d0a3fc129d67f3ece2294f14edb277d7b32d5";
+        };
+      default = "r0";
+      };
+    };
   "0.4.2.0" = {
     sha256 = "ab4af3298b49f802a626f6acdc63f30f8dc235b4155a91dee0e382b98c21790c";
     revisions = {

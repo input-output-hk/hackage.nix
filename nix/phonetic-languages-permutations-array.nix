@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "0.5.0.0" = {
+    sha256 = "7fae3bd5742fb3a8db88eea335e56fd44893d9d53c9e5b28894ea806b8e22ce6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phonetic-languages-permutations-array-0.5.0.0-r0-400afd8bff3286b7de990b32371e31c0e8766c7789b071379d2c2387a8c40e9c.nix;
+        revNum = 0;
+        sha256 = "400afd8bff3286b7de990b32371e31c0e8766c7789b071379d2c2387a8c40e9c";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -1506,6 +1506,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-options" = import ./nix/aeson-options.nix;
   "aeson-parsec-picky" = import ./nix/aeson-parsec-picky.nix;
   "aeson-picker" = import ./nix/aeson-picker.nix;
+  "aeson-possible" = import ./nix/aeson-possible.nix;
   "aeson-prefix" = import ./nix/aeson-prefix.nix;
   "aeson-pretty" = import ./nix/aeson-pretty.nix;
   "aeson-qq" = import ./nix/aeson-qq.nix;
@@ -13495,6 +13496,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "resourcet-effectful" = import ./nix/resourcet-effectful.nix;
   "resourcet-extra" = import ./nix/resourcet-extra.nix;
   "resourcet-pool" = import ./nix/resourcet-pool.nix;
+  "resp" = import ./nix/resp.nix;
   "respond" = import ./nix/respond.nix;
   "rest-client" = import ./nix/rest-client.nix;
   "rest-core" = import ./nix/rest-core.nix;
