@@ -13593,6 +13593,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "risc-v" = import ./nix/risc-v.nix;
   "risc386" = import ./nix/risc386.nix;
   "riscv-isa" = import ./nix/riscv-isa.nix;
+  "risk-weaver" = import ./nix/risk-weaver.nix;
   "rison" = import ./nix/rison.nix;
   "rivers" = import ./nix/rivers.nix;
   "rivet" = import ./nix/rivet.nix;

@@ -125,4 +125,15 @@
       default = "r0";
       };
     };
+  "0.7.0" = {
+    sha256 = "6192505a1c7c707da3240d16810762f3eccb83e463d5e697e5550e9ff9ad39cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simple-sql-parser-0.7.0-r0-43ead5408bc39f5d5b62a03d7c81a039d11c0a400f184826fa2d9e8d36e594f4.nix;
+        revNum = 0;
+        sha256 = "43ead5408bc39f5d5b62a03d7c81a039d11c0a400f184826fa2d9e8d36e594f4";
+        };
+      default = "r0";
+      };
+    };
   }

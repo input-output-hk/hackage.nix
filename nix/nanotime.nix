@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "f68bbd8cc3476aa3c671dbdec6d16e6318756cc1c41e1ad8285e01e3f41d2f9d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nanotime-0.2.0-r0-79aa8dd2d0776173d98dad4447e238f200d3638d6318991852a19d5357f086ed.nix;
+        revNum = 0;
+        sha256 = "79aa8dd2d0776173d98dad4447e238f200d3638d6318991852a19d5357f086ed";
+        };
+      default = "r0";
+      };
+    };
   }

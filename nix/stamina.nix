@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "55e28311fa7f22646f03dcbe47a98a6fa822a70f8b7900c9927ab54ddc042370";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stamina-0.1.0.3-r0-7a41ce24449fdabb1ca8ef88fb46b5a6bb1c90a0da9017e92790f1397034217e.nix;
+        revNum = 0;
+        sha256 = "7a41ce24449fdabb1ca8ef88fb46b5a6bb1c90a0da9017e92790f1397034217e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.1.1.5" = {
+    sha256 = "c10527f535e5d3e1fe89bb42a8ad28afb601045e45363a2caa30db398d2a42d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xml-conduit-writer-0.1.1.5-r0-7b62f92e91d5f7c2c4440b2021d6b9309f9966598b110017b2cbcf3fcd1107df.nix;
+        revNum = 0;
+        sha256 = "7b62f92e91d5f7c2c4440b2021d6b9309f9966598b110017b2cbcf3fcd1107df";
+        };
+      default = "r0";
+      };
+    };
   }
