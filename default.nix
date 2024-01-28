@@ -14761,6 +14761,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "speculate" = import ./nix/speculate.nix;
   "speculation" = import ./nix/speculation.nix;
   "speculation-transformers" = import ./nix/speculation-transformers.nix;
+  "specup" = import ./nix/specup.nix;
   "speechmatics" = import ./nix/speechmatics.nix;
   "speedy-slice" = import ./nix/speedy-slice.nix;
   "spelling-suggest" = import ./nix/spelling-suggest.nix;
