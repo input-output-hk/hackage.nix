@@ -21,4 +21,26 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "cb373ed5012adf558efa3cdae2f0d18dc1d026879c4da16750ddc255303a50d1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nanotime-0.3.0-r0-e998844f6929101eb270ee10ab45db2b3923ce9d0a560303d215ecaba6c829d5.nix;
+        revNum = 0;
+        sha256 = "e998844f6929101eb270ee10ab45db2b3923ce9d0a560303d215ecaba6c829d5";
+        };
+      default = "r0";
+      };
+    };
+  "0.3.1" = {
+    sha256 = "79dfaec79e6f67f1174857002aae2985b0ab069b715ac659a2bd0101561546e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nanotime-0.3.1-r0-71f977311ef21cabd557fc44204b3aee72e70bc842bae9bf3a70ca697f294630.nix;
+        revNum = 0;
+        sha256 = "71f977311ef21cabd557fc44204b3aee72e70bc842bae9bf3a70ca697f294630";
+        };
+      default = "r0";
+      };
+    };
   }

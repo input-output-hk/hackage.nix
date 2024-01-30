@@ -293,7 +293,12 @@
         revNum = 0;
         sha256 = "d0ebf02b4af72ec018057722629b92d4dbb34daaa83c555cd6690c979bb99722";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/reactive-banana-wx-1.1.1.0-r1-cebd2ae191c320a0c88d1de8949d68ce2ff702afa162345b16d95faa0136fd0a.nix;
+        revNum = 1;
+        sha256 = "cebd2ae191c320a0c88d1de8949d68ce2ff702afa162345b16d95faa0136fd0a";
+        };
+      default = "r1";
       };
     };
   }

@@ -40,6 +40,60 @@
         revNum = 0;
         sha256 = "4789c38b8a8ea05fbc2004b5b91f87ccae0950b58b0d596ad72fafa221cda945";
         };
+      r1 = {
+        nix = import ../hackage/gigaparsec-0.2.2.0-r1-22f4edf46ccb04b51cf0c57cce7ddca2f64eb61a174561cbd6138887884eaf43.nix;
+        revNum = 1;
+        sha256 = "22f4edf46ccb04b51cf0c57cce7ddca2f64eb61a174561cbd6138887884eaf43";
+        };
+      default = "r1";
+      };
+    };
+  "0.2.2.1" = {
+    sha256 = "1be70f89f2575da83741546c777d512cda161bfe91260d352f10beb2484912a6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gigaparsec-0.2.2.1-r0-e4dfff05f500679973034163a80d842e2f4ba52220970abc4c4f278807661194.nix;
+        revNum = 0;
+        sha256 = "e4dfff05f500679973034163a80d842e2f4ba52220970abc4c4f278807661194";
+        };
+      r1 = {
+        nix = import ../hackage/gigaparsec-0.2.2.1-r1-cbcf81ef4055b200feb0e1490f7d8116f8c6d51145da0a5d72467852064a0619.nix;
+        revNum = 1;
+        sha256 = "cbcf81ef4055b200feb0e1490f7d8116f8c6d51145da0a5d72467852064a0619";
+        };
+      default = "r1";
+      };
+    };
+  "0.2.2.2" = {
+    sha256 = "1f228657764c40e132f7729f318b1096a9447732456f78d6542d562764545efa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gigaparsec-0.2.2.2-r0-1c821fca9029e775df03a4e8c7d45508a2baa987d465573b76a63e5b8d12677d.nix;
+        revNum = 0;
+        sha256 = "1c821fca9029e775df03a4e8c7d45508a2baa987d465573b76a63e5b8d12677d";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.2.3" = {
+    sha256 = "709ee294beca105a2df064a0a960796d1ae5352cadcd33e546d31d3ffddda706";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gigaparsec-0.2.2.3-r0-31387c8fb7abb0612051427a70f3ca9d76cc0408975e4f48ab455d62aa9fcc4b.nix;
+        revNum = 0;
+        sha256 = "31387c8fb7abb0612051427a70f3ca9d76cc0408975e4f48ab455d62aa9fcc4b";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.3.0" = {
+    sha256 = "cdd490f05f6ea57cd5eed8cde9d753947ad7db6c6c9b2ee5c20c9514ce81b404";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gigaparsec-0.2.3.0-r0-958d6463a2503f2e53c02043b27a15c49e0fe324f1c73a8d3b4660df2154ebcd.nix;
+        revNum = 0;
+        sha256 = "958d6463a2503f2e53c02043b27a15c49e0fe324f1c73a8d3b4660df2154ebcd";
+        };
       default = "r0";
       };
     };

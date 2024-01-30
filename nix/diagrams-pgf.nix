@@ -142,7 +142,12 @@
         revNum = 0;
         sha256 = "07af9ee41bb4198cec1ca562cf451d6523e847bbb837999fc2f54abfcff7f64e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/diagrams-pgf-1.4.2.1-r1-e01a76adc05e81e4428bdb5178390dbcc133e096c2deb909d3dce335619d5048.nix;
+        revNum = 1;
+        sha256 = "e01a76adc05e81e4428bdb5178390dbcc133e096c2deb909d3dce335619d5048";
+        };
+      default = "r1";
       };
     };
   }

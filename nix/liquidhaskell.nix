@@ -446,4 +446,15 @@
       default = "r0";
       };
     };
+  "0.9.6.3" = {
+    sha256 = "03f0ef22d958efc1ba6cc0dd2bfa4e85d9adce75bb948815ff0fa3c56a45dd3c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquidhaskell-0.9.6.3-r0-bdfa5021c4461f6985b20781b23e3ae9ef2c843104eaf0df117602925551521a.nix;
+        revNum = 0;
+        sha256 = "bdfa5021c4461f6985b20781b23e3ae9ef2c843104eaf0df117602925551521a";
+        };
+      default = "r0";
+      };
+    };
   }

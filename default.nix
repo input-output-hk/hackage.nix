@@ -3115,6 +3115,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabal-fmt" = import ./nix/cabal-fmt.nix;
   "cabal-ghc-dynflags" = import ./nix/cabal-ghc-dynflags.nix;
   "cabal-ghci" = import ./nix/cabal-ghci.nix;
+  "cabal-gild" = import ./nix/cabal-gild.nix;
   "cabal-graphdeps" = import ./nix/cabal-graphdeps.nix;
   "cabal-helper" = import ./nix/cabal-helper.nix;
   "cabal-hoogle" = import ./nix/cabal-hoogle.nix;
@@ -16268,6 +16269,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-unary" = import ./nix/type-unary.nix;
   "typeable-mock" = import ./nix/typeable-mock.nix;
   "typeable-th" = import ./nix/typeable-th.nix;
+  "typechain" = import ./nix/typechain.nix;
   "typecheck-plugin-nat-simple" = import ./nix/typecheck-plugin-nat-simple.nix;
   "typed-admin" = import ./nix/typed-admin.nix;
   "typed-digits" = import ./nix/typed-digits.nix;

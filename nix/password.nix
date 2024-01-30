@@ -172,4 +172,26 @@
       default = "r1";
       };
     };
+  "3.0.3.0" = {
+    sha256 = "32b17def162a518424217ea6c5ba2c5ce8097aca32ea82a45c67e740fd5f267e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/password-3.0.3.0-r0-2c17b136193b56282ed5760aac40ed4b4e65658f923702ee006f225c05c895a2.nix;
+        revNum = 0;
+        sha256 = "2c17b136193b56282ed5760aac40ed4b4e65658f923702ee006f225c05c895a2";
+        };
+      default = "r0";
+      };
+    };
+  "3.0.4.0" = {
+    sha256 = "53df26abd7fc214d3294b5f06da73105525431e32598eb22cfc5cd22dcc6c136";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/password-3.0.4.0-r0-412ba325762c533e7bcba39c9c127bfc99f86ed3edde4175e191f555bdc683b6.nix;
+        revNum = 0;
+        sha256 = "412ba325762c533e7bcba39c9c127bfc99f86ed3edde4175e191f555bdc683b6";
+        };
+      default = "r0";
+      };
+    };
   }

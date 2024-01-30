@@ -91,4 +91,15 @@
       default = "r0";
       };
     };
+  "0.4.3" = {
+    sha256 = "2d28f5bc9dc00478f43de2996561b0aeb7bcc19518bbd970537cc539f5537867";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rest-rewrite-0.4.3-r0-915fb98b8c0a0f518c1a4b75bcf3ae27a3ebd5b10d60cc16a216c2fca2148ab0.nix;
+        revNum = 0;
+        sha256 = "915fb98b8c0a0f518c1a4b75bcf3ae27a3ebd5b10d60cc16a216c2fca2148ab0";
+        };
+      default = "r0";
+      };
+    };
   }
