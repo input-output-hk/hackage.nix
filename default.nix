@@ -3029,6 +3029,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "byteorder" = import ./nix/byteorder.nix;
   "bytepatch" = import ./nix/bytepatch.nix;
   "bytes" = import ./nix/bytes.nix;
+  "bytes-metrics" = import ./nix/bytes-metrics.nix;
   "byteset" = import ./nix/byteset.nix;
   "byteslice" = import ./nix/byteslice.nix;
   "bytesmith" = import ./nix/bytesmith.nix;
