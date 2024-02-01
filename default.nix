@@ -3018,6 +3018,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "by-other-names" = import ./nix/by-other-names.nix;
   "byline" = import ./nix/byline.nix;
   "bytable" = import ./nix/bytable.nix;
+  "byte-containers" = import ./nix/byte-containers.nix;
   "byte-count-reader" = import ./nix/byte-count-reader.nix;
   "byte-order" = import ./nix/byte-order.nix;
   "byteable" = import ./nix/byteable.nix;
@@ -3065,6 +3066,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bytestringparser" = import ./nix/bytestringparser.nix;
   "bytestringparser-temporary" = import ./nix/bytestringparser-temporary.nix;
   "bytestringreadp" = import ./nix/bytestringreadp.nix;
+  "bytetrie" = import ./nix/bytetrie.nix;
   "byteunits" = import ./nix/byteunits.nix;
   "bz2" = import ./nix/bz2.nix;
   "bzip-signature" = import ./nix/bzip-signature.nix;
