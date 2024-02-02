@@ -253,7 +253,23 @@
         revNum = 2;
         sha256 = "eae561348250fb8a382bb9c421c8fbb251b35bd58759f4d54bb4b9d83af84d8b";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ChasingBottoms-1.3.1.12-r3-17020448576360a6e603feb020c4c036129a239fbec267809d2e95f2db577562.nix;
+        revNum = 3;
+        sha256 = "17020448576360a6e603feb020c4c036129a239fbec267809d2e95f2db577562";
+        };
+      default = "r3";
+      };
+    };
+  "1.3.1.13" = {
+    sha256 = "46ab4106a6db7371375303af499dd36c0209db0653934ca4245c7fde4edfffce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ChasingBottoms-1.3.1.13-r0-5a84ce319e3e5d18267e561f1fb17c0a0a688ff469cd58a127c8eaabd3e4e00b.nix;
+        revNum = 0;
+        sha256 = "5a84ce319e3e5d18267e561f1fb17c0a0a688ff469cd58a127c8eaabd3e4e00b";
+        };
+      default = "r0";
       };
     };
   "1.3.1.2" = {

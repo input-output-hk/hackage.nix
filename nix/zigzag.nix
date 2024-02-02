@@ -20,4 +20,15 @@
       default = "r2";
       };
     };
+  "0.1.0.0" = {
+    sha256 = "f538e7db692aa6c760f092473fa69b416207b9e58c8c640c192b98f6778eafb3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zigzag-0.1.0.0-r0-794afe9e8f7a8abd79d77ae4bb0bb2eeb14b56bc49d2e2cbd8220b6778eecb70.nix;
+        revNum = 0;
+        sha256 = "794afe9e8f7a8abd79d77ae4bb0bb2eeb14b56bc49d2e2cbd8220b6778eecb70";
+        };
+      default = "r0";
+      };
+    };
   }

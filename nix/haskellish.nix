@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.3.2.2" = {
+    sha256 = "6430e69f68e9b5298bc58972d36ec4081ab81dbb8b099d4e8c9041e67110041e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskellish-0.3.2.2-r0-433fb4cd1497d9ba41fb7c7924022b5b7d21bf0f5f057c4180b2618a6148707b.nix;
+        revNum = 0;
+        sha256 = "433fb4cd1497d9ba41fb7c7924022b5b7d21bf0f5f057c4180b2618a6148707b";
+        };
+      default = "r0";
+      };
+    };
   }

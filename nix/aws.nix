@@ -660,6 +660,17 @@
       default = "r0";
       };
     };
+  "0.24.2" = {
+    sha256 = "c6e460c304c7f22df67a2db7b5eb70cdfe9c4c32fea4bace6b2414fd0dbb682e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-0.24.2-r0-18b872cb67329685e73d9a519b7c01b5ecc4bd5861cf29e832773f3643ccacb2.nix;
+        revNum = 0;
+        sha256 = "18b872cb67329685e73d9a519b7c01b5ecc4bd5861cf29e832773f3643ccacb2";
+        };
+      default = "r0";
+      };
+    };
   "0.3" = {
     sha256 = "a2259b66ae8feda2484ce220e41209f0edc4b777d1bacac20874e73943e16ab1";
     revisions = {

@@ -59,4 +59,15 @@
       default = "r0";
       };
     };
+  "0.1.4.1" = {
+    sha256 = "9bb5cb0f75cd97c584e8ab0cc851f77f06207d48d7c607915c2f77004d771f86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/array-builder-0.1.4.1-r0-88dbf27a0db6da7097aa74fe95883de8951d64e5d8bad7f2d1f8311a677b7f01.nix;
+        revNum = 0;
+        sha256 = "88dbf27a0db6da7097aa74fe95883de8951d64e5d8bad7f2d1f8311a677b7f01";
+        };
+      default = "r0";
+      };
+    };
   }

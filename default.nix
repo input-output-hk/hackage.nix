@@ -17053,6 +17053,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wheb-mongo" = import ./nix/wheb-mongo.nix;
   "wheb-redis" = import ./nix/wheb-redis.nix;
   "wheb-strapped" = import ./nix/wheb-strapped.nix;
+  "wherefrom-compat" = import ./nix/wherefrom-compat.nix;
   "which" = import ./nix/which.nix;
   "while-lang-parser" = import ./nix/while-lang-parser.nix;
   "whim" = import ./nix/whim.nix;

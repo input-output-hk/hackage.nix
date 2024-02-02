@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "1.2.2" = {
+    sha256 = "b5b8f1e823587570180f43ca287a14466bf5c670eb243bf58d19ad9161a78e4c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/git-lfs-1.2.2-r0-a38b66f4403d8d57edfd7313ab67efbbe7977e07f4f679ba55b32c475c9ca86f.nix;
+        revNum = 0;
+        sha256 = "a38b66f4403d8d57edfd7313ab67efbbe7977e07f4f679ba55b32c475c9ca86f";
+        };
+      default = "r0";
+      };
+    };
   }

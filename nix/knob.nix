@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "1c5d2894dc1ae11ac33effd2d95b1784c14905c2589bdca9c57de0ff602a8c5c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/knob-0.2.2-r1-465dcf97ab7fb5c1debd60a8c51bfe2cd0a8c5072ba976a9b583984d8085fe2e.nix;
+        revNum = 1;
+        sha256 = "465dcf97ab7fb5c1debd60a8c51bfe2cd0a8c5072ba976a9b583984d8085fe2e";
+        };
+      default = "r1";
       };
     };
   }
