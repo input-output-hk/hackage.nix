@@ -213,4 +213,15 @@
       default = "r0";
       };
     };
+  "2.2.2" = {
+    sha256 = "e1f12104845818b74d0bd2b6890c53252271bc1d9c5ffa707e9c667959b4e672";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsemail-2.2.2-r0-e43b7982d5049058d777458f3ac5ac8f44c8a564b3ff1d4885b69f4505597e85.nix;
+        revNum = 0;
+        sha256 = "e43b7982d5049058d777458f3ac5ac8f44c8a564b3ff1d4885b69f4505597e85";
+        };
+      default = "r0";
+      };
+    };
   }

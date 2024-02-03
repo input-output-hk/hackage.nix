@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "f9fd9902fee634d0c51b5c3defd67ee08ef8af4dc2cd133f712e5a85a6512109";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/md5-0.1.0.3-r0-dfb47b2bbb3ea147ab543e7a6ee010c229c785a90ff4f23cf47003747916a892.nix;
+        revNum = 0;
+        sha256 = "dfb47b2bbb3ea147ab543e7a6ee010c229c785a90ff4f23cf47003747916a892";
+        };
+      default = "r0";
+      };
+    };
   }

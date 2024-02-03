@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "dd71222dcd31613696438cba375249fab2b122af82c62d61f5b80b6412c7645f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zlib-bytes-0.1.0.2-r0-d220d427cb9e00614a571cff34f5cac9cf8f406a7754fac344ccf424a3f1cc83.nix;
+        revNum = 0;
+        sha256 = "d220d427cb9e00614a571cff34f5cac9cf8f406a7754fac344ccf424a3f1cc83";
+        };
+      default = "r0";
+      };
+    };
   }

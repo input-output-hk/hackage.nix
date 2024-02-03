@@ -205,7 +205,12 @@
         revNum = 0;
         sha256 = "a9eb8f653ad6c9f1ed7b30c0b8312b60e92aa81c987bf25994e74536998d0284";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghc-events-0.19.0.1-r1-fb5f6b6cfa19530839ffc0419509cd38893b2377a0e19347ee9698585d9f5925.nix;
+        revNum = 1;
+        sha256 = "fb5f6b6cfa19530839ffc0419509cd38893b2377a0e19347ee9698585d9f5925";
+        };
+      default = "r1";
       };
     };
   "0.2" = {

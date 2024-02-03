@@ -5266,6 +5266,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "envstatus" = import ./nix/envstatus.nix;
   "envy" = import ./nix/envy.nix;
   "envy-extensible" = import ./nix/envy-extensible.nix;
+  "eo-phi-normalizer" = import ./nix/eo-phi-normalizer.nix;
   "epanet-haskell" = import ./nix/epanet-haskell.nix;
   "epass" = import ./nix/epass.nix;
   "ephemeral" = import ./nix/ephemeral.nix;
@@ -9718,6 +9719,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lazyarray" = import ./nix/lazyarray.nix;
   "lazyboy" = import ./nix/lazyboy.nix;
   "lazyio" = import ./nix/lazyio.nix;
+  "lazyio-applicative" = import ./nix/lazyio-applicative.nix;
   "lazyset" = import ./nix/lazyset.nix;
   "lazysmallcheck" = import ./nix/lazysmallcheck.nix;
   "lazysplines" = import ./nix/lazysplines.nix;
