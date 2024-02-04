@@ -10536,6 +10536,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "microlens-ghc" = import ./nix/microlens-ghc.nix;
   "microlens-mtl" = import ./nix/microlens-mtl.nix;
   "microlens-platform" = import ./nix/microlens-platform.nix;
+  "microlens-pro" = import ./nix/microlens-pro.nix;
   "microlens-process" = import ./nix/microlens-process.nix;
   "microlens-th" = import ./nix/microlens-th.nix;
   "micrologger" = import ./nix/micrologger.nix;

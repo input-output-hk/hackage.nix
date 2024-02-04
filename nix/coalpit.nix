@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "c22fab7a052565028240a666a079564ce332a7271fd6707c7e286fdad4e153a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/coalpit-0.2.0.0-r0-93d63f648e842e9539e60d3b27b5f1b5175317180e96afdb37b05824350c34f2.nix;
+        revNum = 0;
+        sha256 = "93d63f648e842e9539e60d3b27b5f1b5175317180e96afdb37b05824350c34f2";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -373,4 +373,15 @@
       default = "r0";
       };
     };
+  "90000.0.0" = {
+    sha256 = "b52f1c7113df7c1d788cce8170388665cf8832641029aa8427b7e56511452b53";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mattermost-api-qc-90000.0.0-r0-65018e57226477d639e4a6467ac3d2e884eaef0ed75764e54559d80d116e5017.nix;
+        revNum = 0;
+        sha256 = "65018e57226477d639e4a6467ac3d2e884eaef0ed75764e54559d80d116e5017";
+        };
+      default = "r0";
+      };
+    };
   }
