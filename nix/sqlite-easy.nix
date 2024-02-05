@@ -64,4 +64,15 @@
       default = "r0";
       };
     };
+  "1.1.0.0" = {
+    sha256 = "d11f923c675718764be577cc8a524fd2e3c592e65c598a56f3a1780d874fa88b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sqlite-easy-1.1.0.0-r0-3182d71467b2039afb3da856ca9f5babe27be049383e22a462946e7d7a8cb4a9.nix;
+        revNum = 0;
+        sha256 = "3182d71467b2039afb3da856ca9f5babe27be049383e22a462946e7d7a8cb4a9";
+        };
+      default = "r0";
+      };
+    };
   }
