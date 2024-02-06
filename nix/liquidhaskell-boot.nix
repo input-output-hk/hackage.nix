@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.9.8.1" = {
+    sha256 = "dc6e2191885be30b36f4c556e1b3e2c27629c6b09b807eb50d0550c17d0d9501";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquidhaskell-boot-0.9.8.1-r0-5b00e110d7217558e9dd6aad93c452bae4fd766df45919ef97e5758298eacce0.nix;
+        revNum = 0;
+        sha256 = "5b00e110d7217558e9dd6aad93c452bae4fd766df45919ef97e5758298eacce0";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -271,4 +271,15 @@
       default = "r0";
       };
     };
+  "2.1.1.0" = {
+    sha256 = "409b0831a27f0c579f2ef792ae14ae5603c5921f8334826d3b5bb91ec206593f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lsp-types-2.1.1.0-r0-b194de4a8ba8b8120d9cc1ef3fb5f0150643de646630fc7487fe8232e84e30d7.nix;
+        revNum = 0;
+        sha256 = "b194de4a8ba8b8120d9cc1ef3fb5f0150643de646630fc7487fe8232e84e30d7";
+        };
+      default = "r0";
+      };
+    };
   }

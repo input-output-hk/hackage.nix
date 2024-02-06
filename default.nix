@@ -4129,8 +4129,13 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cron-compat" = import ./nix/cron-compat.nix;
   "cronus" = import ./nix/cronus.nix;
   "cropty" = import ./nix/cropty.nix;
+  "crucible" = import ./nix/crucible.nix;
+  "crucible-llvm" = import ./nix/crucible-llvm.nix;
+  "crucible-symio" = import ./nix/crucible-symio.nix;
   "cruncher-types" = import ./nix/cruncher-types.nix;
   "crunghc" = import ./nix/crunghc.nix;
+  "crux" = import ./nix/crux.nix;
+  "crux-llvm" = import ./nix/crux-llvm.nix;
   "crypt-sha512" = import ./nix/crypt-sha512.nix;
   "crypto-api" = import ./nix/crypto-api.nix;
   "crypto-api-tests" = import ./nix/crypto-api-tests.nix;
@@ -9479,6 +9484,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kind-generics-th" = import ./nix/kind-generics-th.nix;
   "kind-integer" = import ./nix/kind-integer.nix;
   "kind-rational" = import ./nix/kind-rational.nix;
+  "kindly-functors" = import ./nix/kindly-functors.nix;
   "kinds" = import ./nix/kinds.nix;
   "kit" = import ./nix/kit.nix;
   "kleene" = import ./nix/kleene.nix;

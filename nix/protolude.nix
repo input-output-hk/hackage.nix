@@ -254,4 +254,15 @@
       default = "r2";
       };
     };
+  "0.3.4" = {
+    sha256 = "f838998212470de45d5d70e380a55d431b468423cd8d315dc3165e874a157052";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/protolude-0.3.4-r0-6787ea63ec2e8172f3d011e7f913cf831d9fdc44de233d479b2d5af06a69d559.nix;
+        revNum = 0;
+        sha256 = "6787ea63ec2e8172f3d011e7f913cf831d9fdc44de233d479b2d5af06a69d559";
+        };
+      default = "r0";
+      };
+    };
   }

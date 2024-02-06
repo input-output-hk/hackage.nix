@@ -148,7 +148,12 @@
         revNum = 0;
         sha256 = "ec3fae1f34cfcfc3990e6761593c358cd33cc6bd619198e73437012856cc0a71";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/enummapset-0.7.2.0-r1-451c245b3fb48b6dbfcd18e7307d6ab53ef7c33244496646629b222fcb2c8292.nix;
+        revNum = 1;
+        sha256 = "451c245b3fb48b6dbfcd18e7307d6ab53ef7c33244496646629b222fcb2c8292";
+        };
+      default = "r1";
       };
     };
   }

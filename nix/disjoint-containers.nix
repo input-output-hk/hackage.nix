@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.3.0.1" = {
+    sha256 = "7fd7f40ed7a709fe42344741a075e4e585bfbd9e0bf041de2e388f51c7ffd90c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/disjoint-containers-0.3.0.1-r0-4a6f4de982d5c3492e4754836e15b47c24b6241bf19312ec586ff5694b34bd9e.nix;
+        revNum = 0;
+        sha256 = "4a6f4de982d5c3492e4754836e15b47c24b6241bf19312ec586ff5694b34bd9e";
+        };
+      default = "r0";
+      };
+    };
   }
