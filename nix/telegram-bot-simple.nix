@@ -43,6 +43,17 @@
       default = "r0";
       };
     };
+  "0.13" = {
+    sha256 = "3f976734f4db56dbebb6218d564730533e608e659db613272d7d2b07a138c23d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/telegram-bot-simple-0.13-r0-26fab79060ebfea06dad143a1d8fe6cf82a9547b18a85d247407c61bcb41a78e.nix;
+        revNum = 0;
+        sha256 = "26fab79060ebfea06dad143a1d8fe6cf82a9547b18a85d247407c61bcb41a78e";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0" = {
     sha256 = "8a8cc572880a792d1ed722bd0ac961892d79113c9fa1b2fbdf3019f98f904ea9";
     revisions = {

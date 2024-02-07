@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "066afc4f39c538a14b5cff9f10af8c236afde19ab762f3b3b69b130f2fb33b04";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hspear-0.14-r1-e2907c6ef940fa2a14691bde4f26fbf83bdfafd83126650bc9fd97d667a5f2c6.nix;
+        revNum = 1;
+        sha256 = "e2907c6ef940fa2a14691bde4f26fbf83bdfafd83126650bc9fd97d667a5f2c6";
+        };
+      default = "r1";
       };
     };
   }

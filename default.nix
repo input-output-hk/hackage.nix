@@ -4023,6 +4023,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "copilot-prettyprinter" = import ./nix/copilot-prettyprinter.nix;
   "copilot-sbv" = import ./nix/copilot-sbv.nix;
   "copilot-theorem" = import ./nix/copilot-theorem.nix;
+  "copilot-verifier" = import ./nix/copilot-verifier.nix;
   "copr" = import ./nix/copr.nix;
   "copr-api" = import ./nix/copr-api.nix;
   "coquina" = import ./nix/coquina.nix;
@@ -12962,6 +12963,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quandl-api" = import ./nix/quandl-api.nix;
   "quantfin" = import ./nix/quantfin.nix;
   "quantification" = import ./nix/quantification.nix;
+  "quantification-aeson" = import ./nix/quantification-aeson.nix;
   "quantities" = import ./nix/quantities.nix;
   "quantizer" = import ./nix/quantizer.nix;
   "quantum-arrow" = import ./nix/quantum-arrow.nix;
@@ -14039,6 +14041,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sequent-core" = import ./nix/sequent-core.nix;
   "sequential-index" = import ./nix/sequential-index.nix;
   "sequor" = import ./nix/sequor.nix;
+  "serdoc-binary" = import ./nix/serdoc-binary.nix;
+  "serdoc-core" = import ./nix/serdoc-core.nix;
   "serf" = import ./nix/serf.nix;
   "serial" = import ./nix/serial.nix;
   "serial-test-generators" = import ./nix/serial-test-generators.nix;
@@ -17127,6 +17131,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "word" = import ./nix/word.nix;
   "word-array" = import ./nix/word-array.nix;
   "word-compat" = import ./nix/word-compat.nix;
+  "word-note-sox" = import ./nix/word-note-sox.nix;
   "word-trie" = import ./nix/word-trie.nix;
   "word-vector" = import ./nix/word-vector.nix;
   "word-wrap" = import ./nix/word-wrap.nix;

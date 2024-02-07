@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.1.6.1" = {
+    sha256 = "5dfdbae127a3132d8673c8b367a6b11e17e543ed74ac73ddd4e9ff73569aa2e3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scientific-notation-0.1.6.1-r0-eb82238c9ee1b4f06f5c77345b750dbe37a8b78abd93c0712c838e2afc65916b.nix;
+        revNum = 0;
+        sha256 = "eb82238c9ee1b4f06f5c77345b750dbe37a8b78abd93c0712c838e2afc65916b";
+        };
+      default = "r0";
+      };
+    };
   }
