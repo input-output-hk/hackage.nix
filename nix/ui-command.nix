@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "c66fc6033d0546e245a3dbae73741e4ef2a837001a1a9be20e0b4ebdabe50b01";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ui-command-0.5.1-r1-ed511bc4bff023804e53ac03a199c72b6387aa4ff35586c294f616843bf9500e.nix;
+        revNum = 1;
+        sha256 = "ed511bc4bff023804e53ac03a199c72b6387aa4ff35586c294f616843bf9500e";
+        };
+      default = "r1";
       };
     };
   "0.5.2" = {

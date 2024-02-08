@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "104db2556f2f83336278cef01208b989ea6b06118775f84e1f380b471b1f89b9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/BCMtools-0.1.1-r1-ae4f4a426eee8ef09f1b96d20f150b11a73e887ab0793d253e3573297d5e9f47.nix;
+        revNum = 1;
+        sha256 = "ae4f4a426eee8ef09f1b96d20f150b11a73e887ab0793d253e3573297d5e9f47";
+        };
+      default = "r1";
       };
     };
   }

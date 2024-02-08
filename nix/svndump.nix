@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "0232131f03dc82a2a8f798988efc3a03a4c95287710a8790074a537ae2a731b1";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/svndump-0.4.5-r1-6dd90d0cea3ec6117bc77d35a669518c61cd073d6d054581eebbe2fecccd011f.nix;
+        revNum = 1;
+        sha256 = "6dd90d0cea3ec6117bc77d35a669518c61cd073d6d054581eebbe2fecccd011f";
+        };
+      default = "r1";
       };
     };
   }

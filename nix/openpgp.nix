@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "6e5421335e026ab3efd2d6d6a4ea981f048f4a508e973a44667fe675ecf78ae0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/openpgp-0.5-r1-d585b626dbf83e2f6ea9665f3f2821a9c862ba3fa3496703e81340dc436c95d4.nix;
+        revNum = 1;
+        sha256 = "d585b626dbf83e2f6ea9665f3f2821a9c862ba3fa3496703e81340dc436c95d4";
+        };
+      default = "r1";
       };
     };
   "0.6" = {

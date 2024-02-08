@@ -55,7 +55,12 @@
         revNum = 3;
         sha256 = "258b8facd91c2cddbe93670cb2d85bfda42af88e8dfb3bde4346e78ec8cf07e0";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/colourista-0.1.0.2-r4-87b6c096563c3dc5afb1161f06891235370862fc3406406f1f10f1864e55e0a1.nix;
+        revNum = 4;
+        sha256 = "87b6c096563c3dc5afb1161f06891235370862fc3406406f1f10f1864e55e0a1";
+        };
+      default = "r4";
       };
     };
   }

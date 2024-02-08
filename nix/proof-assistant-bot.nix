@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.2" = {
+    sha256 = "767a99565371d804abeb747cbd70144b502ffba365a3c196a3bb6ca6f93ebad0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proof-assistant-bot-0.2.2-r0-ea28be283584ad0a6b12e3a3139149fc3119b62252448c1f54c96922dfd8c95b.nix;
+        revNum = 0;
+        sha256 = "ea28be283584ad0a6b12e3a3139149fc3119b62252448c1f54c96922dfd8c95b";
+        };
+      default = "r0";
+      };
+    };
   }

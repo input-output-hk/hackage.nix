@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "e6832d1647850a2b1b09a38fad71421ea0770e7499a63aefc9558d1b2dbe96ce";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.0-r1-8e6e8ec63bdfa6c4e378cfeb075175491454731ab3773fbedfba243559c5fc5b.nix;
+        revNum = 1;
+        sha256 = "8e6e8ec63bdfa6c4e378cfeb075175491454731ab3773fbedfba243559c5fc5b";
+        };
+      default = "r1";
       };
     };
   "1.0.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "c6401c77d8d7334e211e1e7c37cc49ac34ad6d736746e02cace5f5605bcca708";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.1-r1-07ba4b21e08cddd8ea326b75cedda50c81542f61374cefaae67fa9326c100cb7.nix;
+        revNum = 1;
+        sha256 = "07ba4b21e08cddd8ea326b75cedda50c81542f61374cefaae67fa9326c100cb7";
+        };
+      default = "r1";
       };
     };
   "1.0.10" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "945327cd475510ff2ab13a00b6247f861fb31125f8e47b3e7847cdc12fadaf1e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.10-r1-61e1f6ec5e843ce7f3202d967ed7b4a721025c0c1340e012223a1dd6873ae298.nix;
+        revNum = 1;
+        sha256 = "61e1f6ec5e843ce7f3202d967ed7b4a721025c0c1340e012223a1dd6873ae298";
+        };
+      default = "r1";
       };
     };
   "1.0.11" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "5fb2b1ca1f136075f6494b81b7159a8883f98477a4fe8be3fa40f0687b3786d7";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.11-r1-480e43630b08299c7690c6edfed54b2911156e3efcbf5b275b68e050063dc63a.nix;
+        revNum = 1;
+        sha256 = "480e43630b08299c7690c6edfed54b2911156e3efcbf5b275b68e050063dc63a";
+        };
+      default = "r1";
       };
     };
   "1.0.12" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "15c774f5773b2deb54237acf45c620a151bf958e220ff32888106b9bbb96e61d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.12-r1-59d162308fb318a86f45ac6b7cd58285f13f60cb72968245acd1bc3378074db9.nix;
+        revNum = 1;
+        sha256 = "59d162308fb318a86f45ac6b7cd58285f13f60cb72968245acd1bc3378074db9";
+        };
+      default = "r1";
       };
     };
   "1.0.13" = {
@@ -62,7 +87,12 @@
         revNum = 0;
         sha256 = "c8027231409774c435c81790ac00ec8a5008425845b272c9648efc5cdb219dcf";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.13-r1-0df759ff166fdd0c76cf87b9394b3dd6f8afa9242b50daef2494a64558a8656c.nix;
+        revNum = 1;
+        sha256 = "0df759ff166fdd0c76cf87b9394b3dd6f8afa9242b50daef2494a64558a8656c";
+        };
+      default = "r1";
       };
     };
   "1.0.14" = {
@@ -139,7 +169,12 @@
         revNum = 0;
         sha256 = "290b24578a990b0334a37bce3e269f6d0891d104a2b2d01a8e9a4e393abb400e";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.2-r1-4cae8f419cedde643c2e743325129f4f59edbf0529beca84e625bad08d78fe1c.nix;
+        revNum = 1;
+        sha256 = "4cae8f419cedde643c2e743325129f4f59edbf0529beca84e625bad08d78fe1c";
+        };
+      default = "r1";
       };
     };
   "1.0.20" = {
@@ -216,7 +251,12 @@
         revNum = 0;
         sha256 = "0ca6611a884026b65be1594d9cce7a78b5c210d28f762875f27e6d1033dee7d0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.3-r1-3091e57cef17c45b653d39cdc6dfd2af2f17452899c8d622897962e8c2caa145.nix;
+        revNum = 1;
+        sha256 = "3091e57cef17c45b653d39cdc6dfd2af2f17452899c8d622897962e8c2caa145";
+        };
+      default = "r1";
       };
     };
   "1.0.30" = {
@@ -271,7 +311,12 @@
         revNum = 0;
         sha256 = "56c9f5f5d475f7a7ea13b32400c9b474a64ea89c9e2854b43db837c3577a3bc5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.4-r1-07eb86c2692110bca0abca2c5ef138eeb45c07d651a657a2b63f3e6696b59c7b.nix;
+        revNum = 1;
+        sha256 = "07eb86c2692110bca0abca2c5ef138eeb45c07d651a657a2b63f3e6696b59c7b";
+        };
+      default = "r1";
       };
     };
   "1.0.5" = {
@@ -282,7 +327,12 @@
         revNum = 0;
         sha256 = "fc4d33ace013db903e2044e05fa37f5f2c82e99a9fea8a3e47f00f08eb9362a4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.5-r1-f77887cf8084f6097f8cd24706f4c44773c8680fb77ba0e57f69f4314ff403aa.nix;
+        revNum = 1;
+        sha256 = "f77887cf8084f6097f8cd24706f4c44773c8680fb77ba0e57f69f4314ff403aa";
+        };
+      default = "r1";
       };
     };
   "1.0.6" = {
@@ -293,7 +343,12 @@
         revNum = 0;
         sha256 = "8e808a2c45af7238dcf39198f3a9adee174fffe9a3cb5df577c2be039815cd8d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.6-r1-10971ab5e4a414e58d85909bf3596b4f7ca9e6640ffb01e178f72bf98b40f800.nix;
+        revNum = 1;
+        sha256 = "10971ab5e4a414e58d85909bf3596b4f7ca9e6640ffb01e178f72bf98b40f800";
+        };
+      default = "r1";
       };
     };
   "1.0.7" = {
@@ -304,7 +359,12 @@
         revNum = 0;
         sha256 = "457e4762aa22c05c8d10e4e2ff39d7ee7564ebff8c3b4c8a21a0798e1e4115f2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.7-r1-212492f99182ada29dfd63a9d6121328a2167b5b1cb4bfe183ff3201e4bee28b.nix;
+        revNum = 1;
+        sha256 = "212492f99182ada29dfd63a9d6121328a2167b5b1cb4bfe183ff3201e4bee28b";
+        };
+      default = "r1";
       };
     };
   "1.0.8" = {
@@ -315,7 +375,12 @@
         revNum = 0;
         sha256 = "ec77ca9d57285d5952614d25c91d43383f1316226505778bd5f6eddaadcfae52";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.8-r1-182140b88353734b6735ad94b5245c8bdaa66bc54a8c253d3276bcb4006f3833.nix;
+        revNum = 1;
+        sha256 = "182140b88353734b6735ad94b5245c8bdaa66bc54a8c253d3276bcb4006f3833";
+        };
+      default = "r1";
       };
     };
   "1.0.9" = {
@@ -326,7 +391,12 @@
         revNum = 0;
         sha256 = "ce63f9aa5420709fc13df1938be61bf29f52645b7201e3b02b61e54b830f4a6f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-conduit-downloader-1.0.9-r1-182e94b52b1d0dad907d3d49235f41c51863d19b652fc5ec559189a4b7fc8f3c.nix;
+        revNum = 1;
+        sha256 = "182e94b52b1d0dad907d3d49235f41c51863d19b652fc5ec559189a4b7fc8f3c";
+        };
+      default = "r1";
       };
     };
   "1.1.0" = {

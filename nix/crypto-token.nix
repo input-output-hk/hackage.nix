@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.1" = {
+    sha256 = "cced601c53689a87f5175e9ba8dffe35c9679660dc1831b73b40f8145b76bdf4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypto-token-0.1.1-r0-899e9aa9f51d77f5014031321c0f1b4dae5916fbb1fbe699bb3aa16eeb2250ec.nix;
+        revNum = 0;
+        sha256 = "899e9aa9f51d77f5014031321c0f1b4dae5916fbb1fbe699bb3aa16eeb2250ec";
+        };
+      default = "r0";
+      };
+    };
   }

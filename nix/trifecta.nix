@@ -1326,4 +1326,15 @@
       default = "r1";
       };
     };
+  "2.1.4" = {
+    sha256 = "d4d842afdb1a3330874738c587336d0b53741d37918112269bb51ff186dc9c28";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trifecta-2.1.4-r0-b0d87f892fa5bdc008cbadbc57bb2de17729da510ff974afac99eeb70844d94e.nix;
+        revNum = 0;
+        sha256 = "b0d87f892fa5bdc008cbadbc57bb2de17729da510ff974afac99eeb70844d94e";
+        };
+      default = "r0";
+      };
+    };
   }

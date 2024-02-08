@@ -3031,6 +3031,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bytepatch" = import ./nix/bytepatch.nix;
   "bytes" = import ./nix/bytes.nix;
   "bytes-metrics" = import ./nix/bytes-metrics.nix;
+  "bytes-patterns" = import ./nix/bytes-patterns.nix;
   "byteset" = import ./nix/byteset.nix;
   "byteslice" = import ./nix/byteslice.nix;
   "bytesmith" = import ./nix/bytesmith.nix;
@@ -6030,6 +6031,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "functor-combo" = import ./nix/functor-combo.nix;
   "functor-friends" = import ./nix/functor-friends.nix;
   "functor-infix" = import ./nix/functor-infix.nix;
+  "functor-monad" = import ./nix/functor-monad.nix;
   "functor-monadic" = import ./nix/functor-monadic.nix;
   "functor-products" = import ./nix/functor-products.nix;
   "functor-utils" = import ./nix/functor-utils.nix;

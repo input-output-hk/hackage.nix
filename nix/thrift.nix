@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "b3c5c46d5c3afde9b8d85d13ab054c22fac2d680c6a35cd56c0ac431936821d3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/thrift-0.11.0-r1-0852c0a01084f66b14b2ccf6800eaf7c11c3d57ddeebd92a55706eba66094a7c.nix;
+        revNum = 1;
+        sha256 = "0852c0a01084f66b14b2ccf6800eaf7c11c3d57ddeebd92a55706eba66094a7c";
+        };
+      default = "r1";
       };
     };
   "0.12.0" = {
@@ -29,7 +34,12 @@
         revNum = 0;
         sha256 = "1f97fad315d100b1dcc838e9b553d87634952f189804d1d5f23802cd123c21bd";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/thrift-0.12.0-r1-65d44bb49a4514774ecf5afe31dc45dcb063ea9721fdcd1b926c6e95af109fd1.nix;
+        revNum = 1;
+        sha256 = "65d44bb49a4514774ecf5afe31dc45dcb063ea9721fdcd1b926c6e95af109fd1";
+        };
+      default = "r1";
       };
     };
   "0.13.0" = {
