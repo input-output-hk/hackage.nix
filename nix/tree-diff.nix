@@ -243,7 +243,12 @@
         revNum = 4;
         sha256 = "c56bd52a4da9354d69fd3c2c24fad65178583b8550742bc093bac7178d7723d4";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/tree-diff-0.3.0.1-r5-093c1731742686a1e349cf44e1f7f6a0486ee09419db981e3252aaade5e1f098.nix;
+        revNum = 5;
+        sha256 = "093c1731742686a1e349cf44e1f7f6a0486ee09419db981e3252aaade5e1f098";
+        };
+      default = "r5";
       };
     };
   }

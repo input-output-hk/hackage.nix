@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "6e6455df4e565cd59d09368a4805981ff19e10a50ac4e6279acd340cc6ef54a9";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lazyio-applicative-0.1.0.1-r1-3460b379a37360e40171abd435e2fb434916e3408cbe8b5386fc144fd59cfec5.nix;
+        revNum = 1;
+        sha256 = "3460b379a37360e40171abd435e2fb434916e3408cbe8b5386fc144fd59cfec5";
+        };
+      default = "r1";
       };
     };
   "0.1.0.2" = {
@@ -29,7 +34,12 @@
         revNum = 0;
         sha256 = "67117eb1984f2b074868e4a7ea3086f8bda7af1f1dc6f18b99e22da19f1bab72";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lazyio-applicative-0.1.0.2-r1-85256fda5d797ca8dfcf2906625ae3a63d87620b60129aba69852cd3e69ed853.nix;
+        revNum = 1;
+        sha256 = "85256fda5d797ca8dfcf2906625ae3a63d87620b60129aba69852cd3e69ed853";
+        };
+      default = "r1";
       };
     };
   "0.1.0.3" = {

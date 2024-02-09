@@ -9606,6 +9606,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "language-ats" = import ./nix/language-ats.nix;
   "language-avro" = import ./nix/language-avro.nix;
   "language-bash" = import ./nix/language-bash.nix;
+  "language-bluespec" = import ./nix/language-bluespec.nix;
   "language-boogie" = import ./nix/language-boogie.nix;
   "language-c" = import ./nix/language-c.nix;
   "language-c-comments" = import ./nix/language-c-comments.nix;
