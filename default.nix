@@ -14668,6 +14668,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "snaplet-typed-sessions" = import ./nix/snaplet-typed-sessions.nix;
   "snaplet-wordpress" = import ./nix/snaplet-wordpress.nix;
   "snappy" = import ./nix/snappy.nix;
+  "snappy-c" = import ./nix/snappy-c.nix;
   "snappy-conduit" = import ./nix/snappy-conduit.nix;
   "snappy-framing" = import ./nix/snappy-framing.nix;
   "snappy-iteratee" = import ./nix/snappy-iteratee.nix;

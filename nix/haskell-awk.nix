@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "585e40f54139c08a472a91b7265e2c9f9c0ab5931afc2cccec8b8bf272df310c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/haskell-awk-1.0-r2-780512b0119cc98b91eeac266f9d2e39ee35d68bed96b8877d4f240e7c015aa8.nix;
+        revNum = 2;
+        sha256 = "780512b0119cc98b91eeac266f9d2e39ee35d68bed96b8877d4f240e7c015aa8";
+        };
+      default = "r2";
       };
     };
   "1.0.1" = {
@@ -69,7 +74,12 @@
         revNum = 4;
         sha256 = "f8483f33d896f26e94b2ab3f6bef9c9c950c15fa9a13d80dcc134b24d32f69c1";
         };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/haskell-awk-1.1-r5-f5bb85d264c130fec190f0df15a93576c178ec2f88fe0a54dc9ce1fa440b90b5.nix;
+        revNum = 5;
+        sha256 = "f5bb85d264c130fec190f0df15a93576c178ec2f88fe0a54dc9ce1fa440b90b5";
+        };
+      default = "r5";
       };
     };
   "1.1.1" = {
@@ -90,7 +100,12 @@
         revNum = 2;
         sha256 = "3cee833807e693cae5342f6a6bb5b0fe5d28f80b8c2438f084f0b672f14e06db";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/haskell-awk-1.1.1-r3-0f32bacfc960bafa81ca931c31589e07b9263a67193b1aa3acc3889515598c7e.nix;
+        revNum = 3;
+        sha256 = "0f32bacfc960bafa81ca931c31589e07b9263a67193b1aa3acc3889515598c7e";
+        };
+      default = "r3";
       };
     };
   "1.2" = {
@@ -106,7 +121,12 @@
         revNum = 1;
         sha256 = "97fc68e0167a60bd18388f175043789bf546114e7887961a80c6b84d95aadab4";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/haskell-awk-1.2-r2-e91c3c8358892b7e6dc0e49c15edcb04945133122cb34590e2527c5cf72ef3ca.nix;
+        revNum = 2;
+        sha256 = "e91c3c8358892b7e6dc0e49c15edcb04945133122cb34590e2527c5cf72ef3ca";
+        };
+      default = "r2";
       };
     };
   "1.2.0.1" = {
@@ -117,7 +137,12 @@
         revNum = 0;
         sha256 = "d70c40d9a4b45406e8513dd45cce7a8a953b3e29737b374ebdaff524bcabe803";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/haskell-awk-1.2.0.1-r1-e6a9dde72966559ac5d82335b76b659bcb2d94e7b9633f0932b9c2453ac4e597.nix;
+        revNum = 1;
+        sha256 = "e6a9dde72966559ac5d82335b76b659bcb2d94e7b9633f0932b9c2453ac4e597";
+        };
+      default = "r1";
       };
     };
   }
