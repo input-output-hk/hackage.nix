@@ -82,7 +82,12 @@
         revNum = 3;
         sha256 = "fa125d7883c9e7ff583f661f013bbcedfbf39391ece73c96199895afd6082a1b";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/hyper-0.2.1.1-r4-8329039caa858b093bdcfcad19fe9a78bb362ebeeead5ef0196da72f0e6bcdbb.nix;
+        revNum = 4;
+        sha256 = "8329039caa858b093bdcfcad19fe9a78bb362ebeeead5ef0196da72f0e6bcdbb";
+        };
+      default = "r4";
       };
     };
   }

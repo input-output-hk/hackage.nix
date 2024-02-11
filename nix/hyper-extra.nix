@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "83624dff94e823a064b57f770f229044a77846fc1dea8bc3c11a327c1424d9fb";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hyper-extra-0.2.0.1-r1-bd497811ae46260652f1aec401621410f481b9b87440814a398a4dad648bbe6e.nix;
+        revNum = 1;
+        sha256 = "bd497811ae46260652f1aec401621410f481b9b87440814a398a4dad648bbe6e";
+        };
+      default = "r1";
       };
     };
   }

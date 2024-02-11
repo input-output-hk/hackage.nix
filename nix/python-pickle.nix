@@ -32,4 +32,20 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "8c34d266bdd558e9999c5d9bf939dd3f4fcd213320e87384cbc1ed537af6635c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/python-pickle-0.3.0-r0-5763d17d542132f27bcaf59f9d1bab6d39c18824f6135c25e088bdb0419f6b4f.nix;
+        revNum = 0;
+        sha256 = "5763d17d542132f27bcaf59f9d1bab6d39c18824f6135c25e088bdb0419f6b4f";
+        };
+      r1 = {
+        nix = import ../hackage/python-pickle-0.3.0-r1-bb7fd00f48a6eca8cc52be22ad36c7e06bceaa027d44413555aa63ab49f0160e.nix;
+        revNum = 1;
+        sha256 = "bb7fd00f48a6eca8cc52be22ad36c7e06bceaa027d44413555aa63ab49f0160e";
+        };
+      default = "r1";
+      };
+    };
   }

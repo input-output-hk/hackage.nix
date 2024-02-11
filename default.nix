@@ -5292,6 +5292,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "equeue" = import ./nix/equeue.nix;
   "equivalence" = import ./nix/equivalence.nix;
   "erd" = import ./nix/erd.nix;
+  "erebos" = import ./nix/erebos.nix;
   "erf" = import ./nix/erf.nix;
   "erf-native" = import ./nix/erf-native.nix;
   "erlang" = import ./nix/erlang.nix;
@@ -17136,6 +17137,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "word-array" = import ./nix/word-array.nix;
   "word-compat" = import ./nix/word-compat.nix;
   "word-note-sox" = import ./nix/word-note-sox.nix;
+  "word-notes-datatype" = import ./nix/word-notes-datatype.nix;
   "word-trie" = import ./nix/word-trie.nix;
   "word-vector" = import ./nix/word-vector.nix;
   "word-wrap" = import ./nix/word-wrap.nix;

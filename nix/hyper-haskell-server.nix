@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.2.3.1" = {
+    sha256 = "5b7fcd1ab309addc99880c825c5cc5039312ba38dbc6914301b8ccf7976fe133";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hyper-haskell-server-0.2.3.1-r0-be9d56c83fa273da0f2005c8ccd9a7d35df9f87f2cf3307f04197bef51e792be.nix;
+        revNum = 0;
+        sha256 = "be9d56c83fa273da0f2005c8ccd9a7d35df9f87f2cf3307f04197bef51e792be";
+        };
+      default = "r0";
+      };
+    };
   }
