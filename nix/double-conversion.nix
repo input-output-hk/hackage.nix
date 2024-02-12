@@ -252,4 +252,15 @@
       default = "r2";
       };
     };
+  "2.0.5.0" = {
+    sha256 = "98c699b6e47b257dff85d49d59e39858462598008e074460c8bfacaa3e2a43ba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/double-conversion-2.0.5.0-r0-0b055954dcae12d707b74834b8a23c36b549d04f2b5f5ac815c73580d58d90c9.nix;
+        revNum = 0;
+        sha256 = "0b055954dcae12d707b74834b8a23c36b549d04f2b5f5ac815c73580d58d90c9";
+        };
+      default = "r0";
+      };
+    };
   }

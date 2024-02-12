@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "0.0.6.3" = {
+    sha256 = "d5978c8277a400914bcb1fe633b82a67392983020977a1bd8fce076b0df403ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/live-sequencer-0.0.6.3-r0-0468b26c7026c5295ab2a59bc35b7b7b6a147b6c29c18c8778e922833d4427b6.nix;
+        revNum = 0;
+        sha256 = "0468b26c7026c5295ab2a59bc35b7b7b6a147b6c29c18c8778e922833d4427b6";
+        };
+      default = "r0";
+      };
+    };
   }
