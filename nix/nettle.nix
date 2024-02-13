@@ -100,4 +100,15 @@
       default = "r0";
       };
     };
+  "0.3.1.1" = {
+    sha256 = "d548552c257ad0c64ddec7d4605456b0d0a672ca95eb6a3f761e19c6815acb42";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nettle-0.3.1.1-r0-d32ecc767e6796da4b0adb5a2a7daa736978b8e7357abae444ab6485745c78aa.nix;
+        revNum = 0;
+        sha256 = "d32ecc767e6796da4b0adb5a2a7daa736978b8e7357abae444ab6485745c78aa";
+        };
+      default = "r0";
+      };
+    };
   }
