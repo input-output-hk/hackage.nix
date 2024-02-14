@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.1.0.1" = {
+    sha256 = "11660771c9b43e174f8452eff17eb6b956e954adcfa99037a919f6929ba7d29f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/systemd-api-0.1.0.1-r0-ff66503e8f29cd4aea8df1c16bda9d38b1ce65a8577850715857fcf88541fa3c.nix;
+        revNum = 0;
+        sha256 = "ff66503e8f29cd4aea8df1c16bda9d38b1ce65a8577850715857fcf88541fa3c";
+        };
+      default = "r0";
+      };
+    };
   }

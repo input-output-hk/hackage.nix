@@ -113,4 +113,15 @@
       default = "r0";
       };
     };
+  "0.3.7.0" = {
+    sha256 = "819137655ac2abcd1199fce658492d05d577ecc5b082f8afcc19597222c3d992";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/small-bytearray-builder-0.3.7.0-r0-81732c1360d9cd1a2a22effc66542c8ec986ac0629bbb052714dcf65b9d4f39f.nix;
+        revNum = 0;
+        sha256 = "81732c1360d9cd1a2a22effc66542c8ec986ac0629bbb052714dcf65b9d4f39f";
+        };
+      default = "r0";
+      };
+    };
   }

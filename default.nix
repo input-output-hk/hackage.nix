@@ -2893,6 +2893,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "boring-window-switcher" = import ./nix/boring-window-switcher.nix;
   "borsh" = import ./nix/borsh.nix;
   "bot" = import ./nix/bot.nix;
+  "botan-bindings" = import ./nix/botan-bindings.nix;
+  "botan-low" = import ./nix/botan-low.nix;
   "both" = import ./nix/both.nix;
   "botpp" = import ./nix/botpp.nix;
   "bottom" = import ./nix/bottom.nix;
@@ -3641,6 +3643,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "codeforces-cli" = import ./nix/codeforces-cli.nix;
   "codemonitor" = import ./nix/codemonitor.nix;
   "codepad" = import ./nix/codepad.nix;
+  "codet" = import ./nix/codet.nix;
+  "codet-plugin" = import ./nix/codet-plugin.nix;
   "codeworld-api" = import ./nix/codeworld-api.nix;
   "codex" = import ./nix/codex.nix;
   "codo-notation" = import ./nix/codo-notation.nix;
@@ -4506,6 +4510,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "debian" = import ./nix/debian.nix;
   "debian-binary" = import ./nix/debian-binary.nix;
   "debian-build" = import ./nix/debian-build.nix;
+  "debruijn" = import ./nix/debruijn.nix;
+  "debruijn-safe" = import ./nix/debruijn-safe.nix;
   "debug" = import ./nix/debug.nix;
   "debug-diff" = import ./nix/debug-diff.nix;
   "debug-dump" = import ./nix/debug-dump.nix;
