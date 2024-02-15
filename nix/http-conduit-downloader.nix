@@ -454,4 +454,15 @@
       default = "r0";
       };
     };
+  "1.1.5" = {
+    sha256 = "e63959835d53a54bc4d22183bc45bd9b9c3cea2b6b0e27dddc8d52cbe0d91ca1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-conduit-downloader-1.1.5-r0-a2991105dd33efbbe13fdae57dd3dc0626579cefb500a3ad2a86a03efeeaede0.nix;
+        revNum = 0;
+        sha256 = "a2991105dd33efbbe13fdae57dd3dc0626579cefb500a3ad2a86a03efeeaede0";
+        };
+      default = "r0";
+      };
+    };
   }

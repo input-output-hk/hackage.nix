@@ -224,6 +224,17 @@
       default = "r1";
       };
     };
+  "0.17.1" = {
+    sha256 = "903dfd7a6392173e33af72e9d46a40fe83f2e3f275e1dac4e2964c89064f7822";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xmonad-extras-0.17.1-r0-deb111633e6c2a24adc28e4f5f194ac2cdbe01e5644f38ad90ed7b6e5487edb9.nix;
+        revNum = 0;
+        sha256 = "deb111633e6c2a24adc28e4f5f194ac2cdbe01e5644f38ad90ed7b6e5487edb9";
+        };
+      default = "r0";
+      };
+    };
   "0.9" = {
     sha256 = "6177c0a674bdebe0e7fbcd5062aedb434674a51aa4a59eb9099d188aa4bd7bee";
     revisions = {

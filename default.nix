@@ -6434,6 +6434,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-graphene" = import ./nix/gi-graphene.nix;
   "gi-gsk" = import ./nix/gi-gsk.nix;
   "gi-gst" = import ./nix/gi-gst.nix;
+  "gi-gstapp" = import ./nix/gi-gstapp.nix;
   "gi-gstaudio" = import ./nix/gi-gstaudio.nix;
   "gi-gstbase" = import ./nix/gi-gstbase.nix;
   "gi-gstpbutils" = import ./nix/gi-gstpbutils.nix;
@@ -15369,6 +15370,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sys-auth-smbclient" = import ./nix/sys-auth-smbclient.nix;
   "sys-process" = import ./nix/sys-process.nix;
   "sysinfo" = import ./nix/sysinfo.nix;
+  "syslog" = import ./nix/syslog.nix;
   "system-argv0" = import ./nix/system-argv0.nix;
   "system-canonicalpath" = import ./nix/system-canonicalpath.nix;
   "system-command" = import ./nix/system-command.nix;
