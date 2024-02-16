@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "20348b64db49be221399c2d5ffeddf5e58afb35f247848fe52f6c57cb7b61c1d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/GenSmsPdu-0.2.0.0-r0-6ca4b4a52e49d03e3a77a9d33a916c2155a706e433a97783f84bcd747b56a19f.nix;
+        revNum = 0;
+        sha256 = "6ca4b4a52e49d03e3a77a9d33a916c2155a706e433a97783f84bcd747b56a19f";
+        };
+      default = "r0";
+      };
+    };
   }

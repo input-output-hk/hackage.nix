@@ -687,6 +687,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "JsContracts" = import ./nix/_Js_Contracts.nix;
   "JsonGrammar" = import ./nix/_Json_Grammar.nix;
   "JuPyTer-notebook" = import ./nix/_Ju_Py_Ter-notebook.nix;
+  "JuicyCairo" = import ./nix/_Juicy_Cairo.nix;
   "JuicyPixels" = import ./nix/_Juicy_Pixels.nix;
   "JuicyPixels-blp" = import ./nix/_Juicy_Pixels-blp.nix;
   "JuicyPixels-blurhash" = import ./nix/_Juicy_Pixels-blurhash.nix;
@@ -4850,6 +4851,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "djinn-ghc" = import ./nix/djinn-ghc.nix;
   "djinn-lib" = import ./nix/djinn-lib.nix;
   "djinn-th" = import ./nix/djinn-th.nix;
+  "djot" = import ./nix/djot.nix;
   "dl-fedora" = import ./nix/dl-fedora.nix;
   "dlist" = import ./nix/dlist.nix;
   "dlist-instances" = import ./nix/dlist-instances.nix;
@@ -11221,6 +11223,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nettle-frp" = import ./nix/nettle-frp.nix;
   "nettle-netkit" = import ./nix/nettle-netkit.nix;
   "nettle-openflow" = import ./nix/nettle-openflow.nix;
+  "netw" = import ./nix/netw.nix;
   "netwire" = import ./nix/netwire.nix;
   "netwire-input" = import ./nix/netwire-input.nix;
   "netwire-input-glfw" = import ./nix/netwire-input-glfw.nix;
@@ -16618,6 +16621,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "util-primitive-control" = import ./nix/util-primitive-control.nix;
   "util-universe" = import ./nix/util-universe.nix;
   "utility-ht" = import ./nix/utility-ht.nix;
+  "utxorpc" = import ./nix/utxorpc.nix;
   "uu-cco" = import ./nix/uu-cco.nix;
   "uu-cco-examples" = import ./nix/uu-cco-examples.nix;
   "uu-cco-hut-parsing" = import ./nix/uu-cco-hut-parsing.nix;
