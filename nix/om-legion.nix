@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "6.9.0.5" = {
+    sha256 = "0635c1b5ba582846670c700c8a75b431b61c1a1bcab2c082158409dd6ce83623";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-legion-6.9.0.5-r0-b85a7f91a3f0e08fbd2330befda8440887876050d0288540248ca52ccd361a3b.nix;
+        revNum = 0;
+        sha256 = "b85a7f91a3f0e08fbd2330befda8440887876050d0288540248ca52ccd361a3b";
+        };
+      default = "r0";
+      };
+    };
   }

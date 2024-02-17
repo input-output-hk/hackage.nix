@@ -54,6 +54,17 @@
       default = "r0";
       };
     };
+  "0.0.14.0" = {
+    sha256 = "93707fdc775710b744c111de61e5b8481b907e677b15398a6efb6a83833a5cbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduit-algorithms-0.0.14.0-r0-c8d14228d9634886c9dd4d0ef4cc7b029a93c323e99afb3878c3a9753372df67.nix;
+        revNum = 0;
+        sha256 = "c8d14228d9634886c9dd4d0ef4cc7b029a93c323e99afb3878c3a9753372df67";
+        };
+      default = "r0";
+      };
+    };
   "0.0.2.0" = {
     sha256 = "4bba7c9ed1902f9878c324b947cbac5f77e763507a0c0730405934532f91629d";
     revisions = {

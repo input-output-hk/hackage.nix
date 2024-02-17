@@ -15728,6 +15728,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-render" = import ./nix/text-render.nix;
   "text-replace" = import ./nix/text-replace.nix;
   "text-rope" = import ./nix/text-rope.nix;
+  "text-rope-zipper" = import ./nix/text-rope-zipper.nix;
   "text-short" = import ./nix/text-short.nix;
   "text-show" = import ./nix/text-show.nix;
   "text-show-instances" = import ./nix/text-show-instances.nix;
@@ -16622,6 +16623,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "util-universe" = import ./nix/util-universe.nix;
   "utility-ht" = import ./nix/utility-ht.nix;
   "utxorpc" = import ./nix/utxorpc.nix;
+  "utxorpc-client" = import ./nix/utxorpc-client.nix;
+  "utxorpc-server" = import ./nix/utxorpc-server.nix;
   "uu-cco" = import ./nix/uu-cco.nix;
   "uu-cco-examples" = import ./nix/uu-cco-examples.nix;
   "uu-cco-hut-parsing" = import ./nix/uu-cco-hut-parsing.nix;
@@ -17236,6 +17239,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "x11-xim" = import ./nix/x11-xim.nix;
   "x11-xinput" = import ./nix/x11-xinput.nix;
   "x509" = import ./nix/x509.nix;
+  "x509-ocsp" = import ./nix/x509-ocsp.nix;
   "x509-store" = import ./nix/x509-store.nix;
   "x509-system" = import ./nix/x509-system.nix;
   "x509-util" = import ./nix/x509-util.nix;
