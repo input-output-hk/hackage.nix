@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.1.4" = {
+    sha256 = "27f10e5c3aa48ebb33cfa3a95528521f80212683c56afcd2cc727a2d081b597e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-textsearch-1.1.4-r0-6a231075d5b5c057744fe98e1707a582d3975a0c363b0c8a58867c6d02a7ca1b.nix;
+        revNum = 0;
+        sha256 = "6a231075d5b5c057744fe98e1707a582d3975a0c363b0c8a58867c6d02a7ca1b";
+        };
+      default = "r0";
+      };
+    };
   }

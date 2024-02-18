@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.0.2.3" = {
+    sha256 = "7f83e3dbb2ba00e83ca3b7d9b454c1da8ed58a6304f54be861c6c41415a837cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/midimory-0.0.2.3-r0-b9792915ba77dc7c239379ac9338009c212078fb6daf2844cee5fc8bd4ae70fa.nix;
+        revNum = 0;
+        sha256 = "b9792915ba77dc7c239379ac9338009c212078fb6daf2844cee5fc8bd4ae70fa";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -6412,6 +6412,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ght" = import ./nix/ght.nix;
   "gi-adwaita" = import ./nix/gi-adwaita.nix;
   "gi-atk" = import ./nix/gi-atk.nix;
+  "gi-ayatana-appindicator3" = import ./nix/gi-ayatana-appindicator3.nix;
   "gi-cairo" = import ./nix/gi-cairo.nix;
   "gi-cairo-again" = import ./nix/gi-cairo-again.nix;
   "gi-cairo-connector" = import ./nix/gi-cairo-connector.nix;
