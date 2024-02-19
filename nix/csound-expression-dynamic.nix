@@ -317,4 +317,15 @@
       default = "r2";
       };
     };
+  "0.3.9.1" = {
+    sha256 = "cf187c2727b8ae2667d8b07e55b0be1b38a331bad47e70941c61b2337963e7f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/csound-expression-dynamic-0.3.9.1-r0-6e3c2e81e75f9a1fa75c9f71a9d06a54c5a67f09a830fa24c028bfbf691c54d0.nix;
+        revNum = 0;
+        sha256 = "6e3c2e81e75f9a1fa75c9f71a9d06a54c5a67f09a830fa24c028bfbf691c54d0";
+        };
+      default = "r0";
+      };
+    };
   }

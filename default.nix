@@ -12504,6 +12504,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "portaudio" = import ./nix/portaudio.nix;
   "porte" = import ./nix/porte.nix;
   "porter" = import ./nix/porter.nix;
+  "portmidi-utility" = import ./nix/portmidi-utility.nix;
   "portray" = import ./nix/portray.nix;
   "portray-diff" = import ./nix/portray-diff.nix;
   "portray-diff-hunit" = import ./nix/portray-diff-hunit.nix;
