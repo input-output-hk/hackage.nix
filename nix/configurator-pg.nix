@@ -183,7 +183,12 @@
         revNum = 0;
         sha256 = "56c3874488730d1ce83a7a09b6447335bff1c7ab58faa218c16f0f694ca21d88";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/configurator-pg-0.2.9-r1-42ee33c645d37fc71cf93ecd8a79e6723d12cea7d39722371abb26d99fc0f9f1.nix;
+        revNum = 1;
+        sha256 = "42ee33c645d37fc71cf93ecd8a79e6723d12cea7d39722371abb26d99fc0f9f1";
+        };
+      default = "r1";
       };
     };
   }
