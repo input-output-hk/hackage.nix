@@ -127,4 +127,15 @@
       default = "r0";
       };
     };
+  "0.7.0" = {
+    sha256 = "352bdd3dcabb7215c008218ea2c460deb2fff5f3a294dca466a5e84ad920777b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proto3-suite-0.7.0-r0-3733d946f4f15cf485412765380a9a8abee7b2fad1418dcd07b03cb1fbd40350.nix;
+        revNum = 0;
+        sha256 = "3733d946f4f15cf485412765380a9a8abee7b2fad1418dcd07b03cb1fbd40350";
+        };
+      default = "r0";
+      };
+    };
   }

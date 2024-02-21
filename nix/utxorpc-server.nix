@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "c4f1b4390575ff323d03c1b511fba4092529de6163f0b0a079a03401ef20e4b5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/utxorpc-server-0.0.1.1-r1-53e9737d4e7d91c82d33fb2d39264c1d5e798f333d811d3d09688fd408cb1d1a.nix;
+        revNum = 1;
+        sha256 = "53e9737d4e7d91c82d33fb2d39264c1d5e798f333d811d3d09688fd408cb1d1a";
+        };
+      default = "r1";
       };
     };
   }
