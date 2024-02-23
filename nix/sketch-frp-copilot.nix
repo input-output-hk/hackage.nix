@@ -21,6 +21,17 @@
       default = "r0";
       };
     };
+  "1.0.10" = {
+    sha256 = "5a0cdc2bf7a79cd018cb10aa5d34802abf33c83abfde03d90d6d8c63f8b0d2e1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sketch-frp-copilot-1.0.10-r0-e815c1d7d89e257202003c46bdf67f35fa0ad4cbb1535a830c7057ba9d8a1af3.nix;
+        revNum = 0;
+        sha256 = "e815c1d7d89e257202003c46bdf67f35fa0ad4cbb1535a830c7057ba9d8a1af3";
+        };
+      default = "r0";
+      };
+    };
   "1.0.2" = {
     sha256 = "a3656e5d2a8f945355d2685f858095164b49111ad9a5f919571b9c47ef902483";
     revisions = {
@@ -94,6 +105,17 @@
         nix = import ../hackage/sketch-frp-copilot-1.0.8-r0-fb4b6aaac13f941a234e936e4cde805de1d4196d7ca7d9b9339d9cb6684e1a7c.nix;
         revNum = 0;
         sha256 = "fb4b6aaac13f941a234e936e4cde805de1d4196d7ca7d9b9339d9cb6684e1a7c";
+        };
+      default = "r0";
+      };
+    };
+  "1.0.9" = {
+    sha256 = "d39b7a5ae57bf01f4bece7a15d65e080a481447ffd6918587d74fc10f71407ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sketch-frp-copilot-1.0.9-r0-e8956e305eee3356d7e59faf804325b70a6f2f33f4c72422f4ac18d6f7f049e9.nix;
+        revNum = 0;
+        sha256 = "e8956e305eee3356d7e59faf804325b70a6f2f33f4c72422f4ac18d6f7f049e9";
         };
       default = "r0";
       };

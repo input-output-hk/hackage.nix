@@ -274,4 +274,26 @@
       default = "r0";
       };
     };
+  "4.2.2" = {
+    sha256 = "52a963839d5a8e5755d63381e515864557c3cbb1a927dacd1a341e3d34a1f6d3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-lambda-haskell-runtime-4.2.2-r0-d76c900ac4bf2159fe08a91a29478eefbfee60f1f1fbdc42a4a66c90ab27c8a0.nix;
+        revNum = 0;
+        sha256 = "d76c900ac4bf2159fe08a91a29478eefbfee60f1f1fbdc42a4a66c90ab27c8a0";
+        };
+      default = "r0";
+      };
+    };
+  "4.3.2" = {
+    sha256 = "02f8f7728832ac4f91b327fa1c3a24c77a6fc008f367d8cf8e4731fda9b11249";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-lambda-haskell-runtime-4.3.2-r0-8be7d3a43a64abdce273bf0a75b9420fd468e50c42dc5f0435b639656b6fb2ad.nix;
+        revNum = 0;
+        sha256 = "8be7d3a43a64abdce273bf0a75b9420fd468e50c42dc5f0435b639656b6fb2ad";
+        };
+      default = "r0";
+      };
+    };
   }

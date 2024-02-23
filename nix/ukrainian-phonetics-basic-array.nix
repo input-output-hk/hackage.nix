@@ -153,4 +153,26 @@
       default = "r0";
       };
     };
+  "0.7.1.0" = {
+    sha256 = "86e76b20dd79c535115e464cfd124cd89487229b653b18d9b990c4bf94d54d9a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ukrainian-phonetics-basic-array-0.7.1.0-r0-d69d056c5d471a3f94e9344800d36ba27d0fcbc1318a5278c2e0dca00a651160.nix;
+        revNum = 0;
+        sha256 = "d69d056c5d471a3f94e9344800d36ba27d0fcbc1318a5278c2e0dca00a651160";
+        };
+      default = "r0";
+      };
+    };
+  "0.7.1.1" = {
+    sha256 = "a4b93018d3f706fdde0a05587dc3039cf34b22f5a4c04e14025c6743e75e5f61";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ukrainian-phonetics-basic-array-0.7.1.1-r0-fbf349c67c0be8a1a87866bf5755b76842c8bf1177d135627175153d9456cc75.nix;
+        revNum = 0;
+        sha256 = "fbf349c67c0be8a1a87866bf5755b76842c8bf1177d135627175153d9456cc75";
+        };
+      default = "r0";
+      };
+    };
   }

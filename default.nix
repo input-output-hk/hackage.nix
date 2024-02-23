@@ -1271,6 +1271,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "WeberLogic" = import ./nix/_Weber_Logic.nix;
   "Webrexp" = import ./nix/_Webrexp.nix;
   "Wheb" = import ./nix/_Wheb.nix;
+  "WidgetRattus" = import ./nix/_Widget_Rattus.nix;
   "WikimediaParser" = import ./nix/_Wikimedia_Parser.nix;
   "Win32" = import ./nix/_Win32.nix;
   "Win32-console" = import ./nix/_Win32-console.nix;
