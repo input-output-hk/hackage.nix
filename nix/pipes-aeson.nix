@@ -158,4 +158,15 @@
       default = "r0";
       };
     };
+  "0.4.2" = {
+    sha256 = "1a600242ce68bc00bba0575d1721a27f4ef1c21aa059efa75ba3edbc42969a57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pipes-aeson-0.4.2-r0-262ce83f24ada2d4301c7c02867ecbf4e4839044428bb82b89197b06597d5ee7.nix;
+        revNum = 0;
+        sha256 = "262ce83f24ada2d4301c7c02867ecbf4e4839044428bb82b89197b06597d5ee7";
+        };
+      default = "r0";
+      };
+    };
   }

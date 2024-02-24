@@ -37,4 +37,20 @@
       default = "r0";
       };
     };
+  "0.1.2.1" = {
+    sha256 = "edcc8a87f2eddda7fb11b1bf487c96524964125a692409b494b661af4218d07f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/functor-products-0.1.2.1-r0-e1597736d62da5b373ebfa3f083b04c50038cf601b65bcda06b47a2043daa489.nix;
+        revNum = 0;
+        sha256 = "e1597736d62da5b373ebfa3f083b04c50038cf601b65bcda06b47a2043daa489";
+        };
+      r1 = {
+        nix = import ../hackage/functor-products-0.1.2.1-r1-af83ca525f11cf9ec524ac249d0e00cd1bfc7edd84ebc05cb7a121e3badc368b.nix;
+        revNum = 1;
+        sha256 = "af83ca525f11cf9ec524ac249d0e00cd1bfc7edd84ebc05cb7a121e3badc368b";
+        };
+      default = "r1";
+      };
+    };
   }
