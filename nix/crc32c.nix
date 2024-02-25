@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0" = {
+    sha256 = "e03f3fa259721ede53585cb9699749a81c72079e1ea5bfc146ac76f869ae6802";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crc32c-0.2.0-r0-fbaa358beb44f2b680afab5d39dd39358c3161bd24142bff0c9c807e68f314a6.nix;
+        revNum = 0;
+        sha256 = "fbaa358beb44f2b680afab5d39dd39358c3161bd24142bff0c9c807e68f314a6";
+        };
+      default = "r0";
+      };
+    };
   }

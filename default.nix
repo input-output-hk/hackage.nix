@@ -9237,6 +9237,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "javasf" = import ./nix/javasf.nix;
   "javav" = import ./nix/javav.nix;
   "javelin" = import ./nix/javelin.nix;
+  "javelin-io" = import ./nix/javelin-io.nix;
   "jbi" = import ./nix/jbi.nix;
   "jcdecaux-vls" = import ./nix/jcdecaux-vls.nix;
   "jdi" = import ./nix/jdi.nix;
@@ -10704,6 +10705,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "modular-prelude-classy" = import ./nix/modular-prelude-classy.nix;
   "modularity" = import ./nix/modularity.nix;
   "module-management" = import ./nix/module-management.nix;
+  "module-munging" = import ./nix/module-munging.nix;
   "modulespection" = import ./nix/modulespection.nix;
   "modulo" = import ./nix/modulo.nix;
   "moe" = import ./nix/moe.nix;
@@ -16002,6 +16004,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "toml-parser" = import ./nix/toml-parser.nix;
   "toml-reader" = import ./nix/toml-reader.nix;
   "toml-reader-parse" = import ./nix/toml-reader-parse.nix;
+  "toml-test-drivers" = import ./nix/toml-test-drivers.nix;
   "tomland" = import ./nix/tomland.nix;
   "tomlcheck" = import ./nix/tomlcheck.nix;
   "tonalude" = import ./nix/tonalude.nix;
