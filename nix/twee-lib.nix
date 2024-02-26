@@ -188,7 +188,12 @@
         revNum = 0;
         sha256 = "f771b5f6c7c496014f9915548fb35242bc0321627594f79a10acc7c48dfa266f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/twee-lib-2.4.2-r1-79b54cf964b22d5703ccf5db1a6743fdabd801e900169b3b78bead5e32fdc0d7.nix;
+        revNum = 1;
+        sha256 = "79b54cf964b22d5703ccf5db1a6743fdabd801e900169b3b78bead5e32fdc0d7";
+        };
+      default = "r1";
       };
     };
   }

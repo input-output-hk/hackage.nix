@@ -5340,6 +5340,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "esqueleto" = import ./nix/esqueleto.nix;
   "esqueleto-compat" = import ./nix/esqueleto-compat.nix;
   "esqueleto-pgcrypto" = import ./nix/esqueleto-pgcrypto.nix;
+  "esqueleto-postgis" = import ./nix/esqueleto-postgis.nix;
   "esqueleto-streaming" = import ./nix/esqueleto-streaming.nix;
   "esqueleto-textsearch" = import ./nix/esqueleto-textsearch.nix;
   "ess" = import ./nix/ess.nix;
@@ -13193,6 +13194,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rdf" = import ./nix/rdf.nix;
   "rdf4h" = import ./nix/rdf4h.nix;
   "rdioh" = import ./nix/rdioh.nix;
+  "rds-data-codecs" = import ./nix/rds-data-codecs.nix;
   "rdtsc" = import ./nix/rdtsc.nix;
   "rdtsc-enolan" = import ./nix/rdtsc-enolan.nix;
   "re2" = import ./nix/re2.nix;

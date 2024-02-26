@@ -25,4 +25,15 @@
       default = "r3";
       };
     };
+  "3.10.0.0" = {
+    sha256 = "d6fbb70434cd20bfbf62ce23bb06c9ad3a8ef0857cc53c70cf4b84f0ba589b5e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-hoogle-3.10.0.0-r0-5f1243b2814f2a28e87bbd992b4683ca36384354c44e27a509a36628b4df0a21.nix;
+        revNum = 0;
+        sha256 = "5f1243b2814f2a28e87bbd992b4683ca36384354c44e27a509a36628b4df0a21";
+        };
+      default = "r0";
+      };
+    };
   }
