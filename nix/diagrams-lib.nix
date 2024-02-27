@@ -1030,4 +1030,15 @@
       default = "r4";
       };
     };
+  "1.4.6.1" = {
+    sha256 = "5baf4962e5e2dcc4a38b53ad7b0e287f8719aeedb4407749dfe837846223c68d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-lib-1.4.6.1-r0-0dd04f772cf5434be1108d204708260818e83bab6104375d1ef632b903db35af.nix;
+        revNum = 0;
+        sha256 = "0dd04f772cf5434be1108d204708260818e83bab6104375d1ef632b903db35af";
+        };
+      default = "r0";
+      };
+    };
   }

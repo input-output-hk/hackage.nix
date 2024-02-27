@@ -130,4 +130,15 @@
       default = "r1";
       };
     };
+  "0.7.0.8" = {
+    sha256 = "c88769f53c56920891d73d500ea7a84f3d50eee6d516a5c2288eb3a22eed915d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/docopt-0.7.0.8-r0-b88ca348766430101ff1d1ca230ea9038a9fcd63aa3f042a4b95ceab207357e5.nix;
+        revNum = 0;
+        sha256 = "b88ca348766430101ff1d1ca230ea9038a9fcd63aa3f042a4b95ceab207357e5";
+        };
+      default = "r0";
+      };
+    };
   }
