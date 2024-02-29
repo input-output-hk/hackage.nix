@@ -97,4 +97,15 @@
       default = "r2";
       };
     };
+  "0.1.4.1" = {
+    sha256 = "31d0346b3b14fad3109c7c70cfd8c3f1fe14e771b9ca8a491d02237838295731";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/list-witnesses-0.1.4.1-r0-e3d6c62e6dca85fe273d772a5c856307b2357cd2f162d38acaafce3adb52cf13.nix;
+        revNum = 0;
+        sha256 = "e3d6c62e6dca85fe273d772a5c856307b2357cd2f162d38acaafce3adb52cf13";
+        };
+      default = "r0";
+      };
+    };
   }

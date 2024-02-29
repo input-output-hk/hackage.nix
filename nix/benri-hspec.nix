@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "3e32124af7c3a7cf41992fa596e8102d701a4cc7bb158a9ab568eaafed8e8481";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/benri-hspec-0.1.0.2-r0-e8896c2cc500caa7bc3c5ba7de11c5cf77d025381999be6b14a1aaeddc91bcff.nix;
+        revNum = 0;
+        sha256 = "e8896c2cc500caa7bc3c5ba7de11c5cf77d025381999be6b14a1aaeddc91bcff";
+        };
+      default = "r0";
+      };
+    };
   }

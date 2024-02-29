@@ -117,4 +117,15 @@
       default = "r0";
       };
     };
+  "2.1.1" = {
+    sha256 = "4631963337675db145c2bf9752bf27b4bae68b7c48ffcac60b428f557b63e786";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cassava-megaparsec-2.1.1-r0-8afa1f9313cf1ed4d0ab4e193387ce80a7c225cea672b04ab83cc5009c9fb8fd.nix;
+        revNum = 0;
+        sha256 = "8afa1f9313cf1ed4d0ab4e193387ce80a7c225cea672b04ab83cc5009c9fb8fd";
+        };
+      default = "r0";
+      };
+    };
   }
