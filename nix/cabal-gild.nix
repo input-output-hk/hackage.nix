@@ -153,4 +153,26 @@
       default = "r0";
       };
     };
+  "1.1.0.1" = {
+    sha256 = "c25e97b9306d0b69854447dee4ac452e5163fc4ef0a04ce5de4b2306dd953389";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-gild-1.1.0.1-r0-b0b3f36d44ad887261073d82d537edc40a2f593ae3d9ff205c5c205e80c48b48.nix;
+        revNum = 0;
+        sha256 = "b0b3f36d44ad887261073d82d537edc40a2f593ae3d9ff205c5c205e80c48b48";
+        };
+      default = "r0";
+      };
+    };
+  "1.1.1.0" = {
+    sha256 = "08a30b07eab1f7ea3e148e79d5ce99d69ea928511c6770f63e224cc7a0225dbc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-gild-1.1.1.0-r0-7075b84e04efb0f259e1795789cfd51d1b943bfe12c74d592c6cb91df66b4a17.nix;
+        revNum = 0;
+        sha256 = "7075b84e04efb0f259e1795789cfd51d1b943bfe12c74d592c6cb91df66b4a17";
+        };
+      default = "r0";
+      };
+    };
   }

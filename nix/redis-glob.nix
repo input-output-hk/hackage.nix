@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.1.0.8" = {
+    sha256 = "e5cfb10d1f23ccf984c21d3d2bc47686b5de7df83e5e2044022c71d88e0b9273";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/redis-glob-0.1.0.8-r0-b90e24129287caa935dc2cfc9a663afdcd0062296860cf8b898b47d93806bf96.nix;
+        revNum = 0;
+        sha256 = "b90e24129287caa935dc2cfc9a663afdcd0062296860cf8b898b47d93806bf96";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.2.3.1" = {
+    sha256 = "bbbe2bab61b697da052a383b92f86ae12c6bb673128ac5277a17ae453b67addf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keyed-vals-hspec-tests-0.2.3.1-r0-1d28da30264cdf8bb432403156521411e2bdee6756a68bd4b429a1a58491b98b.nix;
+        revNum = 0;
+        sha256 = "1d28da30264cdf8bb432403156521411e2bdee6756a68bd4b429a1a58491b98b";
+        };
+      default = "r0";
+      };
+    };
   }
