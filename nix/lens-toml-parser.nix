@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "e494cb9d938c14760a4259b7d2011126b7bdfa8d7591e7b2d99a490b74cf89b6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-toml-parser-0.3.0.0-r0-d5129a94b7d6f8ffa0d228d007f47dab1940f18b9249039998e885b3a0d742b7.nix;
+        revNum = 0;
+        sha256 = "d5129a94b7d6f8ffa0d228d007f47dab1940f18b9249039998e885b3a0d742b7";
+        };
+      default = "r0";
+      };
+    };
   }
