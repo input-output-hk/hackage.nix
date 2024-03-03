@@ -7741,6 +7741,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hesql" = import ./nix/hesql.nix;
   "hetero-dict" = import ./nix/hetero-dict.nix;
   "hetero-map" = import ./nix/hetero-map.nix;
+  "hetero-zip" = import ./nix/hetero-zip.nix;
   "heterocephalus" = import ./nix/heterocephalus.nix;
   "heterogeneous-list-literals" = import ./nix/heterogeneous-list-literals.nix;
   "heterolist" = import ./nix/heterolist.nix;
