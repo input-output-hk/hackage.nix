@@ -13004,6 +13004,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "queue" = import ./nix/queue.nix;
   "queue-sheet" = import ./nix/queue-sheet.nix;
   "queuelike" = import ./nix/queuelike.nix;
+  "queues" = import ./nix/queues.nix;
   "quibble-core" = import ./nix/quibble-core.nix;
   "quic" = import ./nix/quic.nix;
   "quick-generator" = import ./nix/quick-generator.nix;
@@ -14594,6 +14595,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "smcdel" = import ./nix/smcdel.nix;
   "sme" = import ./nix/sme.nix;
   "smerdyakov" = import ./nix/smerdyakov.nix;
+  "smh" = import ./nix/smh.nix;
   "smiles" = import ./nix/smiles.nix;
   "smith" = import ./nix/smith.nix;
   "smith-cli" = import ./nix/smith-cli.nix;

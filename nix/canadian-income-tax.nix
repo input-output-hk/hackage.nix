@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "2023.0" = {
+    sha256 = "58af59b2cbb22e7a3cd10eb9d9114cb7c07c6e94fdb6dd2ec618c6363c2eda3f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/canadian-income-tax-2023.0-r0-b0d0518c405a0594ae9f16b98e54ccaed53e0dd86296a2e3564944ad7fc76239.nix;
+        revNum = 0;
+        sha256 = "b0d0518c405a0594ae9f16b98e54ccaed53e0dd86296a2e3564944ad7fc76239";
+        };
+      default = "r0";
+      };
+    };
   }
