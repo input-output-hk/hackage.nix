@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "e59f959a03f812109b8c9d5d61cf5ad6ba5b0bf0541d39f17012613cc91e5db4";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/mac-0.1.3.0-r1-dd32008e5a9254eeb77663b0b00efec7cda0aa86360ecbf611c1de5fcece1e5c.nix;
+        revNum = 1;
+        sha256 = "dd32008e5a9254eeb77663b0b00efec7cda0aa86360ecbf611c1de5fcece1e5c";
+        };
+      default = "r1";
       };
     };
   }

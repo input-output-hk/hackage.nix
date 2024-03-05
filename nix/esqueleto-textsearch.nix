@@ -98,4 +98,26 @@
       default = "r0";
       };
     };
+  "1.3.0" = {
+    sha256 = "147a9ac825d15d91a32d943d499daffc0c45fe60ecc64104a79c5d3d985a0992";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-textsearch-1.3.0-r0-97c3c300660b2d5aed8ff407a4da8599366586b72d0fc96522efa5ce0901576b.nix;
+        revNum = 0;
+        sha256 = "97c3c300660b2d5aed8ff407a4da8599366586b72d0fc96522efa5ce0901576b";
+        };
+      default = "r0";
+      };
+    };
+  "1.3.1" = {
+    sha256 = "a7a0264679457c642b84212df41ab6902d484d25c40dff266550900c53e10e7d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-textsearch-1.3.1-r0-be840fb4083a59eaf51c4f82abed5bb50f1ee8ff8326d4c3bf7ade9939ec6a8f.nix;
+        revNum = 0;
+        sha256 = "be840fb4083a59eaf51c4f82abed5bb50f1ee8ff8326d4c3bf7ade9939ec6a8f";
+        };
+      default = "r0";
+      };
+    };
   }

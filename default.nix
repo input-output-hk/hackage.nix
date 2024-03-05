@@ -8237,6 +8237,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-exporter-handle" = import ./nix/hs-opentelemetry-exporter-handle.nix;
   "hs-opentelemetry-exporter-in-memory" = import ./nix/hs-opentelemetry-exporter-in-memory.nix;
   "hs-opentelemetry-exporter-otlp" = import ./nix/hs-opentelemetry-exporter-otlp.nix;
+  "hs-opentelemetry-instrumentation-auto" = import ./nix/hs-opentelemetry-instrumentation-auto.nix;
   "hs-opentelemetry-instrumentation-cloudflare" = import ./nix/hs-opentelemetry-instrumentation-cloudflare.nix;
   "hs-opentelemetry-instrumentation-conduit" = import ./nix/hs-opentelemetry-instrumentation-conduit.nix;
   "hs-opentelemetry-instrumentation-hspec" = import ./nix/hs-opentelemetry-instrumentation-hspec.nix;
@@ -11955,6 +11956,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "parser-combinators" = import ./nix/parser-combinators.nix;
   "parser-combinators-tests" = import ./nix/parser-combinators-tests.nix;
   "parser-helper" = import ./nix/parser-helper.nix;
+  "parser-regex" = import ./nix/parser-regex.nix;
   "parser-unbiased-choice-monad-embedding" = import ./nix/parser-unbiased-choice-monad-embedding.nix;
   "parser241" = import ./nix/parser241.nix;
   "parsergen" = import ./nix/parsergen.nix;

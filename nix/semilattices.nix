@@ -54,4 +54,26 @@
       default = "r0";
       };
     };
+  "0.0.0.5" = {
+    sha256 = "a4e36943f1276d629c21e639218a47fa14c7a98d7a32dddd7215b4e3bf955cc0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semilattices-0.0.0.5-r0-8244dfba2dafa43a2eafb6e3125f400801790252f6ae8770c49b8a56b7ff39d7.nix;
+        revNum = 0;
+        sha256 = "8244dfba2dafa43a2eafb6e3125f400801790252f6ae8770c49b8a56b7ff39d7";
+        };
+      default = "r0";
+      };
+    };
+  "0.0.0.6" = {
+    sha256 = "9e218092a7e59285711ba58d177bf48e5d2d905c37f82825a64a8b6440bece73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semilattices-0.0.0.6-r0-3971d6fac1d600bae72f494dd09201741815b0173986a390e95a0c92b3f48133.nix;
+        revNum = 0;
+        sha256 = "3971d6fac1d600bae72f494dd09201741815b0173986a390e95a0c92b3f48133";
+        };
+      default = "r0";
+      };
+    };
   }
