@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "098ab39de46b8ad67b2ee597e214c1626ea4cef72d36414e28bdd9bd7f048a79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/primitive-offset-0.2.0.1-r0-149652bfdca03e1dcde1f7c43e530fb4609e1db356a0d83a07183e3732b1a9f3.nix;
+        revNum = 0;
+        sha256 = "149652bfdca03e1dcde1f7c43e530fb4609e1db356a0d83a07183e3732b1a9f3";
+        };
+      default = "r0";
+      };
+    };
   }

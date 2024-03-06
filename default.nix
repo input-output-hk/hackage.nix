@@ -12009,6 +12009,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "path-like" = import ./nix/path-like.nix;
   "path-pieces" = import ./nix/path-pieces.nix;
   "path-sing" = import ./nix/path-sing.nix;
+  "path-tagged" = import ./nix/path-tagged.nix;
   "path-text-utf8" = import ./nix/path-text-utf8.nix;
   "path-tree" = import ./nix/path-tree.nix;
   "path-utils" = import ./nix/path-utils.nix;

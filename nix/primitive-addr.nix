@@ -42,4 +42,15 @@
       default = "r2";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "e2fc17b9921bdd55e6dcc494e1b87cd27ab1edd8cf338ee141e19cad69ed46af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/primitive-addr-0.1.0.3-r0-afce584e7471bd69377e90f9297e572845cabf2deb9e77ba1199a3f563ab2c39.nix;
+        revNum = 0;
+        sha256 = "afce584e7471bd69377e90f9297e572845cabf2deb9e77ba1199a3f563ab2c39";
+        };
+      default = "r0";
+      };
+    };
   }

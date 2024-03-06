@@ -142,4 +142,15 @@
       default = "r0";
       };
     };
+  "0.3.0" = {
+    sha256 = "d2653e222e9485e1a72862146347aeca6276308c31d2b5d771013e7670f6f54e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/odbc-0.3.0-r0-1c4cda3a9895a908e36e476c02a6e5888d3cfdb4be65a6f3e1498cd98ce79e24.nix;
+        revNum = 0;
+        sha256 = "1c4cda3a9895a908e36e476c02a6e5888d3cfdb4be65a6f3e1498cd98ce79e24";
+        };
+      default = "r0";
+      };
+    };
   }

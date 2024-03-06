@@ -3049,7 +3049,12 @@
         revNum = 0;
         sha256 = "6a27480d3228e19dd564ce2ba0b91d16328688893f55dacb3cc781349f3be476";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.25.1-r1-a491ceb81aca964cec0ea738e89a419d17801036d8b506182574f4dee9e4bdcc.nix;
+        revNum = 1;
+        sha256 = "a491ceb81aca964cec0ea738e89a419d17801036d8b506182574f4dee9e4bdcc";
+        };
+      default = "r1";
       };
     };
   "1.6.3" = {
