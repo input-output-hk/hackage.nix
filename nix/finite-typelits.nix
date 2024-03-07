@@ -140,7 +140,12 @@
         revNum = 1;
         sha256 = "b9f22e8a03a4f9ccc1e558340babdbb980de752a2a29a395f39cc839212cf56c";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/finite-typelits-0.1.6.0-r2-3a055e3a68ff66b4bf046424b21486c43ae25df003a2f61140cacd72e187ffa3.nix;
+        revNum = 2;
+        sha256 = "3a055e3a68ff66b4bf046424b21486c43ae25df003a2f61140cacd72e187ffa3";
+        };
+      default = "r2";
       };
     };
   }

@@ -45,7 +45,12 @@
         revNum = 1;
         sha256 = "f797c5d47e64c7599ebeb373e1fb6206b28ca9c982ba64754b9e215a0f021c7b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/cached-io-1.2.0.0-r2-b1d982268ff384c790e9763147a9e6965d5ee24217f51d95e1b77f2c7fb2b416.nix;
+        revNum = 2;
+        sha256 = "b1d982268ff384c790e9763147a9e6965d5ee24217f51d95e1b77f2c7fb2b416";
+        };
+      default = "r2";
       };
     };
   }

@@ -31,4 +31,15 @@
       default = "r1";
       };
     };
+  "1.0.2" = {
+    sha256 = "f193081688ae52cd386532213efdd2f9cebb92785459aa779a1ca56b0404d9b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lucid-colonnade-1.0.2-r0-db13439a056d246eb5d5adad929183e65d7e76abd8e4c93788f620c74ed47662.nix;
+        revNum = 0;
+        sha256 = "db13439a056d246eb5d5adad929183e65d7e76abd8e4c93788f620c74ed47662";
+        };
+      default = "r0";
+      };
+    };
   }
