@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.1.1" = {
+    sha256 = "ac8f89b160eef813365d7c9bd2dd63f876e8b4a60f32ddfdb65e7edb78e084c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nix-narinfo-0.1.1.1-r0-57060d9875480aa5673089248535172d4a94471a50dd6303328dfa06e3dcbd60.nix;
+        revNum = 0;
+        sha256 = "57060d9875480aa5673089248535172d4a94471a50dd6303328dfa06e3dcbd60";
+        };
+      default = "r0";
+      };
+    };
   }

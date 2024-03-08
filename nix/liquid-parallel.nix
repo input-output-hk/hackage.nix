@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "3.2.2.0.3" = {
+    sha256 = "8bfadef9cc0ddb6e99367d398b58f42335ef700dd2b36aaa4a2daa5a18526406";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-parallel-3.2.2.0.3-r0-edf5964fa96bd849f897b7d6b52f136ceb7a45c59d043bde3e263b4f3b13ace8.nix;
+        revNum = 0;
+        sha256 = "edf5964fa96bd849f897b7d6b52f136ceb7a45c59d043bde3e263b4f3b13ace8";
+        };
+      default = "r0";
+      };
+    };
   }
