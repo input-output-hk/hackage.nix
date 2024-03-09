@@ -4022,6 +4022,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cooklang-hs" = import ./nix/cooklang-hs.nix;
   "coordinate" = import ./nix/coordinate.nix;
   "copilot" = import ./nix/copilot.nix;
+  "copilot-bluespec" = import ./nix/copilot-bluespec.nix;
   "copilot-c99" = import ./nix/copilot-c99.nix;
   "copilot-cbmc" = import ./nix/copilot-cbmc.nix;
   "copilot-core" = import ./nix/copilot-core.nix;
@@ -4944,6 +4945,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "double-conversion" = import ./nix/double-conversion.nix;
   "double-extra" = import ./nix/double-extra.nix;
   "double-metaphone" = import ./nix/double-metaphone.nix;
+  "double-x-encoding" = import ./nix/double-x-encoding.nix;
   "doublezip" = import ./nix/doublezip.nix;
   "doublify-toolkit" = import ./nix/doublify-toolkit.nix;
   "dove" = import ./nix/dove.nix;

@@ -98,4 +98,15 @@
       default = "r0";
       };
     };
+  "3.19" = {
+    sha256 = "a46c73ad71dc25ccaa2f98f9c9b7db5f498ede837b30f962f0af5b271ec8f6d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-prettyprinter-3.19-r0-6397896da9045a42bd0cc65f4ccfc84456d029b58aa1c09ce75a84efe555587b.nix;
+        revNum = 0;
+        sha256 = "6397896da9045a42bd0cc65f4ccfc84456d029b58aa1c09ce75a84efe555587b";
+        };
+      default = "r0";
+      };
+    };
   }

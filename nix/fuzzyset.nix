@@ -186,4 +186,15 @@
       default = "r0";
       };
     };
+  "0.3.2" = {
+    sha256 = "b84d52c32f61111d2b6ea65a9d1658610a3690a763449f96055f74134746ff8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fuzzyset-0.3.2-r0-1c5613a8c62d0e33ed3cca52a0dea8c7c0945f7fbbb642c722aba8a2e08ac257.nix;
+        revNum = 0;
+        sha256 = "1c5613a8c62d0e33ed3cca52a0dea8c7c0945f7fbbb642c722aba8a2e08ac257";
+        };
+      default = "r0";
+      };
+    };
   }

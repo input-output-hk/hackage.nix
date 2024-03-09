@@ -305,7 +305,12 @@
         revNum = 0;
         sha256 = "7c5639f95c8ce9d5be810152bfcaf701aac3b7d7f08685a869c7eda63dc2cd76";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bitvec-1.1.5.0-r1-cb3efd76b71a9e8a930f4ce5d8c91adcb63ac0d8dc3d2d4a132d490bd1ecb391.nix;
+        revNum = 1;
+        sha256 = "cb3efd76b71a9e8a930f4ce5d8c91adcb63ac0d8dc3d2d4a132d490bd1ecb391";
+        };
+      default = "r1";
       };
     };
   }

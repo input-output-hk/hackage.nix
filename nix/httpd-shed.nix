@@ -117,4 +117,15 @@
       default = "r0";
       };
     };
+  "0.4.1.2" = {
+    sha256 = "b3a0571ab7a7e418d910a6a8938d1ad8b301979c6f4fcd2cb215d2276a544653";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/httpd-shed-0.4.1.2-r0-132f3a24e73aaa62112dc589c1849e4f732802e6453bf899d866ad2542216e9c.nix;
+        revNum = 0;
+        sha256 = "132f3a24e73aaa62112dc589c1849e4f732802e6453bf899d866ad2542216e9c";
+        };
+      default = "r0";
+      };
+    };
   }
