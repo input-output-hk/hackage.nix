@@ -3077,6 +3077,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "byteunits" = import ./nix/byteunits.nix;
   "bz2" = import ./nix/bz2.nix;
   "bzip-signature" = import ./nix/bzip-signature.nix;
+  "bzip2-clib" = import ./nix/bzip2-clib.nix;
   "bzlib" = import ./nix/bzlib.nix;
   "bzlib-conduit" = import ./nix/bzlib-conduit.nix;
   "bzlib-conduit-jappie" = import ./nix/bzlib-conduit-jappie.nix;
