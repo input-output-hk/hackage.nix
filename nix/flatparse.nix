@@ -274,4 +274,15 @@
       default = "r0";
       };
     };
+  "0.5.1.0" = {
+    sha256 = "cb896c944ead34132ddc7203dc4e48152a14306b617963dbee70572c3ac29fc1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flatparse-0.5.1.0-r0-6f5bc2d750061eac198dae1ca700d8c5c9d69dc8a536d53fdccd21a115ccb9aa.nix;
+        revNum = 0;
+        sha256 = "6f5bc2d750061eac198dae1ca700d8c5c9d69dc8a536d53fdccd21a115ccb9aa";
+        };
+      default = "r0";
+      };
+    };
   }

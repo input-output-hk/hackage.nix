@@ -136,4 +136,15 @@
       default = "r0";
       };
     };
+  "0.3.0.3" = {
+    sha256 = "8196eaeadc06630704adf72c8566c847ddbcc2ffd454b10e8bfab80479dbed6c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bzlib-conduit-0.3.0.3-r0-a2ff06fe1c5700c89913446d2bb9772447ccbc554c0acb2bb4d1ebcd0bbcc959.nix;
+        revNum = 0;
+        sha256 = "a2ff06fe1c5700c89913446d2bb9772447ccbc554c0acb2bb4d1ebcd0bbcc959";
+        };
+      default = "r0";
+      };
+    };
   }

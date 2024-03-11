@@ -294,7 +294,12 @@
         revNum = 5;
         sha256 = "52826ccbf7f2f4ceb26e34ad2f82f04c7ecae6ccb98bec37d2f63ac0805b3c64";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/tz-0.1.3.6-r6-2032944ba53dd985918d5e431f6a56d0b2f3e7acec20910dcd4d6d1ad83e467d.nix;
+        revNum = 6;
+        sha256 = "2032944ba53dd985918d5e431f6a56d0b2f3e7acec20910dcd4d6d1ad83e467d";
+        };
+      default = "r6";
       };
     };
   }

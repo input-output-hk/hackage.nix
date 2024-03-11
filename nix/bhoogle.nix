@@ -185,4 +185,15 @@
       default = "r0";
       };
     };
+  "0.1.4.3" = {
+    sha256 = "25d40d18dc1c07609f7e7ced10239c090b7880508b5f612ef9dab3639dfe5be3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bhoogle-0.1.4.3-r0-a424159d54a4d804fe73e6a75e3c8263740dd9b7db373c9fa2316d5be3950472.nix;
+        revNum = 0;
+        sha256 = "a424159d54a4d804fe73e6a75e3c8263740dd9b7db373c9fa2316d5be3950472";
+        };
+      default = "r0";
+      };
+    };
   }
