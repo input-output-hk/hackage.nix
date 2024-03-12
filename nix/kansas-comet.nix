@@ -222,7 +222,12 @@
         revNum = 1;
         sha256 = "659f1697c2220852c2c3fdfedd7ca27a6a1c26c77d99d0d3aa316f1c7d99eb95";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/kansas-comet-0.4.2-r2-ec5f6de718992003d036b2b64b5de08388a38b89f7584e5ee6207f762b5134e2.nix;
+        revNum = 2;
+        sha256 = "ec5f6de718992003d036b2b64b5de08388a38b89f7584e5ee6207f762b5134e2";
+        };
+      default = "r2";
       };
     };
   }

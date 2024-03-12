@@ -65,4 +65,37 @@
       default = "r0";
       };
     };
+  "0.1.2" = {
+    sha256 = "e6b435bb5e04d6ca03f6d6dac8858aef24a736dfcb7e5c6ec6b1557b62caedf9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libsecp256k1-0.1.2-r0-288e40c7cc18626f1a9feb8a873c04dd751a23e78357ff55aac28f34398c7044.nix;
+        revNum = 0;
+        sha256 = "288e40c7cc18626f1a9feb8a873c04dd751a23e78357ff55aac28f34398c7044";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.3" = {
+    sha256 = "f9fd7a18c6a2491cf6acf2a926861f754147d086f5e5ff151760fb475b5864e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libsecp256k1-0.1.3-r0-101e450294ab43f9d4a6ba63ff26c84a6b28e2c2e7efa4d3b0a647cf4d85ab60.nix;
+        revNum = 0;
+        sha256 = "101e450294ab43f9d4a6ba63ff26c84a6b28e2c2e7efa4d3b0a647cf4d85ab60";
+        };
+      default = "r0";
+      };
+    };
+  "0.1.4" = {
+    sha256 = "a3410438f42481ead0c6807c6e0b6a0ec8f59c449147e10643ea4970dcc9c893";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libsecp256k1-0.1.4-r0-29b9bc77988f79c6c14e74c443e01208a1b4c9e0d977ff385e7ea136fd654ed1.nix;
+        revNum = 0;
+        sha256 = "29b9bc77988f79c6c14e74c443e01208a1b4c9e0d977ff385e7ea136fd654ed1";
+        };
+      default = "r0";
+      };
+    };
   }
