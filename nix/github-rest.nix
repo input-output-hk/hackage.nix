@@ -130,7 +130,12 @@
         revNum = 2;
         sha256 = "d804e4dff1fcf2382fd6ef7c0d2ceaca2b442a2a7843397ab37556b2d8c56d4b";
         };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/github-rest-1.1.4-r3-afc9234989a40fbd5694588ab98ed2c9104da9347b9e2770af26ea3713e6950b.nix;
+        revNum = 3;
+        sha256 = "afc9234989a40fbd5694588ab98ed2c9104da9347b9e2770af26ea3713e6950b";
+        };
+      default = "r3";
       };
     };
   }

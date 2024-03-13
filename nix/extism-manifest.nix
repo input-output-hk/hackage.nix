@@ -65,4 +65,48 @@
       default = "r0";
       };
     };
+  "1.2.0.0" = {
+    sha256 = "fa993bd3fa7683e1d2f133dfa4a230d070c5b380187ebff4d63cd50b987d5cb4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/extism-manifest-1.2.0.0-r0-5a6891bbd929b13d839824bb9c9fc00d1bf5f4f84e5493db4b6358992a93ba6a.nix;
+        revNum = 0;
+        sha256 = "5a6891bbd929b13d839824bb9c9fc00d1bf5f4f84e5493db4b6358992a93ba6a";
+        };
+      default = "r0";
+      };
+    };
+  "1.2.0.1" = {
+    sha256 = "513ef91d924b3252b3758e9ed1e43659244a344ffe33e063966df5986bbd13c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/extism-manifest-1.2.0.1-r0-093bc815b5daaf3ff6a4dd4df82ad48a3ed4bba854c96e651d0fcd919b70d8f0.nix;
+        revNum = 0;
+        sha256 = "093bc815b5daaf3ff6a4dd4df82ad48a3ed4bba854c96e651d0fcd919b70d8f0";
+        };
+      default = "r0";
+      };
+    };
+  "1.2.0.2" = {
+    sha256 = "ba717f769bb46c84c7167b96f2574e095939086df8d8f8d23174d961b2f0c427";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/extism-manifest-1.2.0.2-r0-5c2ebf88412736cc711078c03fe9ca3e261b2f66b1b9789d9508069a4c747ab9.nix;
+        revNum = 0;
+        sha256 = "5c2ebf88412736cc711078c03fe9ca3e261b2f66b1b9789d9508069a4c747ab9";
+        };
+      default = "r0";
+      };
+    };
+  "1.2.0.3" = {
+    sha256 = "e11ba51e2ef3f65611169edd2f3bf8e8ef221fd285f4e13db8e1165a3db3d71f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/extism-manifest-1.2.0.3-r0-4f967909fdc5de6269c8166418963ae93e5b2e13bb8fa27dc9aa32a35ff08f87.nix;
+        revNum = 0;
+        sha256 = "4f967909fdc5de6269c8166418963ae93e5b2e13bb8fa27dc9aa32a35ff08f87";
+        };
+      default = "r0";
+      };
+    };
   }

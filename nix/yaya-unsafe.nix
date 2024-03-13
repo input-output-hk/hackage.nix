@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.3.3.1" = {
+    sha256 = "1a894098281c42c91f6767091a6eb278926caea9864864f524f81765ccf7111f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yaya-unsafe-0.3.3.1-r0-6a94f9dcca30a5f0dc0b382f18953d2f3092b8f82d4ea30f72633feaaecb69a8.nix;
+        revNum = 0;
+        sha256 = "6a94f9dcca30a5f0dc0b382f18953d2f3092b8f82d4ea30f72633feaaecb69a8";
+        };
+      default = "r0";
+      };
+    };
   }

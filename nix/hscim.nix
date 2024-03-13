@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.4.0.2" = {
+    sha256 = "dd895f7368de4f0a17f0c349fdf11b63ee9a041a56e090eccb87f640215f8cde";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hscim-0.4.0.2-r0-b1b0cb4401badb3bb503ca8a2f86242514e5f05686ba8efbb4fb371f5a007cb8.nix;
+        revNum = 0;
+        sha256 = "b1b0cb4401badb3bb503ca8a2f86242514e5f05686ba8efbb4fb371f5a007cb8";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -8562,6 +8562,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "htssets" = import ./nix/htssets.nix;
   "http-accept" = import ./nix/http-accept.nix;
   "http-api-data" = import ./nix/http-api-data.nix;
+  "http-api-data-ip" = import ./nix/http-api-data-ip.nix;
   "http-api-data-qq" = import ./nix/http-api-data-qq.nix;
   "http-attoparsec" = import ./nix/http-attoparsec.nix;
   "http-client" = import ./nix/http-client.nix;
