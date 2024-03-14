@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.2.0.1" = {
+    sha256 = "28c38266c5573ffce4fe19a1b8a758d04f914ba79b03608ccda3d384072a6b2f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semantic-source-0.2.0.1-r0-2ec0988106f22a8f5e1464e56390ecf73873645ad1635f99ebd5839fcb95187c.nix;
+        revNum = 0;
+        sha256 = "2ec0988106f22a8f5e1464e56390ecf73873645ad1635f99ebd5839fcb95187c";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -42,4 +42,15 @@
       default = "r0";
       };
     };
+  "0.2.2.1" = {
+    sha256 = "881416833a7d9c1600b33e8d2bee4b5eda4e9385ed6858809d779ecbab19b805";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libyaml-streamly-0.2.2.1-r0-908ff35ae9ae7c3baad1d0ec434a9b584f9c70c575a8be3307f89d31c6ee4b8b.nix;
+        revNum = 0;
+        sha256 = "908ff35ae9ae7c3baad1d0ec434a9b584f9c70c575a8be3307f89d31c6ee4b8b";
+        };
+      default = "r0";
+      };
+    };
   }

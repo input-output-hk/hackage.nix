@@ -9415,6 +9415,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "karver" = import ./nix/karver.nix;
   "katip" = import ./nix/katip.nix;
   "katip-datadog" = import ./nix/katip-datadog.nix;
+  "katip-effectful" = import ./nix/katip-effectful.nix;
   "katip-elasticsearch" = import ./nix/katip-elasticsearch.nix;
   "katip-kafka" = import ./nix/katip-kafka.nix;
   "katip-logstash" = import ./nix/katip-logstash.nix;
@@ -9913,6 +9914,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libxml-sax" = import ./nix/libxml-sax.nix;
   "libxslt" = import ./nix/libxslt.nix;
   "libyaml" = import ./nix/libyaml.nix;
+  "libyaml-clib" = import ./nix/libyaml-clib.nix;
   "libyaml-streamly" = import ./nix/libyaml-streamly.nix;
   "libzfs" = import ./nix/libzfs.nix;
   "licensor" = import ./nix/licensor.nix;
@@ -17454,7 +17456,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yate" = import ./nix/yate.nix;
   "yavie" = import ./nix/yavie.nix;
   "yaya" = import ./nix/yaya.nix;
+  "yaya-containers" = import ./nix/yaya-containers.nix;
   "yaya-hedgehog" = import ./nix/yaya-hedgehog.nix;
+  "yaya-quickcheck" = import ./nix/yaya-quickcheck.nix;
   "yaya-test" = import ./nix/yaya-test.nix;
   "yaya-unsafe" = import ./nix/yaya-unsafe.nix;
   "yaya-unsafe-test" = import ./nix/yaya-unsafe-test.nix;
