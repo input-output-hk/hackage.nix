@@ -54,6 +54,17 @@
       default = "r0";
       };
     };
+  "0.1.1.12" = {
+    sha256 = "90cf0f442bfc6c34f23ec2e9cb6367d6e4f9fdec25260dfcd592ac0dc9ed734b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-list-skip-0.1.1.12-r0-fa183c496109f4ab059359eab35e09ee947f4e54e654cf83d18d935359b6c2af.nix;
+        revNum = 0;
+        sha256 = "fa183c496109f4ab059359eab35e09ee947f4e54e654cf83d18d935359b6c2af";
+        };
+      default = "r0";
+      };
+    };
   "0.1.1.2" = {
     sha256 = "5f89c5351b70bceefa3a611be6cdfb4ac94a9cc86eb6cd942ef36c2471ba27e2";
     revisions = {

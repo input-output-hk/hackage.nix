@@ -60,7 +60,12 @@
         revNum = 1;
         sha256 = "dd5d08b79d57edf85f4534fdfb8a0c6e78217bb5dcad488b7c3fff6dfa798c82";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/poly-0.3.1.0-r2-2501a2257b13399a8516fb0a857c7c11790c52d0e09faccbacf1bde61cc8e6f9.nix;
+        revNum = 2;
+        sha256 = "2501a2257b13399a8516fb0a857c7c11790c52d0e09faccbacf1bde61cc8e6f9";
+        };
+      default = "r2";
       };
     };
   "0.3.2.0" = {

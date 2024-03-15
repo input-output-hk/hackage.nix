@@ -2445,6 +2445,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bamse" = import ./nix/bamse.nix;
   "bamstats" = import ./nix/bamstats.nix;
   "ban-instance" = import ./nix/ban-instance.nix;
+  "bank-holiday-germany" = import ./nix/bank-holiday-germany.nix;
   "bank-holiday-usa" = import ./nix/bank-holiday-usa.nix;
   "bank-holidays-england" = import ./nix/bank-holidays-england.nix;
   "banwords" = import ./nix/banwords.nix;
@@ -15541,6 +15542,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-mgolden" = import ./nix/tasty-mgolden.nix;
   "tasty-papi" = import ./nix/tasty-papi.nix;
   "tasty-prelude" = import ./nix/tasty-prelude.nix;
+  "tasty-process" = import ./nix/tasty-process.nix;
   "tasty-program" = import ./nix/tasty-program.nix;
   "tasty-quickcheck" = import ./nix/tasty-quickcheck.nix;
   "tasty-quickcheck-laws" = import ./nix/tasty-quickcheck-laws.nix;

@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "02f8d17864f47b99b70aab6c2ddd48285f374f01a9c7e48497451f3de36214fa";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/module-munging-0.1.0.1-r1-2906a40acad60ba1735e2e058f8d7e1d44540976a9b1427635af47d01c7eeeb1.nix;
+        revNum = 1;
+        sha256 = "2906a40acad60ba1735e2e058f8d7e1d44540976a9b1427635af47d01c7eeeb1";
+        };
+      default = "r1";
       };
     };
   }

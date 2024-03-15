@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "0.9" = {
+    sha256 = "179ac06a0cbdc2106d1963ac0210aa52b2f2a213ffac45700081e1fc7b6f568e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ldap-scim-bridge-0.9-r0-b423673771534391d01ee98f8ebdfd4a70e272d7011411b8dd545a4af3bfbf6d.nix;
+        revNum = 0;
+        sha256 = "b423673771534391d01ee98f8ebdfd4a70e272d7011411b8dd545a4af3bfbf6d";
+        };
+      default = "r0";
+      };
+    };
   }
