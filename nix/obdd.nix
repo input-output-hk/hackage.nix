@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.9.0" = {
+    sha256 = "cf307162738cf75b650cc4dd9d5c80ed4ed099b971af9a232b3f69ada03f3233";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/obdd-0.9.0-r0-9986e8281c3bab00c22d0586cacb04fdb53d3cfe08afb41b42ba136e097d77a0.nix;
+        revNum = 0;
+        sha256 = "9986e8281c3bab00c22d0586cacb04fdb53d3cfe08afb41b42ba136e097d77a0";
+        };
+      default = "r0";
+      };
+    };
   }

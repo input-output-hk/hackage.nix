@@ -9032,6 +9032,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "integreat" = import ./nix/integreat.nix;
   "intel-aes" = import ./nix/intel-aes.nix;
   "intel-powermon" = import ./nix/intel-powermon.nix;
+  "intelli-monad" = import ./nix/intelli-monad.nix;
   "intensional-datatys" = import ./nix/intensional-datatys.nix;
   "interact" = import ./nix/interact.nix;
   "interactive-plot" = import ./nix/interactive-plot.nix;
@@ -10175,6 +10176,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "longboi" = import ./nix/longboi.nix;
   "longshot" = import ./nix/longshot.nix;
   "looksee" = import ./nix/looksee.nix;
+  "looksee-trip" = import ./nix/looksee-trip.nix;
   "lookup-tables" = import ./nix/lookup-tables.nix;
   "loop" = import ./nix/loop.nix;
   "loop-dsl" = import ./nix/loop-dsl.nix;
@@ -10969,6 +10971,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mssql-simple" = import ./nix/mssql-simple.nix;
   "mstate" = import ./nix/mstate.nix;
   "msu" = import ./nix/msu.nix;
+  "mt19937" = import ./nix/mt19937.nix;
   "mtgoxapi" = import ./nix/mtgoxapi.nix;
   "mtl" = import ./nix/mtl.nix;
   "mtl-c" = import ./nix/mtl-c.nix;
@@ -11633,6 +11636,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "open-witness" = import ./nix/open-witness.nix;
   "openai-hs" = import ./nix/openai-hs.nix;
   "openai-servant" = import ./nix/openai-servant.nix;
+  "openai-servant-gen" = import ./nix/openai-servant-gen.nix;
   "openal-ffi" = import ./nix/openal-ffi.nix;
   "openapi-petstore" = import ./nix/openapi-petstore.nix;
   "openapi-typed" = import ./nix/openapi-typed.nix;

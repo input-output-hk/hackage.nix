@@ -60,7 +60,12 @@
         revNum = 1;
         sha256 = "e8c8c1bf1dbeec64ad86d67ae6dca1c45afd644d20869546dfdcd03910d3848d";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/chs-cabal-0.1.1.1-r2-ed2d2a23964da34e5b2d40ca2584917b9f6626e8e283388bb5d085c0e90c66ef.nix;
+        revNum = 2;
+        sha256 = "ed2d2a23964da34e5b2d40ca2584917b9f6626e8e283388bb5d085c0e90c66ef";
+        };
+      default = "r2";
       };
     };
   }
