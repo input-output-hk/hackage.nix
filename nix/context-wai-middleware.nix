@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "2183363748bdee3f71babefcb6121a4dda658ebf319a3564a82fb7af524d9b39";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/context-wai-middleware-0.2.0.2-r1-b7d2c6bba4d8ca8abf9912ec97677428d446ae7902f32a2d929673b20bd9ed0a.nix;
+        revNum = 1;
+        sha256 = "b7d2c6bba4d8ca8abf9912ec97677428d446ae7902f32a2d929673b20bd9ed0a";
+        };
+      default = "r1";
       };
     };
   }

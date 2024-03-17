@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.2.0.0" = {
+    sha256 = "adc09cde45a1239bbc9609cf7d528c755a6b20a4c3d1325af5a6605fd6f9b7e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-localize-1.2.0.0-r0-0301351b42666338855fb12efca75894bb3a4bca129276313f452061eb000e61.nix;
+        revNum = 0;
+        sha256 = "0301351b42666338855fb12efca75894bb3a4bca129276313f452061eb000e61";
+        };
+      default = "r0";
+      };
+    };
   }

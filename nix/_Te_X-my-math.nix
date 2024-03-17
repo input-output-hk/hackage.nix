@@ -99,7 +99,12 @@
         revNum = 0;
         sha256 = "a73cde15789e29feae9897b9b2fb4ab0aa34f5065c20b53b42038e4dfdd7d4cc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/TeX-my-math-0.203.0.0-r1-aa1de48ecdc9587e6258ad97eda88fdfba7a06ab5a832ba64ba9a4624b12f671.nix;
+        revNum = 1;
+        sha256 = "aa1de48ecdc9587e6258ad97eda88fdfba7a06ab5a832ba64ba9a4624b12f671";
+        };
+      default = "r1";
       };
     };
   }

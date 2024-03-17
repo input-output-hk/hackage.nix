@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "a4740c3d8933a1fd479b68034fabedf7512adc54897a670274d464f9c95c63b2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/context-resource-0.2.0.2-r1-5a208e5aebe1ddaa824567210b49d1f000207f501b007223e3296a8c2b9cab7e.nix;
+        revNum = 1;
+        sha256 = "5a208e5aebe1ddaa824567210b49d1f000207f501b007223e3296a8c2b9cab7e";
+        };
+      default = "r1";
       };
     };
   }

@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "b40183900c045641c0632ed8e53a326c0c0e9c2806568613c03b3131d9016183";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pa-label-0.1.1.0-r0-685fcd74fa54924b3197b1d425f32a65bb4c08b7a8b589147cb6e2465f2f390e.nix;
+        revNum = 0;
+        sha256 = "685fcd74fa54924b3197b1d425f32a65bb4c08b7a8b589147cb6e2465f2f390e";
+        };
+      default = "r0";
+      };
+    };
   }
