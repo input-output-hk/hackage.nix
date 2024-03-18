@@ -186,7 +186,12 @@
         revNum = 0;
         sha256 = "08ecd33caba526277f8c8f0daf42973b18211f925bc54011d9f48d916ebd0a7a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/eliminators-0.9.4-r1-38e0f7e82805f60b98982288574f697a3710c398ad3694d36ca5ea277bc4a0e5.nix;
+        revNum = 1;
+        sha256 = "38e0f7e82805f60b98982288574f697a3710c398ad3694d36ca5ea277bc4a0e5";
+        };
+      default = "r1";
       };
     };
   }

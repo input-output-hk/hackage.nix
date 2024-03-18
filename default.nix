@@ -3076,6 +3076,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bytestringreadp" = import ./nix/bytestringreadp.nix;
   "bytetrie" = import ./nix/bytetrie.nix;
   "byteunits" = import ./nix/byteunits.nix;
+  "bytezap" = import ./nix/bytezap.nix;
   "bz2" = import ./nix/bz2.nix;
   "bzip-signature" = import ./nix/bzip-signature.nix;
   "bzip2-clib" = import ./nix/bzip2-clib.nix;

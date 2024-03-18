@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.1.0.3" = {
+    sha256 = "03acb42a9bcc9ebcde9d26179d1316068f3d73c388f051fd11aab822d4b49953";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/attoparsec-framer-0.1.0.3-r0-971e6def32ac2bdf35611e7c122d27f82f4dcf23d9c0ec6825dae025fb5b6212.nix;
+        revNum = 0;
+        sha256 = "971e6def32ac2bdf35611e7c122d27f82f4dcf23d9c0ec6825dae025fb5b6212";
+        };
+      default = "r0";
+      };
+    };
   }

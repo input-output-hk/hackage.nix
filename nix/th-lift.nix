@@ -380,7 +380,17 @@
         revNum = 0;
         sha256 = "1bb5bab13b61be2bdecf977d5cf274e8ba2ed76b5058a15a021687ebc159b36f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/th-lift-0.8.4-r1-d48b92e1adcc170d363f50e4bbe2d90044f539b8a683a755b31a9d4dae59fc00.nix;
+        revNum = 1;
+        sha256 = "d48b92e1adcc170d363f50e4bbe2d90044f539b8a683a755b31a9d4dae59fc00";
+        };
+      r2 = {
+        nix = import ../hackage/th-lift-0.8.4-r2-2f32c878a42a6a5d725514556d5851d8a63a368a301970948d372d0408268cb3.nix;
+        revNum = 2;
+        sha256 = "2f32c878a42a6a5d725514556d5851d8a63a368a301970948d372d0408268cb3";
+        };
+      default = "r2";
       };
     };
   }

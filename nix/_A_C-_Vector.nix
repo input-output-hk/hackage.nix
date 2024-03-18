@@ -144,4 +144,15 @@
       default = "r1";
       };
     };
+  "2.4.0" = {
+    sha256 = "c6d6065a034c566fea0ecb70a8e0ae6a92ef8662c5dbd720e496ef71e41ae00c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/AC-Vector-2.4.0-r0-e9b03da163208a948f47d294cfd9f496108d060a73c8a9d1f0ec9c9429d7f67d.nix;
+        revNum = 0;
+        sha256 = "e9b03da163208a948f47d294cfd9f496108d060a73c8a9d1f0ec9c9429d7f67d";
+        };
+      default = "r0";
+      };
+    };
   }
