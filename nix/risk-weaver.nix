@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "bad264665eeecb8c30c596fd410817b23acb42fd98157d71e0a6c39502ac5f86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/risk-weaver-0.1.0.2-r0-6db655c315917d925ae100f18e9bd162245da2290acb81c61e218753c0754f4e.nix;
+        revNum = 0;
+        sha256 = "6db655c315917d925ae100f18e9bd162245da2290acb81c61e218753c0754f4e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -109,4 +109,15 @@
       default = "r0";
       };
     };
+  "0.3.8" = {
+    sha256 = "20368e8ffe5bcfcc9ae33cb99253ff4566deae5ef7ce314949007881c44093ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-ww-0.3.8-r0-fb9e2e4b06be203aad189b4bf33c5aa25734db4b428ce069dbcc90c0ccc62c42.nix;
+        revNum = 0;
+        sha256 = "fb9e2e4b06be203aad189b4bf33c5aa25734db4b428ce069dbcc90c0ccc62c42";
+        };
+      default = "r0";
+      };
+    };
   }

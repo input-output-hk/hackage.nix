@@ -186,4 +186,15 @@
       default = "r0";
       };
     };
+  "0.6.8" = {
+    sha256 = "e82a7f16de2fe36eca474602b6e532c9a21410037d05adde3c4170cfcf5e7171";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-ski-0.6.8-r0-0219741cb47779f4a0af34184e69d02de2e2ac97c45fbe7a29e27edfb584de25.nix;
+        revNum = 0;
+        sha256 = "0219741cb47779f4a0af34184e69d02de2e2ac97c45fbe7a29e27edfb584de25";
+        };
+      default = "r0";
+      };
+    };
   }

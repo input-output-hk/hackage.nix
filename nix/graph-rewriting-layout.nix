@@ -117,7 +117,12 @@
         revNum = 0;
         sha256 = "68f5f2a6acbf6262fed192a1a3d41e6076890294ddf67537d6599b44f27f238d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/graph-rewriting-layout-0.5.5-r1-cf661aa49ca4313e1ba1057961774f52e46ea3a4cdd8f8d647ec768a330e2911.nix;
+        revNum = 1;
+        sha256 = "cf661aa49ca4313e1ba1057961774f52e46ea3a4cdd8f8d647ec768a330e2911";
+        };
+      default = "r1";
       };
     };
   "0.5.6" = {
@@ -127,6 +132,43 @@
         nix = import ../hackage/graph-rewriting-layout-0.5.6-r0-3b45bb44b88133f2fe80e20b0b895049a35d09b7a602afdb45b99eade5d29735.nix;
         revNum = 0;
         sha256 = "3b45bb44b88133f2fe80e20b0b895049a35d09b7a602afdb45b99eade5d29735";
+        };
+      r1 = {
+        nix = import ../hackage/graph-rewriting-layout-0.5.6-r1-20093ef89645b60c038c1e2fff6561a6f19d0f5fcd729d1d95ef260ab51d7468.nix;
+        revNum = 1;
+        sha256 = "20093ef89645b60c038c1e2fff6561a6f19d0f5fcd729d1d95ef260ab51d7468";
+        };
+      default = "r1";
+      };
+    };
+  "0.5.7" = {
+    sha256 = "7c38635e68e9a044b168d3d3ac3be432df0f50f6a733ec53e6a20b3289374346";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-layout-0.5.7-r0-d7aea7dd6327f9c5883b4d89c6130d55a11f6369a89d10faada377fc035bc037.nix;
+        revNum = 0;
+        sha256 = "d7aea7dd6327f9c5883b4d89c6130d55a11f6369a89d10faada377fc035bc037";
+        };
+      r1 = {
+        nix = import ../hackage/graph-rewriting-layout-0.5.7-r1-1cf21f15ed3fcb15a7fd7bb1c05b30397a0b6b708bf625fb63164054ad23f54c.nix;
+        revNum = 1;
+        sha256 = "1cf21f15ed3fcb15a7fd7bb1c05b30397a0b6b708bf625fb63164054ad23f54c";
+        };
+      r2 = {
+        nix = import ../hackage/graph-rewriting-layout-0.5.7-r2-ca14c514583d802c065fcd47d1809fe728765fca2b01229c3b0cd9440618a228.nix;
+        revNum = 2;
+        sha256 = "ca14c514583d802c065fcd47d1809fe728765fca2b01229c3b0cd9440618a228";
+        };
+      default = "r2";
+      };
+    };
+  "0.5.8" = {
+    sha256 = "48f4a13b295b9c8f22c916a4eb8f0e5206284685daedfddc469887a8af84783c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-layout-0.5.8-r0-8832656f203b4481bbcb00a908c8a3801d96f9cf7a47218d00a3800540a10fbb.nix;
+        revNum = 0;
+        sha256 = "8832656f203b4481bbcb00a908c8a3801d96f9cf7a47218d00a3800540a10fbb";
         };
       default = "r0";
       };

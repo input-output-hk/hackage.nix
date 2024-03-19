@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.2.9" = {
+    sha256 = "e45a4d4b0af9ca7e9fa62e3f65bcedefc09f96b148ef7ffa19339b4c655b1cf4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-strategies-0.2.9-r0-ca49c1cc855abb4cc8ddf680b019ac97a68f41c0f19f91df0001c8f329b73bcb.nix;
+        revNum = 0;
+        sha256 = "ca49c1cc855abb4cc8ddf680b019ac97a68f41c0f19f91df0001c8f329b73bcb";
+        };
+      default = "r0";
+      };
+    };
   }

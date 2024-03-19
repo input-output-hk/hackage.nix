@@ -20,4 +20,15 @@
       default = "r2";
       };
     };
+  "0.2.1" = {
+    sha256 = "3000a0696d47d4fb4c8d40d44b1368eb1e7b8f1352b8bb14aa8e29cc6cafd850";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/optparse-applicative-cmdline-util-0.2.1-r0-55aff6fd4c4a5a8bdf7d2722c0f14cbafdbd26fa0a39589d9a9e19a8893ea186.nix;
+        revNum = 0;
+        sha256 = "55aff6fd4c4a5a8bdf7d2722c0f14cbafdbd26fa0a39589d9a9e19a8893ea186";
+        };
+      default = "r0";
+      };
+    };
   }

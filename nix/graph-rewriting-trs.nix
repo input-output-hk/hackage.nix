@@ -21,6 +21,17 @@
       default = "r0";
       };
     };
+  "0.1.10" = {
+    sha256 = "1061be25deefb72c4c7fcf2e1e1a1f3a880e2730a3d0a13f16449b8d95d5dfd3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-trs-0.1.10-r0-f72613653d6ea4a2dc8f9299f08c944e3964ef7fde8953a534130437d4abc91d.nix;
+        revNum = 0;
+        sha256 = "f72613653d6ea4a2dc8f9299f08c944e3964ef7fde8953a534130437d4abc91d";
+        };
+      default = "r0";
+      };
+    };
   "0.1.2" = {
     sha256 = "0681f54452dedac2e4885ffdccf4ed9928cca49aa8d0895908af46fe91b2d2d0";
     revisions = {

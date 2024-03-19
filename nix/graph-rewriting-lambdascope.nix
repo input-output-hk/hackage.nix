@@ -120,6 +120,17 @@
       default = "r0";
       };
     };
+  "0.5.11" = {
+    sha256 = "98fa87cf95de53f5ebae05e072557dd8e916ee6021c1453af39995f4c2c32150";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-lambdascope-0.5.11-r0-82ba986fc35f17da8a239210104e26f7c5bea7e38d89348cd3aa13ffcc67516e.nix;
+        revNum = 0;
+        sha256 = "82ba986fc35f17da8a239210104e26f7c5bea7e38d89348cd3aa13ffcc67516e";
+        };
+      default = "r0";
+      };
+    };
   "0.5.2" = {
     sha256 = "11e992ed2ed795bf74c94b61346899bbcfb8e59d952fbe0c7de0effa1d58511b";
     revisions = {

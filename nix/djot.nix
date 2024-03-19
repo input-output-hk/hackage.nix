@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.1.1.3" = {
+    sha256 = "70c195c88d7470932d75707aebdb45102c4b586bca99cfab6901d66b5848df20";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/djot-0.1.1.3-r0-ca16461dc9c3f367fbb75ecbe0815077f2b7ee87507c7e6b68b60609404b886d.nix;
+        revNum = 0;
+        sha256 = "ca16461dc9c3f367fbb75ecbe0815077f2b7ee87507c7e6b68b60609404b886d";
+        };
+      default = "r0";
+      };
+    };
   }

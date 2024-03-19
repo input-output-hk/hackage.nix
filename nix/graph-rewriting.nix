@@ -106,7 +106,12 @@
         revNum = 0;
         sha256 = "dd35a7b45ec92e6bdc0ee0f2a579cd50f21e183d5d9780acc3d72883b14e38b5";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/graph-rewriting-0.7.10-r1-6f5a06f590b3bd9f627652c3458fc330054ec23974b7033cf52da0a020a3bea8.nix;
+        revNum = 1;
+        sha256 = "6f5a06f590b3bd9f627652c3458fc330054ec23974b7033cf52da0a020a3bea8";
+        };
+      default = "r1";
       };
     };
   "0.7.2" = {
@@ -209,7 +214,12 @@
         revNum = 1;
         sha256 = "1fad5efec32357d774a2eb70a8152a937283d30f80ae4593f572f08753d1844b";
         };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/graph-rewriting-0.7.9-r2-2dc53a7b9c3b411833b6562c2b6bc4942429a61f5a790359b065c66606caf976.nix;
+        revNum = 2;
+        sha256 = "2dc53a7b9c3b411833b6562c2b6bc4942429a61f5a790359b065c66606caf976";
+        };
+      default = "r2";
       };
     };
   "0.8.0" = {

@@ -194,7 +194,12 @@
         revNum = 0;
         sha256 = "6214c88bf32c2eed7d33b8954e78d55d8ab27aef2b91ca401e9676345f6d1102";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/graph-rewriting-gl-0.7.7-r1-03c884c7aaab294240745e3726a551c1b3d83d27d9de0bb7809c3b2f106c3933.nix;
+        revNum = 1;
+        sha256 = "03c884c7aaab294240745e3726a551c1b3d83d27d9de0bb7809c3b2f106c3933";
+        };
+      default = "r1";
       };
     };
   "0.7.8" = {
@@ -204,6 +209,22 @@
         nix = import ../hackage/graph-rewriting-gl-0.7.8-r0-ba8e7bf82e05750ec46acaae60da2f6ea7311f10d5cd63d5081567f0f7cf430a.nix;
         revNum = 0;
         sha256 = "ba8e7bf82e05750ec46acaae60da2f6ea7311f10d5cd63d5081567f0f7cf430a";
+        };
+      r1 = {
+        nix = import ../hackage/graph-rewriting-gl-0.7.8-r1-56004de28efd8a0cc86efed4f736de3eead0c801d7e5c54980460b7fa63f7c4b.nix;
+        revNum = 1;
+        sha256 = "56004de28efd8a0cc86efed4f736de3eead0c801d7e5c54980460b7fa63f7c4b";
+        };
+      default = "r1";
+      };
+    };
+  "0.7.9" = {
+    sha256 = "ab7e044f6db309e999180022e9cea520fbfb99c2e2e4caa062b2e856aa2394c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graph-rewriting-gl-0.7.9-r0-3fe8c191b4808fdfad3054599a040741cea755a4d4a83591717687807197fba9.nix;
+        revNum = 0;
+        sha256 = "3fe8c191b4808fdfad3054599a040741cea755a4d4a83591717687807197fba9";
         };
       default = "r0";
       };

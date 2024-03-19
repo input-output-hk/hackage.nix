@@ -12928,6 +12928,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pure-priority-queue" = import ./nix/pure-priority-queue.nix;
   "pure-priority-queue-tests" = import ./nix/pure-priority-queue-tests.nix;
   "pure-shuffle" = import ./nix/pure-shuffle.nix;
+  "pure-sum" = import ./nix/pure-sum.nix;
+  "pure-sum-aeson" = import ./nix/pure-sum-aeson.nix;
   "pure-zlib" = import ./nix/pure-zlib.nix;
   "pureMD5" = import ./nix/pure_M_D5.nix;
   "purebred-email" = import ./nix/purebred-email.nix;
@@ -15792,6 +15794,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "th-constraint-compat" = import ./nix/th-constraint-compat.nix;
   "th-context" = import ./nix/th-context.nix;
   "th-data-compat" = import ./nix/th-data-compat.nix;
+  "th-deepstrict" = import ./nix/th-deepstrict.nix;
   "th-desugar" = import ./nix/th-desugar.nix;
   "th-dict-discovery" = import ./nix/th-dict-discovery.nix;
   "th-env" = import ./nix/th-env.nix;
