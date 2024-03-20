@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "1.0.4" = {
+    sha256 = "1821f170fe143831a7df749770fc4b9a2ee33e6260ed20642bf52801efd7da8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/skylighting-lucid-1.0.4-r0-76ce5e510453077d448f614454eecad68fd5c92aaea499cf85faf965be198495.nix;
+        revNum = 0;
+        sha256 = "76ce5e510453077d448f614454eecad68fd5c92aaea499cf85faf965be198495";
+        };
+      default = "r0";
+      };
+    };
   }

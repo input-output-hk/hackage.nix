@@ -8901,6 +8901,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "immortal" = import ./nix/immortal.nix;
   "immortal-queue" = import ./nix/immortal-queue.nix;
   "immortal-worker" = import ./nix/immortal-worker.nix;
+  "imp" = import ./nix/imp.nix;
   "imparse" = import ./nix/imparse.nix;
   "imperative-edsl" = import ./nix/imperative-edsl.nix;
   "imperative-edsl-vhdl" = import ./nix/imperative-edsl-vhdl.nix;
@@ -11620,6 +11621,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "oops" = import ./nix/oops.nix;
   "oops-examples" = import ./nix/oops-examples.nix;
   "op" = import ./nix/op.nix;
+  "op2" = import ./nix/op2.nix;
   "opaleye" = import ./nix/opaleye.nix;
   "opaleye-classy" = import ./nix/opaleye-classy.nix;
   "opaleye-sqlite" = import ./nix/opaleye-sqlite.nix;

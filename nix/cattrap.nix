@@ -70,4 +70,15 @@
       default = "r0";
       };
     };
+  "0.6.0.0" = {
+    sha256 = "2a5cf51d9ce7316e1fb39b72a10ce7e0ff41ac49fd771f5bf642df6fd53108a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cattrap-0.6.0.0-r0-0fe5d8997764b1fc40b0fda722059078f2bfac11127de8f9231dd3b2d1eb1907.nix;
+        revNum = 0;
+        sha256 = "0fe5d8997764b1fc40b0fda722059078f2bfac11127de8f9231dd3b2d1eb1907";
+        };
+      default = "r0";
+      };
+    };
   }

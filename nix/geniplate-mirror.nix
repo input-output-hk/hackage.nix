@@ -43,6 +43,17 @@
       default = "r0";
       };
     };
+  "0.7.10" = {
+    sha256 = "8272f8b6e7109094e2f8a35277be3524cfab5682f8ddb51b2a97fc31d746162c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geniplate-mirror-0.7.10-r0-e6c8ea5cf51f1dbf30e1aa95d5137071247879f58b00660a5db74b200d9d21fb.nix;
+        revNum = 0;
+        sha256 = "e6c8ea5cf51f1dbf30e1aa95d5137071247879f58b00660a5db74b200d9d21fb";
+        };
+      default = "r0";
+      };
+    };
   "0.7.2" = {
     sha256 = "2797766702a57f16739378e6da50e8a074d48318601eb5a3e4528b2819509082";
     revisions = {
