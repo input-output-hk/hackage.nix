@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "2aa470055316465248fe620c533c05f22dc2bb3b6e1a9335340fe72bd05925fc";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/eventlog2html-0.11.0-r1-1dd28518627aa01abe5a7ec92d3941a2434e40bef2fbac73a264405cc750ff87.nix;
+        revNum = 1;
+        sha256 = "1dd28518627aa01abe5a7ec92d3941a2434e40bef2fbac73a264405cc750ff87";
+        };
+      default = "r1";
       };
     };
   "0.2.0" = {
