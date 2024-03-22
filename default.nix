@@ -6104,6 +6104,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "g-npm" = import ./nix/g-npm.nix;
   "g2" = import ./nix/g2.nix;
   "g2q" = import ./nix/g2q.nix;
+  "g3p-hash" = import ./nix/g3p-hash.nix;
   "g4ip" = import ./nix/g4ip.nix;
   "g4ip-prover" = import ./nix/g4ip-prover.nix;
   "gact" = import ./nix/gact.nix;
@@ -9403,6 +9404,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kafka-device-leap" = import ./nix/kafka-device-leap.nix;
   "kafka-device-spacenav" = import ./nix/kafka-device-spacenav.nix;
   "kafka-device-vrpn" = import ./nix/kafka-device-vrpn.nix;
+  "kafka-interchange" = import ./nix/kafka-interchange.nix;
   "kaleidoscope" = import ./nix/kaleidoscope.nix;
   "kalman" = import ./nix/kalman.nix;
   "kan-extensions" = import ./nix/kan-extensions.nix;
@@ -12198,6 +12200,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "phash" = import ./nix/phash.nix;
   "phatsort" = import ./nix/phatsort.nix;
   "phizzle" = import ./nix/phizzle.nix;
+  "phkdf" = import ./nix/phkdf.nix;
   "phladiprelio-general-datatype" = import ./nix/phladiprelio-general-datatype.nix;
   "phladiprelio-general-shared" = import ./nix/phladiprelio-general-shared.nix;
   "phladiprelio-general-simple" = import ./nix/phladiprelio-general-simple.nix;
@@ -16224,6 +16227,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tuple-ops" = import ./nix/tuple-ops.nix;
   "tuple-sop" = import ./nix/tuple-sop.nix;
   "tuple-th" = import ./nix/tuple-th.nix;
+  "tuplehash-utils" = import ./nix/tuplehash-utils.nix;
   "tupleinstances" = import ./nix/tupleinstances.nix;
   "tuples" = import ./nix/tuples.nix;
   "tuples-homogenous-h98" = import ./nix/tuples-homogenous-h98.nix;
