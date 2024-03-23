@@ -351,4 +351,15 @@
       default = "r0";
       };
     };
+  "5.1.0" = {
+    sha256 = "1c18f20fffabe0764d9dbf8a5d8911947e8d984f7244e918c574708538c75b25";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rdf4h-5.1.0-r0-1499a4974529bc2e05d2e3878eaa43b2c3c9eb9f2e49dbc8a8b48e0e69d69c60.nix;
+        revNum = 0;
+        sha256 = "1499a4974529bc2e05d2e3878eaa43b2c3c9eb9f2e49dbc8a8b48e0e69d69c60";
+        };
+      default = "r0";
+      };
+    };
   }

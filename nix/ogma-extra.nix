@@ -87,4 +87,15 @@
       default = "r0";
       };
     };
+  "1.3.0" = {
+    sha256 = "490c556a972cfdab063a116ab046c1eb032b3c38e775fca71c6903101fc376df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ogma-extra-1.3.0-r0-307100049535edf42ed48547a6f55cd113824fbe36e8fb09c619371cc8d504bb.nix;
+        revNum = 0;
+        sha256 = "307100049535edf42ed48547a6f55cd113824fbe36e8fb09c619371cc8d504bb";
+        };
+      default = "r0";
+      };
+    };
   }

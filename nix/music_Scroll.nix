@@ -153,4 +153,15 @@
       default = "r0";
       };
     };
+  "0.3.4" = {
+    sha256 = "c2f4840507b8842eaa1e119e31f3a47d069f266143988b311fc7c8542ad84f0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/musicScroll-0.3.4-r0-7b8726180074ee49b91eb5659abe6b04cc8114592b0f40df9e110930c46a2ffb.nix;
+        revNum = 0;
+        sha256 = "7b8726180074ee49b91eb5659abe6b04cc8114592b0f40df9e110930c46a2ffb";
+        };
+      default = "r0";
+      };
+    };
   }

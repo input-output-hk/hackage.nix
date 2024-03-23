@@ -11433,6 +11433,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nonlinear-optimization" = import ./nix/nonlinear-optimization.nix;
   "nonlinear-optimization-ad" = import ./nix/nonlinear-optimization-ad.nix;
   "nonlinear-optimization-backprop" = import ./nix/nonlinear-optimization-backprop.nix;
+  "nonnonempty" = import ./nix/nonnonempty.nix;
   "noodle" = import ./nix/noodle.nix;
   "normaldistribution" = import ./nix/normaldistribution.nix;
   "normalization-insensitive" = import ./nix/normalization-insensitive.nix;
@@ -15677,6 +15678,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "terrahs" = import ./nix/terrahs.nix;
   "tersmu" = import ./nix/tersmu.nix;
   "tesla" = import ./nix/tesla.nix;
+  "test-certs" = import ./nix/test-certs.nix;
   "test-fixture" = import ./nix/test-fixture.nix;
   "test-framework" = import ./nix/test-framework.nix;
   "test-framework-doctest" = import ./nix/test-framework-doctest.nix;
