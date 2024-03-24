@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.1.4.0" = {
+    sha256 = "59b623c4b3afcf52766bbc886df5e637481d691756bcbd36438f0d6fc38a5bcd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mysql-json-table-0.1.4.0-r0-fd94ad0ed32ddc1409ee2094b761dce1ca12fe70a000464b9ed30f2b120f9a53.nix;
+        revNum = 0;
+        sha256 = "fd94ad0ed32ddc1409ee2094b761dce1ca12fe70a000464b9ed30f2b120f9a53";
+        };
+      default = "r0";
+      };
+    };
   }

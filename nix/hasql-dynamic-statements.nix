@@ -147,4 +147,15 @@
       default = "r0";
       };
     };
+  "0.3.1.5" = {
+    sha256 = "d74cd64e33e3c6b2da63e543d2c41b023fd16f02869878136f161abe4b1eecc0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-dynamic-statements-0.3.1.5-r0-2455a5fdd8cc6458a6fa66cbca8a01d25011e16c405e36b0c6d75fc39b15477f.nix;
+        revNum = 0;
+        sha256 = "2455a5fdd8cc6458a6fa66cbca8a01d25011e16c405e36b0c6d75fc39b15477f";
+        };
+      default = "r0";
+      };
+    };
   }

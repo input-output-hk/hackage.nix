@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "e539beab07d37b9de4698e22da3e8ab6331d04fc9afed071eedd36dbffce6c2f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/COrdering-2.3-r1-3b58c6ea7dfc169724c65fe8449e66e9f3fd7354d11d8315daf61d7914807e01.nix;
+        revNum = 1;
+        sha256 = "3b58c6ea7dfc169724c65fe8449e66e9f3fd7354d11d8315daf61d7914807e01";
+        };
+      default = "r1";
       };
     };
   }

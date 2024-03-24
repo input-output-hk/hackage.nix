@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "663e0c00598a1baa6469529d59d2488dd82534b9b73525ca091c81e93d2ad36d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/x509-ocsp-0.2.0.0-r0-4fcc9ecb694566299d835bc66c540d37d7194e75c6ecb5ae9f144d63737f4d1f.nix;
+        revNum = 0;
+        sha256 = "4fcc9ecb694566299d835bc66c540d37d7194e75c6ecb5ae9f144d63737f4d1f";
+        };
+      default = "r0";
+      };
+    };
   }
