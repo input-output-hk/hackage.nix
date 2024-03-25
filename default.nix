@@ -795,6 +795,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Metrics" = import ./nix/_Metrics.nix;
   "Mhailist" = import ./nix/_Mhailist.nix;
   "Michelangelo" = import ./nix/_Michelangelo.nix;
+  "MicroCabal" = import ./nix/_Micro_Cabal.nix;
   "MicroHs" = import ./nix/_Micro_Hs.nix;
   "MicrosoftTranslator" = import ./nix/_Microsoft_Translator.nix;
   "MiniAgda" = import ./nix/_Mini_Agda.nix;
@@ -4484,6 +4485,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dbmigrations-sqlite" = import ./nix/dbmigrations-sqlite.nix;
   "dbmonitor" = import ./nix/dbmonitor.nix;
   "dbus" = import ./nix/dbus.nix;
+  "dbus-app-launcher" = import ./nix/dbus-app-launcher.nix;
   "dbus-client" = import ./nix/dbus-client.nix;
   "dbus-core" = import ./nix/dbus-core.nix;
   "dbus-hslogger" = import ./nix/dbus-hslogger.nix;
@@ -12379,6 +12381,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "platinum-parsing" = import ./nix/platinum-parsing.nix;
   "playlists" = import ./nix/playlists.nix;
   "playlists-http" = import ./nix/playlists-http.nix;
+  "plegg" = import ./nix/plegg.nix;
   "plex" = import ./nix/plex.nix;
   "plist" = import ./nix/plist.nix;
   "plist-buddy" = import ./nix/plist-buddy.nix;
