@@ -232,4 +232,15 @@
       default = "r1";
       };
     };
+  "0.5.7" = {
+    sha256 = "6762f90c6144648e2f4c461694314505cae5015ad418dc2ee1356f53681b7698";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-transport-0.5.7-r0-774c78d8a238616b65171e6b5ce385b2f4fde5d3e26b7f2ebd4857e85b76fc09.nix;
+        revNum = 0;
+        sha256 = "774c78d8a238616b65171e6b5ce385b2f4fde5d3e26b7f2ebd4857e85b76fc09";
+        };
+      default = "r0";
+      };
+    };
   }

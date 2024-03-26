@@ -65,4 +65,15 @@
       default = "r0";
       };
     };
+  "0.5.0" = {
+    sha256 = "642e90bed18d9d58e99ef6ab0ae8296242642014ae567af7e6d9a831f6c3e82a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/quickcheck-lockstep-0.5.0-r0-4b79d7b25594b608b4dad678976b1033511c7cfe84c30fd9dde2a2cc2bddae19.nix;
+        revNum = 0;
+        sha256 = "4b79d7b25594b608b4dad678976b1033511c7cfe84c30fd9dde2a2cc2bddae19";
+        };
+      default = "r0";
+      };
+    };
   }

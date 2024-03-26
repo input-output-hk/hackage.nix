@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "0.8.2" = {
+    sha256 = "fe19219ee2eafc6ae5b7376674046247712e51733cb998e314980c2717d9ce5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-transport-tcp-0.8.2-r0-9a4f6293555a175a5b0cb2fbc08ac32f6a071cef39cad256e48cbc370932a30c.nix;
+        revNum = 0;
+        sha256 = "9a4f6293555a175a5b0cb2fbc08ac32f6a071cef39cad256e48cbc370932a30c";
+        };
+      default = "r0";
+      };
+    };
   }

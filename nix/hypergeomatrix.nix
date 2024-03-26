@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "1.1.0.2" = {
+    sha256 = "b3a50b4d99991414d4616cafdf032e26978d3c483e8ed9fe12971fd4fac5e3b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hypergeomatrix-1.1.0.2-r0-f9d811e544264de55a9ac0277eb4eea59facab881cd50272f4850f7447508f6d.nix;
+        revNum = 0;
+        sha256 = "f9d811e544264de55a9ac0277eb4eea59facab881cd50272f4850f7447508f6d";
+        };
+      default = "r0";
+      };
+    };
   }

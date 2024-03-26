@@ -285,4 +285,15 @@
       default = "r0";
       };
     };
+  "0.6.1" = {
+    sha256 = "8500b20104950b9bbc54dddb3bb790820801fbc078663a25484be5635fd4dcdf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sphinx-0.6.1-r0-b1d142d36ae864b72fbfb0b2d7d5e8d539dd833bddf5251852a42bac6a3a05b9.nix;
+        revNum = 0;
+        sha256 = "b1d142d36ae864b72fbfb0b2d7d5e8d539dd833bddf5251852a42bac6a3a05b9";
+        };
+      default = "r0";
+      };
+    };
   }
