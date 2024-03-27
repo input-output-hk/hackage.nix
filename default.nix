@@ -2010,6 +2010,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "animate-frames" = import ./nix/animate-frames.nix;
   "animate-preview" = import ./nix/animate-preview.nix;
   "animate-sdl2" = import ./nix/animate-sdl2.nix;
+  "anitomata" = import ./nix/anitomata.nix;
+  "anitomata-aseprite" = import ./nix/anitomata-aseprite.nix;
   "anki-tools" = import ./nix/anki-tools.nix;
   "ann" = import ./nix/ann.nix;
   "annah" = import ./nix/annah.nix;
@@ -6485,6 +6487,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-wnck" = import ./nix/gi-wnck.nix;
   "gi-xlib" = import ./nix/gi-xlib.nix;
   "giak" = import ./nix/giak.nix;
+  "gibberish" = import ./nix/gibberish.nix;
   "gibbon" = import ./nix/gibbon.nix;
   "gigaparsec" = import ./nix/gigaparsec.nix;
   "gimlh" = import ./nix/gimlh.nix;

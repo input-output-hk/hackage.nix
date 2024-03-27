@@ -53,4 +53,15 @@
       default = "r0";
       };
     };
+  "0.5.4" = {
+    sha256 = "38f6d6788817fcf96b12e185b87c1251b5245a53a317be5db7d753ae35eca714";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-transport-inmemory-0.5.4-r0-e975dcffabb71f7c3318c34401bdee88d47896eb867a6d7180079cf465209cb9.nix;
+        revNum = 0;
+        sha256 = "e975dcffabb71f7c3318c34401bdee88d47896eb867a6d7180079cf465209cb9";
+        };
+      default = "r0";
+      };
+    };
   }

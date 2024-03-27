@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "73cd3c08cb3b15a1e4c1fcc2a179e81e570c7ee03e27da7f765f03ced5ac8797";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/primitive-atomic-0.1.0.2-r0-ea3fc0607518fa62420c13325b6a6cae077b2f65e575aa26366e5f565c672a70.nix;
+        revNum = 0;
+        sha256 = "ea3fc0607518fa62420c13325b6a6cae077b2f65e575aa26366e5f565c672a70";
+        };
+      default = "r0";
+      };
+    };
   }

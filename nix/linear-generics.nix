@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "1b63033a3e7feb1846e76dad390bbd44f7852b34e0a22e96ca7a9da6c0518c03";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/linear-generics-0.2.3-r1-7df8ed37daf0013a347b90d9e04a49e7bb959b089bc9cb45e0d5cb05186cc9cf.nix;
+        revNum = 1;
+        sha256 = "7df8ed37daf0013a347b90d9e04a49e7bb959b089bc9cb45e0d5cb05186cc9cf";
+        };
+      default = "r1";
       };
     };
   }

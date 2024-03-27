@@ -197,4 +197,15 @@
       default = "r0";
       };
     };
+  "0.4.0.0" = {
+    sha256 = "f048562a02a5547fbf49bb36370492c5fb85b95962444f01b0de389e4594eb8d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/NetSNMP-0.4.0.0-r0-e04cd82755fcade34345423488dfea5ee98337a4e6fc1c01cec6bc18dd3bd345.nix;
+        revNum = 0;
+        sha256 = "e04cd82755fcade34345423488dfea5ee98337a4e6fc1c01cec6bc18dd3bd345";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "49005e72f93790f6ab7b5dcbc4511c46a9d27dc2042a8dea6d9d6b89e88e1a4f";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http2-tls-0.2.5-r1-c75ba90b71e5a8e4602d4e9cf5b8b83e926cee87648cfe200dc012b3b7109914.nix;
+        revNum = 1;
+        sha256 = "c75ba90b71e5a8e4602d4e9cf5b8b83e926cee87648cfe200dc012b3b7109914";
+        };
+      default = "r1";
       };
     };
   }

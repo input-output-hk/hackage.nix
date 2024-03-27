@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "d2f1282a7cea006d0a62a1ff0116308f969f60207b53a15a889ece09239cd852";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/safe-coloured-text-terminfo-0.2.0.0-r0-6d9b67741490155aeccb5f9bf720831c8e9b4446021720e9eac4a68966bbe1be.nix;
+        revNum = 0;
+        sha256 = "6d9b67741490155aeccb5f9bf720831c8e9b4446021720e9eac4a68966bbe1be";
+        };
+      default = "r0";
+      };
+    };
   }
