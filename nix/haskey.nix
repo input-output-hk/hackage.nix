@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "cab8fd4b14f8079c1f6e442ab50a5230479cfd47589a9604ad96d6f300822e6b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/haskey-0.3.1.0-r1-cd967bd52150728152c99611bbaa1d376dc0884774f517c2f2da78f5c6314e1a.nix;
+        revNum = 1;
+        sha256 = "cd967bd52150728152c99611bbaa1d376dc0884774f517c2f2da78f5c6314e1a";
+        };
+      default = "r1";
       };
     };
   }

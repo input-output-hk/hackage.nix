@@ -54,4 +54,48 @@
       default = "r0";
       };
     };
+  "0.2.4.0" = {
+    sha256 = "b35f77a8dc613c40f316b447550d1f021baebecff9f35e72594849cfd8380946";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-transaction-io-0.2.4.0-r0-b138a8653b93885ebe0b1247f1a6c9d3cd6fdda2f59474f543a03802e79a5135.nix;
+        revNum = 0;
+        sha256 = "b138a8653b93885ebe0b1247f1a6c9d3cd6fdda2f59474f543a03802e79a5135";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.5.0" = {
+    sha256 = "af4bee56695e692a1930e3f8f33b21042b6d045635fec994fdac32b3732ba349";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-transaction-io-0.2.5.0-r0-077210254d4f1839257e499b928e5482c9b9b108ac5d7b4c634c99fe355ad77f.nix;
+        revNum = 0;
+        sha256 = "077210254d4f1839257e499b928e5482c9b9b108ac5d7b4c634c99fe355ad77f";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.6.0" = {
+    sha256 = "4208b32f1deab86ce608fce279c72cb603beb0ed393d3d86665d60a6aa6ed99b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-transaction-io-0.2.6.0-r0-b7654427f01c6f66927b0ed47c59268d460edee164415da1613b0b08d6ee6448.nix;
+        revNum = 0;
+        sha256 = "b7654427f01c6f66927b0ed47c59268d460edee164415da1613b0b08d6ee6448";
+        };
+      default = "r0";
+      };
+    };
+  "0.2.7.0" = {
+    sha256 = "bf1aeb7745eb9f104e7b6c2fd731b1a308f5ab301bc6fafe138d913a5588fdfc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-transaction-io-0.2.7.0-r0-7ee0354544a18958b500e3739ea104984e25febfe270fb230b9436108830664b.nix;
+        revNum = 0;
+        sha256 = "7ee0354544a18958b500e3739ea104984e25febfe270fb230b9436108830664b";
+        };
+      default = "r0";
+      };
+    };
   }

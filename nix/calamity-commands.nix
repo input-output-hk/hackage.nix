@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.4.1.0" = {
+    sha256 = "e69129faf8d5bfcf5785383bf891b546042bb41d82699ba4d229ddd0c0fcb0f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/calamity-commands-0.4.1.0-r0-1863d11bf8b259a313f64a40428d8342206da68be26fcec09635d19e03ffc478.nix;
+        revNum = 0;
+        sha256 = "1863d11bf8b259a313f64a40428d8342206da68be26fcec09635d19e03ffc478";
+        };
+      default = "r0";
+      };
+    };
   }

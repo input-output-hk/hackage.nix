@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "6a287fba3279e6b83f6ae86ecb1a2f4b428b2ed906be14ce97f1f8cb4ed2299b";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/haskey-btree-0.3.0.1-r1-f269e44d89924a76eb88e7f1ae5b8e1637b1b9c6b1ab98d1f64aa0d2e1a88806.nix;
+        revNum = 1;
+        sha256 = "f269e44d89924a76eb88e7f1ae5b8e1637b1b9c6b1ab98d1f64aa0d2e1a88806";
+        };
+      default = "r1";
       };
     };
   }
