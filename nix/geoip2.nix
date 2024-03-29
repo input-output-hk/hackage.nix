@@ -195,4 +195,15 @@
       default = "r0";
       };
     };
+  "0.4.1.2" = {
+    sha256 = "f91205a48b5904e2e8890c75b2c015d04ea7dec3a77ba39a5331f6b923f5dcbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geoip2-0.4.1.2-r0-79e2b870ed672de319edb7861cadebdafad7f0df3bb67ff5b759810548a97715.nix;
+        revNum = 0;
+        sha256 = "79e2b870ed672de319edb7861cadebdafad7f0df3bb67ff5b759810548a97715";
+        };
+      default = "r0";
+      };
+    };
   }

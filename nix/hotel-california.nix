@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "0.0.6.0" = {
+    sha256 = "6d775acd8cd9128f97a020fd3e445fa63841cf531c4c3820e2d197ab66fc14ba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hotel-california-0.0.6.0-r0-cc578e705b6edd60f590f725e8f18a07ff47096a314bb288c41f45399d2ad7d4.nix;
+        revNum = 0;
+        sha256 = "cc578e705b6edd60f590f725e8f18a07ff47096a314bb288c41f45399d2ad7d4";
+        };
+      default = "r0";
+      };
+    };
   }
