@@ -5942,6 +5942,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "freckle-app" = import ./nix/freckle-app.nix;
   "freddy" = import ./nix/freddy.nix;
   "free" = import ./nix/free.nix;
+  "free-alacarte" = import ./nix/free-alacarte.nix;
   "free-algebras" = import ./nix/free-algebras.nix;
   "free-applicative-t" = import ./nix/free-applicative-t.nix;
   "free-categories" = import ./nix/free-categories.nix;

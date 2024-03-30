@@ -241,4 +241,15 @@
       default = "r0";
       };
     };
+  "5.0.2.0" = {
+    sha256 = "7492a75a92749460e5bdaf9e525b988586204f3fb702e999bc89e79e68e8f637";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xilinx-lava-5.0.2.0-r0-56985dbd3783a9717a82495a699e21734672058f1432012cc2078ef5f51c65cc.nix;
+        revNum = 0;
+        sha256 = "56985dbd3783a9717a82495a699e21734672058f1432012cc2078ef5f51c65cc";
+        };
+      default = "r0";
+      };
+    };
   }
