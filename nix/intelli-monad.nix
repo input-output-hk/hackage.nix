@@ -21,4 +21,15 @@
       default = "r0";
       };
     };
+  "0.1.0.2" = {
+    sha256 = "07cbab17f428bd21fda4502e7249178cb46052e89b06b686a14c184e798bdcc4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/intelli-monad-0.1.0.2-r0-bfca2c4f074f96bfd9d2eab2893ed00dede68030718cc2cb3b8cea40b2c83d4b.nix;
+        revNum = 0;
+        sha256 = "bfca2c4f074f96bfd9d2eab2893ed00dede68030718cc2cb3b8cea40b2c83d4b";
+        };
+      default = "r0";
+      };
+    };
   }

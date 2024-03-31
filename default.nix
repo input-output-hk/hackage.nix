@@ -187,6 +187,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "CirruParser" = import ./nix/_Cirru_Parser.nix;
   "Clash-Royale-Hack-Cheats" = import ./nix/_Clash-_Royale-_Hack-_Cheats.nix;
   "ClassLaws" = import ./nix/_Class_Laws.nix;
+  "ClasshSS" = import ./nix/_Classh_S_S.nix;
   "ClassyPrelude" = import ./nix/_Classy_Prelude.nix;
   "Clean" = import ./nix/_Clean.nix;
   "Clipboard" = import ./nix/_Clipboard.nix;

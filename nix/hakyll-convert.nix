@@ -107,7 +107,12 @@
         revNum = 7;
         sha256 = "b6c0f04897991b0f37229920236e569aa265bfa1ef6fc56c9e833a79378c9972";
         };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/hakyll-convert-0.3.0.4-r8-c066919906a9116ad59ab93d4ff662286a109b777bd77b4ee49413ec5aed92bb.nix;
+        revNum = 8;
+        sha256 = "c066919906a9116ad59ab93d4ff662286a109b777bd77b4ee49413ec5aed92bb";
+        };
+      default = "r8";
       };
     };
   }
