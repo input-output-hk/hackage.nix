@@ -54,4 +54,15 @@
       default = "r0";
       };
     };
+  "1.1.2.0" = {
+    sha256 = "3b5c8225bf28e1574ea6b3ba0378970cabeb35b99af825bc2d94fa56153f1c50";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jackpolynomials-1.1.2.0-r0-c4e88f9feb7dc0218db0d2f741faa9ed2e6545a93e29cfe11a40c366f9f9d9a5.nix;
+        revNum = 0;
+        sha256 = "c4e88f9feb7dc0218db0d2f741faa9ed2e6545a93e29cfe11a40c366f9f9d9a5";
+        };
+      default = "r0";
+      };
+    };
   }
