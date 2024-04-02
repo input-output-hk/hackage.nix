@@ -11393,6 +11393,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nixfromnpm" = import ./nix/nixfromnpm.nix;
   "nixos-types" = import ./nix/nixos-types.nix;
   "nixpkgs-update" = import ./nix/nixpkgs-update.nix;
+  "nkeys" = import ./nix/nkeys.nix;
   "nkjp" = import ./nix/nkjp.nix;
   "nlopt-haskell" = import ./nix/nlopt-haskell.nix;
   "nlp-scores" = import ./nix/nlp-scores.nix;

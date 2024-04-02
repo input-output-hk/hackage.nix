@@ -259,7 +259,12 @@
         revNum = 0;
         sha256 = "dbd1aea0e6a7c61114f9c7328e943217609a163ff4db2e467c3e2708f37c2a0a";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hsshellscript-3.6.3-r1-e8d45f15261941a57f70a83c20accc4279221f33ad62ebd24771c93f66d0e88d.nix;
+        revNum = 1;
+        sha256 = "e8d45f15261941a57f70a83c20accc4279221f33ad62ebd24771c93f66d0e88d";
+        };
+      default = "r1";
       };
     };
   }

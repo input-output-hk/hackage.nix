@@ -80,4 +80,15 @@
       default = "r0";
       };
     };
+  "0.2.0.5" = {
+    sha256 = "7d03c6c4c71983ef649f1b264411e261be7868606e1b478becd9e6219c3fcdd8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exiftool-0.2.0.5-r0-bed779e278b55ce1fd0bfb58e8d1e985d65d805c0c7f4faeb4ce1bd7da16da0b.nix;
+        revNum = 0;
+        sha256 = "bed779e278b55ce1fd0bfb58e8d1e985d65d805c0c7f4faeb4ce1bd7da16da0b";
+        };
+      default = "r0";
+      };
+    };
   }
