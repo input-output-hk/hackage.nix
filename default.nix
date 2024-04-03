@@ -7843,6 +7843,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hie-compat" = import ./nix/hie-compat.nix;
   "hie-core" = import ./nix/hie-core.nix;
   "hiedb" = import ./nix/hiedb.nix;
+  "hiedb-plugin" = import ./nix/hiedb-plugin.nix;
   "hieraclus" = import ./nix/hieraclus.nix;
   "hierarchical-clustering" = import ./nix/hierarchical-clustering.nix;
   "hierarchical-clustering-diagrams" = import ./nix/hierarchical-clustering-diagrams.nix;
