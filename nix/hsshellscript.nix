@@ -267,4 +267,15 @@
       default = "r1";
       };
     };
+  "3.6.4" = {
+    sha256 = "760090a8caf8e224cb35a8bdea240cebf9230e3d4fffc65e76f871d4439ff475";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsshellscript-3.6.4-r0-abf2b79c2fdf8235aa0aa7ba0b7639dd54f67378c25c8f577921d45bf1d7006d.nix;
+        revNum = 0;
+        sha256 = "abf2b79c2fdf8235aa0aa7ba0b7639dd54f67378c25c8f577921d45bf1d7006d";
+        };
+      default = "r0";
+      };
+    };
   }

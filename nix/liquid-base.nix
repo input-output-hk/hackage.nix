@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "52ac0bda5d8cce9be744dc7af0622b355d59ef02401f0c25ddd6e866010cb60c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/liquid-base-4.14.0.0-r1-54f5ff6d2f07abd34efa7440918c11dc800dfae3b7760d62bb75ca91f5b6d8fa.nix;
+        revNum = 1;
+        sha256 = "54f5ff6d2f07abd34efa7440918c11dc800dfae3b7760d62bb75ca91f5b6d8fa";
+        };
+      default = "r1";
       };
     };
   "4.14.1.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "5df5cf52b893238e243b48ee647389caa81fbb838c9de26691ded4a3f091c5a3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/liquid-base-4.14.1.0-r1-d584e9fe8fd8cda4997895b1733587d215cdf3944055be0e41a2ea0899420345.nix;
+        revNum = 1;
+        sha256 = "d584e9fe8fd8cda4997895b1733587d215cdf3944055be0e41a2ea0899420345";
+        };
+      default = "r1";
       };
     };
   "4.15.0.0" = {
@@ -29,7 +39,17 @@
         revNum = 0;
         sha256 = "a28cc9217966f18ef02f9b7e7c060f7682187e2c37ca20ce80088cc28860eb35";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/liquid-base-4.15.0.0-r1-686ffff34261dd9f797cd2719c10db5c06e085afd89103312b0923ce06490ae7.nix;
+        revNum = 1;
+        sha256 = "686ffff34261dd9f797cd2719c10db5c06e085afd89103312b0923ce06490ae7";
+        };
+      r2 = {
+        nix = import ../hackage/liquid-base-4.15.0.0-r2-7622b0dcb45bef98604fb91653eb5c230b1c0fe442cb8d2e0d81b42827475792.nix;
+        revNum = 2;
+        sha256 = "7622b0dcb45bef98604fb91653eb5c230b1c0fe442cb8d2e0d81b42827475792";
+        };
+      default = "r2";
       };
     };
   "4.15.1.0" = {
@@ -40,7 +60,12 @@
         revNum = 0;
         sha256 = "cf7a0032946db50ff2683775dbe821543200d95f75c235c95ea277f74d08cb10";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/liquid-base-4.15.1.0-r1-2dd56691a8ce1fdfef4cfedc22a7f960a2caf279c71520fd3019f5842b6edd58.nix;
+        revNum = 1;
+        sha256 = "2dd56691a8ce1fdfef4cfedc22a7f960a2caf279c71520fd3019f5842b6edd58";
+        };
+      default = "r1";
       };
     };
   }
