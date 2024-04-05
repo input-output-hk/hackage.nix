@@ -6190,6 +6190,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-church" = import ./nix/generic-church.nix;
   "generic-constraints" = import ./nix/generic-constraints.nix;
   "generic-data" = import ./nix/generic-data.nix;
+  "generic-data-asserts" = import ./nix/generic-data-asserts.nix;
   "generic-data-functions" = import ./nix/generic-data-functions.nix;
   "generic-data-surgery" = import ./nix/generic-data-surgery.nix;
   "generic-deepseq" = import ./nix/generic-deepseq.nix;
@@ -14040,6 +14041,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "securemem" = import ./nix/securemem.nix;
   "sednaDBXML" = import ./nix/sedna_D_B_X_M_L.nix;
   "seitz-symbol" = import ./nix/seitz-symbol.nix;
+  "sel" = import ./nix/sel.nix;
   "selda" = import ./nix/selda.nix;
   "selda-json" = import ./nix/selda-json.nix;
   "selda-postgresql" = import ./nix/selda-postgresql.nix;

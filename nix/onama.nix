@@ -43,4 +43,15 @@
       default = "r0";
       };
     };
+  "0.2.3.0" = {
+    sha256 = "5d4a2cd51500da1e43187d6b92d5b2cabf9f4526cae8dfc29a418002e181bebe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/onama-0.2.3.0-r0-fb219830a4bac71ef71836663a1131c865f13a2a9877b1bf53cea7980020cc88.nix;
+        revNum = 0;
+        sha256 = "fb219830a4bac71ef71836663a1131c865f13a2a9877b1bf53cea7980020cc88";
+        };
+      default = "r0";
+      };
+    };
   }

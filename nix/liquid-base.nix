@@ -31,6 +31,17 @@
       default = "r1";
       };
     };
+  "4.14.3.0" = {
+    sha256 = "8a860f12d57ab046008f88014266b29d6e15d6df8e895d39c3e1fcb3b8ece7ba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-base-4.14.3.0-r0-855a65baf2b88bda87b6349e4af61869ad0229cfdbc355fd59f039027de210c2.nix;
+        revNum = 0;
+        sha256 = "855a65baf2b88bda87b6349e4af61869ad0229cfdbc355fd59f039027de210c2";
+        };
+      default = "r0";
+      };
+    };
   "4.15.0.0" = {
     sha256 = "7527f4f51ef796b569f71d30b687465833a86028b98d08fc027fa8625ac334b8";
     revisions = {
