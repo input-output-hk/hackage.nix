@@ -65,6 +65,17 @@
       default = "r0";
       };
     };
+  "0.13.0.0" = {
+    sha256 = "955079bc056f5c935f629ecee30402d8dcccd3f90dee83bbfcbbd671daef646c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-thrift-0.13.0.0-r0-9c0f72bb62f3b3a9a75e3d8d600ff55e6145cc6e62d44581659d4b234262102a.nix;
+        revNum = 0;
+        sha256 = "9c0f72bb62f3b3a9a75e3d8d600ff55e6145cc6e62d44581659d4b234262102a";
+        };
+      default = "r0";
+      };
+    };
   "0.2.0.0" = {
     sha256 = "1ca76392ee9e4de6f0514de329e0436d5ae765e3e071f3118b4208a548bd9b07";
     revisions = {

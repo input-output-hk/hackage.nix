@@ -26,4 +26,15 @@
       default = "r0";
       };
     };
+  "0.1.0.0" = {
+    sha256 = "2be24d22995b7479c496d4d37aeb8c116ad872b738fc0201a1b60e06182bfba5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rustls-0.1.0.0-r0-3f7d7358c263c70fdf11c681a61e8ab20272dcc45f13b69ce86250cbb9764337.nix;
+        revNum = 0;
+        sha256 = "3f7d7358c263c70fdf11c681a61e8ab20272dcc45f13b69ce86250cbb9764337";
+        };
+      default = "r0";
+      };
+    };
   }

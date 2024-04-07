@@ -32,4 +32,15 @@
       default = "r0";
       };
     };
+  "0.3.0.0" = {
+    sha256 = "cd842dac0961ff0afa5aedd36c944d76e1ac9130f26cf7009cc1ab9e6b2ac391";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pagerduty-hs-0.3.0.0-r0-e9f53b2c2b8d2ebd7434bc57997452feac3150d9c6b1a384c5907952b6957232.nix;
+        revNum = 0;
+        sha256 = "e9f53b2c2b8d2ebd7434bc57997452feac3150d9c6b1a384c5907952b6957232";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "70408c36b7868c9f7a3e1f652e642f725b8b2bf68f2dde2b3c1bb88d97be7bc3";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tokenize-0.2.0-r1-e764ec63d8426463c2758ea96b8e790b30f0a38bf26cb235918c3958d5e05e79.nix;
+        revNum = 1;
+        sha256 = "e764ec63d8426463c2758ea96b8e790b30f0a38bf26cb235918c3958d5e05e79";
+        };
+      default = "r1";
       };
     };
   "0.2.2" = {
@@ -62,7 +67,12 @@
         revNum = 0;
         sha256 = "962043094923be9403d8d14e212e9f9be6a7ea0342b50be61886867fb5f9ea6c";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tokenize-0.2.2-r1-783b6a278802142532ec55fea10c22ab09b456f8734c6c0d86b74821b5b50711.nix;
+        revNum = 1;
+        sha256 = "783b6a278802142532ec55fea10c22ab09b456f8734c6c0d86b74821b5b50711";
+        };
+      default = "r1";
       };
     };
   "0.3.0" = {
@@ -73,7 +83,12 @@
         revNum = 0;
         sha256 = "73e4e845359ff60e51d30f3c33b751ced1076fac5e6640243463795260172ee0";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tokenize-0.3.0-r1-dbe3de66f05023a36e434a0988cbfb9e8c19cff2be29eef4e0ca087a8d8c07b0.nix;
+        revNum = 1;
+        sha256 = "dbe3de66f05023a36e434a0988cbfb9e8c19cff2be29eef4e0ca087a8d8c07b0";
+        };
+      default = "r1";
       };
     };
   }

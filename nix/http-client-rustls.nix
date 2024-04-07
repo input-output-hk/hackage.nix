@@ -15,4 +15,15 @@
       default = "r1";
       };
     };
+  "0.0.1.0" = {
+    sha256 = "1fcdcfdf59518ec2cf829e1bd3c45f753325c2fee62d41b3def823bb1d1ba9fb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-client-rustls-0.0.1.0-r0-9a87a1b5de25ec5cebaa83b04670f423b910763378709f52cc90e54817e52982.nix;
+        revNum = 0;
+        sha256 = "9a87a1b5de25ec5cebaa83b04670f423b910763378709f52cc90e54817e52982";
+        };
+      default = "r0";
+      };
+    };
   }
