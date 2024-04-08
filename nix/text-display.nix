@@ -80,4 +80,15 @@
       default = "r0";
       };
     };
+  "0.0.5.2" = {
+    sha256 = "7adcb062a35bac2143f7aafddbbd2f17669672dd3e309fad69b5492039629893";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-display-0.0.5.2-r0-6e6a5bf1c83dfa6c34692ed5d8ea87f1bd385984309b42c302f2156f4d82477b.nix;
+        revNum = 0;
+        sha256 = "6e6a5bf1c83dfa6c34692ed5d8ea87f1bd385984309b42c302f2156f4d82477b";
+        };
+      default = "r0";
+      };
+    };
   }

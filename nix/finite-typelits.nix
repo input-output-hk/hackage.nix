@@ -148,4 +148,15 @@
       default = "r2";
       };
     };
+  "0.2.0.0" = {
+    sha256 = "88d695a60a4b41862794862aeea79bdb8fbdacb642050f62197f6e0cbe020e11";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/finite-typelits-0.2.0.0-r0-ca12e20785c24a18bd3d5da3f323c6255b863d705e4cf9a6ca0e1d2ad30736c5.nix;
+        revNum = 0;
+        sha256 = "ca12e20785c24a18bd3d5da3f323c6255b863d705e4cf9a6ca0e1d2ad30736c5";
+        };
+      default = "r0";
+      };
+    };
   }

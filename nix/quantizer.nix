@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.3.1.0" = {
+    sha256 = "844b9fa7c1a76cb123305675a843b029992a7dc0213c7762726ddb713e66a3dd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/quantizer-0.3.1.0-r0-098aff7e4776d7537a78d13c46529d236ca1d3553bb40924e30cb1dcecad62dc.nix;
+        revNum = 0;
+        sha256 = "098aff7e4776d7537a78d13c46529d236ca1d3553bb40924e30cb1dcecad62dc";
+        };
+      default = "r0";
+      };
+    };
   }
