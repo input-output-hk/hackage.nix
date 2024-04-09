@@ -76,4 +76,15 @@
       default = "r0";
       };
     };
+  "0.9.9.0" = {
+    sha256 = "f9ade9c93d7450019b82f1b133ededd0eb81a236307578ccf12d3de6205c4a44";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsaddle-clib-0.9.9.0-r0-39c862357f2bda7df1eda84327dd5866e7c04f605d1f255663f5449e1c52cfa7.nix;
+        revNum = 0;
+        sha256 = "39c862357f2bda7df1eda84327dd5866e7c04f605d1f255663f5449e1c52cfa7";
+        };
+      default = "r0";
+      };
+    };
   }

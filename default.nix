@@ -6412,6 +6412,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghcjs-codemirror" = import ./nix/ghcjs-codemirror.nix;
   "ghcjs-dom" = import ./nix/ghcjs-dom.nix;
   "ghcjs-dom-hello" = import ./nix/ghcjs-dom-hello.nix;
+  "ghcjs-dom-javascript" = import ./nix/ghcjs-dom-javascript.nix;
   "ghcjs-dom-jsaddle" = import ./nix/ghcjs-dom-jsaddle.nix;
   "ghcjs-dom-jsffi" = import ./nix/ghcjs-dom-jsffi.nix;
   "ghcjs-dom-webkit" = import ./nix/ghcjs-dom-webkit.nix;
@@ -13773,6 +13774,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rss-conduit" = import ./nix/rss-conduit.nix;
   "rss2irc" = import ./nix/rss2irc.nix;
   "rstream" = import ./nix/rstream.nix;
+  "rt" = import ./nix/rt.nix;
   "rtcm" = import ./nix/rtcm.nix;
   "rtld" = import ./nix/rtld.nix;
   "rtlsdr" = import ./nix/rtlsdr.nix;

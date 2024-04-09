@@ -175,4 +175,15 @@
       default = "r0";
       };
     };
+  "0.7.2.1" = {
+    sha256 = "2bef67abfac38a096165b1ef7d728bec4c708b8e9241b1a00346e8c3ba6b4218";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proto-lens-protobuf-types-0.7.2.1-r0-8ca2fc7146f5b9badb6e63aa5572239d2ad6c938ec19802e0f56b7e4d667c3a9.nix;
+        revNum = 0;
+        sha256 = "8ca2fc7146f5b9badb6e63aa5572239d2ad6c938ec19802e0f56b7e4d667c3a9";
+        };
+      default = "r0";
+      };
+    };
   }

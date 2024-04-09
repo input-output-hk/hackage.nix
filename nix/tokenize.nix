@@ -91,4 +91,15 @@
       default = "r1";
       };
     };
+  "0.3.0.1" = {
+    sha256 = "90cbb05a2a45cab51f713a6968e64f054863f709f7492ed1d646a7e02419f40b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tokenize-0.3.0.1-r0-146423dea3f30146cdce0e4f386854568fc11ea2f8c284745544148926dc87f2.nix;
+        revNum = 0;
+        sha256 = "146423dea3f30146cdce0e4f386854568fc11ea2f8c284745544148926dc87f2";
+        };
+      default = "r0";
+      };
+    };
   }
