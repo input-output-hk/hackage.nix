@@ -944,6 +944,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Pathfinder" = import ./nix/_Pathfinder.nix;
   "Peano" = import ./nix/_Peano.nix;
   "PeanoWitnesses" = import ./nix/_Peano_Witnesses.nix;
+  "PenroseKiteDart" = import ./nix/_Penrose_Kite_Dart.nix;
   "PerfectHash" = import ./nix/_Perfect_Hash.nix;
   "PermuteEffects" = import ./nix/_Permute_Effects.nix;
   "Persistence" = import ./nix/_Persistence.nix;
@@ -1031,6 +1032,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Ritt-Wu" = import ./nix/_Ritt-_Wu.nix;
   "Rlang-QQ" = import ./nix/_Rlang-_Q_Q.nix;
   "RollingDirectory" = import ./nix/_Rolling_Directory.nix;
+  "RoundingFiasco" = import ./nix/_Rounding_Fiasco.nix;
   "RoyalMonad" = import ./nix/_Royal_Monad.nix;
   "RtMidi" = import ./nix/_Rt_Midi.nix;
   "RxHaskell" = import ./nix/_Rx_Haskell.nix;

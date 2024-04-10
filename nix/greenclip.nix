@@ -131,4 +131,15 @@
       default = "r0";
       };
     };
+  "4.2.0" = {
+    sha256 = "268795288356b6a5e0af4bb7fa5d4879bf5f835446162e930bf14c266b3ac10f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/greenclip-4.2.0-r0-bdae140f1666153da3d121083a0f7bdf71736a77bf787c99766d9f00e78aefd7.nix;
+        revNum = 0;
+        sha256 = "bdae140f1666153da3d121083a0f7bdf71736a77bf787c99766d9f00e78aefd7";
+        };
+      default = "r0";
+      };
+    };
   }

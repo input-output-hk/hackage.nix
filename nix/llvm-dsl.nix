@@ -37,4 +37,15 @@
       default = "r1";
       };
     };
+  "0.1.2" = {
+    sha256 = "9818315a6a4704ba19fba883903f6051f188e2b70569720202b164dafe6ad4fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llvm-dsl-0.1.2-r0-e84ac57ba3b44cf2135c7ae923369f18878b61ab01c33e775eae3a5f27b820bd.nix;
+        revNum = 0;
+        sha256 = "e84ac57ba3b44cf2135c7ae923369f18878b61ab01c33e775eae3a5f27b820bd";
+        };
+      default = "r0";
+      };
+    };
   }

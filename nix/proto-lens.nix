@@ -274,4 +274,15 @@
       default = "r0";
       };
     };
+  "0.7.1.5" = {
+    sha256 = "dad172f0416b847dceb5340bb0e706180e6950fdef92eb5e92e049c29bb15c10";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proto-lens-0.7.1.5-r0-38f7f70fb01f6c79c35d76ef0f60bf1297b132d4a71973c6bafb48fcb1b3c0d4.nix;
+        revNum = 0;
+        sha256 = "38f7f70fb01f6c79c35d76ef0f60bf1297b132d4a71973c6bafb48fcb1b3c0d4";
+        };
+      default = "r0";
+      };
+    };
   }
