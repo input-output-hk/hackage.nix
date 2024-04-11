@@ -235,6 +235,17 @@
       default = "r0";
       };
     };
+  "0.20.0.2" = {
+    sha256 = "2220117db9149e63886f92436b9577a6814bf1bb84e3dcf1690495223a58d904";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phladiprelio-general-simple-0.20.0.2-r0-8d63d230ba809db9c3b43aba3d91acf6f5f8ba19b92045b090aa841573fd68d9.nix;
+        revNum = 0;
+        sha256 = "8d63d230ba809db9c3b43aba3d91acf6f5f8ba19b92045b090aa841573fd68d9";
+        };
+      default = "r0";
+      };
+    };
   "0.3.0.0" = {
     sha256 = "11b8d84b49691d96f6f3c93f3170a889e7c3cbe5afb0df26507c951e9d9d1226";
     revisions = {

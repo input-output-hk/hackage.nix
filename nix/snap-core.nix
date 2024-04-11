@@ -1059,7 +1059,12 @@
         revNum = 3;
         sha256 = "e84e14c59ef925cf83312103449e4253800489d051991675b747ee5bcc6dda4e";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/snap-core-1.0.5.1-r4-487ad8100089f9f796dab4ec3c61b43d7f83c1a1b87f71d8afb7418f44ac2f87.nix;
+        revNum = 4;
+        sha256 = "487ad8100089f9f796dab4ec3c61b43d7f83c1a1b87f71d8afb7418f44ac2f87";
+        };
+      default = "r4";
       };
     };
   }

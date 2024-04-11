@@ -6224,6 +6224,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-storable" = import ./nix/generic-storable.nix;
   "generic-tree" = import ./nix/generic-tree.nix;
   "generic-trie" = import ./nix/generic-trie.nix;
+  "generic-type-asserts" = import ./nix/generic-type-asserts.nix;
+  "generic-type-functions" = import ./nix/generic-type-functions.nix;
   "generic-xml" = import ./nix/generic-xml.nix;
   "generic-xmlpickler" = import ./nix/generic-xmlpickler.nix;
   "generically" = import ./nix/generically.nix;

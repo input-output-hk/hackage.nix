@@ -190,4 +190,15 @@
       default = "r0";
       };
     };
+  "1.2.2" = {
+    sha256 = "b8804efca30d14d717ccf44b9bccb082bc5da290df58daa5489ffe972624f682";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hakyll-images-1.2.2-r0-0a6bc980a1b006846c4296f7f53b2925f9ce37b29ec8f20d701faa5c70ff9480.nix;
+        revNum = 0;
+        sha256 = "0a6bc980a1b006846c4296f7f53b2925f9ce37b29ec8f20d701faa5c70ff9480";
+        };
+      default = "r0";
+      };
+    };
   }
