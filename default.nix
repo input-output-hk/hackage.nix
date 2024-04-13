@@ -2114,6 +2114,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "applicative-parsec" = import ./nix/applicative-parsec.nix;
   "applicative-quoters" = import ./nix/applicative-quoters.nix;
   "applicative-splice" = import ./nix/applicative-splice.nix;
+  "apply-merge" = import ./nix/apply-merge.nix;
   "apply-refact" = import ./nix/apply-refact.nix;
   "apply-unordered" = import ./nix/apply-unordered.nix;
   "apply-unordered-mono" = import ./nix/apply-unordered-mono.nix;
@@ -16331,6 +16332,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-iso" = import ./nix/type-iso.nix;
   "type-level" = import ./nix/type-level.nix;
   "type-level-bst" = import ./nix/type-level-bst.nix;
+  "type-level-bytestrings" = import ./nix/type-level-bytestrings.nix;
   "type-level-integers" = import ./nix/type-level-integers.nix;
   "type-level-kv-list" = import ./nix/type-level-kv-list.nix;
   "type-level-kv-list-esqueleto" = import ./nix/type-level-kv-list-esqueleto.nix;
