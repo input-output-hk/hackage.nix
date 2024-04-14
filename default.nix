@@ -11413,6 +11413,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nn" = import ./nix/nn.nix;
   "nntp" = import ./nix/nntp.nix;
   "no-buffering-workaround" = import ./nix/no-buffering-workaround.nix;
+  "no-recursion" = import ./nix/no-recursion.nix;
   "no-role-annots" = import ./nix/no-role-annots.nix;
   "no-value" = import ./nix/no-value.nix;
   "noether" = import ./nix/noether.nix;
