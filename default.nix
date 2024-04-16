@@ -10232,6 +10232,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lsp-client" = import ./nix/lsp-client.nix;
   "lsp-test" = import ./nix/lsp-test.nix;
   "lsp-types" = import ./nix/lsp-types.nix;
+  "lsql-csv" = import ./nix/lsql-csv.nix;
   "lss" = import ./nix/lss.nix;
   "lsystem" = import ./nix/lsystem.nix;
   "ltext" = import ./nix/ltext.nix;
