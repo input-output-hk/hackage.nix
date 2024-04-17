@@ -879,7 +879,12 @@
         revNum = 0;
         sha256 = "a5fcf2a81ad6953aa5c8d5ccab82a3c47d9ac848316d607c696c190df1454039";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/shelly-1.12.1-r1-15de3321dbe61a4d8b0e3b723422c9a25e0d192fe9a353bc40ab0f05e06ae138.nix;
+        revNum = 1;
+        sha256 = "15de3321dbe61a4d8b0e3b723422c9a25e0d192fe9a353bc40ab0f05e06ae138";
+        };
+      default = "r1";
       };
     };
   "1.2.0.0" = {

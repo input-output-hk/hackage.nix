@@ -48,7 +48,12 @@
         revNum = 3;
         sha256 = "0ae080f4a41238182415c5dab24010f7580991f7e383c35bca8ccd17f5194d3a";
         };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/phatsort-0.6.0.0-r4-e7ae7410adedcfdd97c367697da4aee386244bee58dcbd15e49f5822b0a5b160.nix;
+        revNum = 4;
+        sha256 = "e7ae7410adedcfdd97c367697da4aee386244bee58dcbd15e49f5822b0a5b160";
+        };
+      default = "r4";
       };
     };
   }
