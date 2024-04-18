@@ -4064,6 +4064,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "corenlp-parser" = import ./nix/corenlp-parser.nix;
   "corenlp-types" = import ./nix/corenlp-types.nix;
   "cornea" = import ./nix/cornea.nix;
+  "cornelis" = import ./nix/cornelis.nix;
   "coroutine-enumerator" = import ./nix/coroutine-enumerator.nix;
   "coroutine-iteratee" = import ./nix/coroutine-iteratee.nix;
   "coroutine-object" = import ./nix/coroutine-object.nix;
@@ -11649,6 +11650,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "opaleye" = import ./nix/opaleye.nix;
   "opaleye-classy" = import ./nix/opaleye-classy.nix;
   "opaleye-sqlite" = import ./nix/opaleye-sqlite.nix;
+  "opaleye-textsearch" = import ./nix/opaleye-textsearch.nix;
   "opaleye-trans" = import ./nix/opaleye-trans.nix;
   "opc-xml-da-client" = import ./nix/opc-xml-da-client.nix;
   "open-adt" = import ./nix/open-adt.nix;
@@ -15399,6 +15401,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symantic-xml" = import ./nix/symantic-xml.nix;
   "symbiote" = import ./nix/symbiote.nix;
   "symbol" = import ./nix/symbol.nix;
+  "symbol-parser" = import ./nix/symbol-parser.nix;
   "symbolic-link" = import ./nix/symbolic-link.nix;
   "symbolize" = import ./nix/symbolize.nix;
   "symbols" = import ./nix/symbols.nix;
