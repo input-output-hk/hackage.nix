@@ -10,4 +10,15 @@
       default = "r0";
       };
     };
+  "0.1.1.0" = {
+    sha256 = "766ead81c17a48dc1275c915766086ee02200fa8aae538785705ea14d0c6a11f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http2-grpc-proto-lens-0.1.1.0-r0-a41fcee365a4f6a8f9f839ac39b1d7c3239911ab1ec99047465813eb2ca6bca5.nix;
+        revNum = 0;
+        sha256 = "a41fcee365a4f6a8f9f839ac39b1d7c3239911ab1ec99047465813eb2ca6bca5";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -303,7 +303,12 @@
         revNum = 5;
         sha256 = "0ba46c42a63750cb815ce6921426c28a2ef2372e19b82af866e21c65a4d682d7";
         };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/vector-th-unbox-0.2.2-r6-3942bf27ed264bf5df6742365e5a2ccdcaa924d912b5b4c4789fac90770fb4dd.nix;
+        revNum = 6;
+        sha256 = "3942bf27ed264bf5df6742365e5a2ccdcaa924d912b5b4c4789fac90770fb4dd";
+        };
+      default = "r6";
       };
     };
   }

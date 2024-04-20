@@ -8636,6 +8636,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-response-decoder" = import ./nix/http-response-decoder.nix;
   "http-reverse-proxy" = import ./nix/http-reverse-proxy.nix;
   "http-rfc7807" = import ./nix/http-rfc7807.nix;
+  "http-semantics" = import ./nix/http-semantics.nix;
   "http-server" = import ./nix/http-server.nix;
   "http-shed" = import ./nix/http-shed.nix;
   "http-slim" = import ./nix/http-slim.nix;

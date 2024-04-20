@@ -202,6 +202,17 @@
       default = "r0";
       };
     };
+  "0.4.14.3" = {
+    sha256 = "9735188354a4f17a890baa0693b9ea2f0f420396da0e67a194de588384fd4c8f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/microlens-ghc-0.4.14.3-r0-e8686a29a6f775755e7860525678cb090a77133fbb3500fb2715ff6ba4f913f9.nix;
+        revNum = 0;
+        sha256 = "e8686a29a6f775755e7860525678cb090a77133fbb3500fb2715ff6ba4f913f9";
+        };
+      default = "r0";
+      };
+    };
   "0.4.2.0" = {
     sha256 = "65c98674708c55de5a0b9c0913b903f906e4313184b798652817a4205f25b35e";
     revisions = {

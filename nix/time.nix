@@ -239,7 +239,12 @@
         revNum = 0;
         sha256 = "0779aaf8ee51c47307bd27b0473ecc5b395b24f00f5bfe31b2dca3bcb5822a1d";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/time-1.14-r1-918455e07f347049c2169a43169aca77de7a2c97e33aca0b476aabcd8a79798d.nix;
+        revNum = 1;
+        sha256 = "918455e07f347049c2169a43169aca77de7a2c97e33aca0b476aabcd8a79798d";
+        };
+      default = "r1";
       };
     };
   "1.2" = {
