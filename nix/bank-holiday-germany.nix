@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "fa130c83bc8cdb833f67c8d01b3ef375a288f00b59e2ab319c3ba30a3b4901e2";
         };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bank-holiday-germany-1.3.0.0-r1-12b8007a9e2120ead6f992fa4dc64c2ac06ff55503339401adfd3498b4681396.nix;
+        revNum = 1;
+        sha256 = "12b8007a9e2120ead6f992fa4dc64c2ac06ff55503339401adfd3498b4681396";
+        };
+      default = "r1";
       };
     };
   }

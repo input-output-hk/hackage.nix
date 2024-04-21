@@ -182,4 +182,15 @@
       default = "r0";
       };
     };
+  "0.1.3.2" = {
+    sha256 = "3c7a2ac314d04b17dc6ef77a0ac4bde36d4c4fd35cc810346cc4c705280c8002";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sak-0.1.3.2-r0-ec4d1cab2a70a436b8f80c6c4813ced1ad45c12af7a3f6ae7d120d08c219152e.nix;
+        revNum = 0;
+        sha256 = "ec4d1cab2a70a436b8f80c6c4813ced1ad45c12af7a3f6ae7d120d08c219152e";
+        };
+      default = "r0";
+      };
+    };
   }

@@ -124,7 +124,12 @@
         revNum = 12;
         sha256 = "cb019634063dcb53a4b0fb4bd70b8fdfa3bc32df28676f480f3976485a1f3649";
         };
-      default = "r12";
+      r13 = {
+        nix = import ../hackage/yampa-canvas-0.2.3-r13-78c9f34ce10623b64089fb62d7a78a0584cfa1020c18788ef0038bf2f8fa0190.nix;
+        revNum = 13;
+        sha256 = "78c9f34ce10623b64089fb62d7a78a0584cfa1020c18788ef0038bf2f8fa0190";
+        };
+      default = "r13";
       };
     };
   }

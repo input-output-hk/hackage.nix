@@ -111,7 +111,12 @@
         revNum = 10;
         sha256 = "d8869261d8878c0f044f1612c6c18785bd2c0d6d26a88c3aeb0eeeeeef805bcc";
         };
-      default = "r10";
+      r11 = {
+        nix = import ../hackage/keycode-0.2.2-r11-925c697082c1f73b0f8727f26d2402f0252e900f35823082776059a0b2218646.nix;
+        revNum = 11;
+        sha256 = "925c697082c1f73b0f8727f26d2402f0252e900f35823082776059a0b2218646";
+        };
+      default = "r11";
       };
     };
   }

@@ -339,4 +339,15 @@
       default = "r0";
       };
     };
+  "0.8.7" = {
+    sha256 = "5ba6d923f8b3d0c107d80d89703bc0384a09564e6b52eaf117152c0e0dd19cf7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atomic-primops-0.8.7-r0-7a1fed1887027f36d63c985939aaa681f9d0f6e2abf7926e3f3354e6c87c9ee8.nix;
+        revNum = 0;
+        sha256 = "7a1fed1887027f36d63c985939aaa681f9d0f6e2abf7926e3f3354e6c87c9ee8";
+        };
+      default = "r0";
+      };
+    };
   }
