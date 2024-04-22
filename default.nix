@@ -12817,6 +12817,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "procrastinating-variable" = import ./nix/procrastinating-variable.nix;
   "procstat" = import ./nix/procstat.nix;
   "proctest" = import ./nix/proctest.nix;
+  "prodapi" = import ./nix/prodapi.nix;
   "producer" = import ./nix/producer.nix;
   "product" = import ./nix/product.nix;
   "product-isomorphic" = import ./nix/product-isomorphic.nix;

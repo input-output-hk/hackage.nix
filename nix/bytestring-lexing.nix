@@ -341,6 +341,17 @@
       default = "r0";
       };
     };
+  "0.5.0.12" = {
+    sha256 = "72c83b6b7c090fab776858e76482fe17c46f9c6148d28c4ef16ba6cfe5e9e525";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytestring-lexing-0.5.0.12-r0-366cfba9cf1d4b603f591fd71bd26dfd57f99c8f13369a0a0609d5a437cc17b9.nix;
+        revNum = 0;
+        sha256 = "366cfba9cf1d4b603f591fd71bd26dfd57f99c8f13369a0a0609d5a437cc17b9";
+        };
+      default = "r0";
+      };
+    };
   "0.5.0.2" = {
     sha256 = "01f9add3f25067a89c5ae9ab1f2fd8ab75ec9f386987ee0d83f73ec855b43f73";
     revisions = {

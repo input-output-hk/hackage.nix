@@ -1,0 +1,101 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "hasql"; version = "1.6.4.4"; };
+      license = "MIT";
+      copyright = "(c) 2014, Nikita Volkov";
+      maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
+      author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
+      homepage = "https://github.com/nikita-volkov/hasql";
+      url = "";
+      synopsis = "An efficient PostgreSQL driver with a flexible mapping API";
+      description = "Root of the \\\"hasql\\\" ecosystem.\nFor details and tutorials see\n<https://github.com/nikita-volkov/hasql the readme>.\nThe API comes free from all kinds of exceptions. All error-reporting is explicit and is presented using the 'Either' type.";
+      buildType = "Simple";
+      };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."bytestring-strict-builder" or (errorHandler.buildDepError "bytestring-strict-builder"))
+          (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
+          (hsPkgs."postgresql-binary" or (errorHandler.buildDepError "postgresql-binary"))
+          (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          ];
+        buildable = true;
+        };
+      sublibs = {
+        "testing-utils" = {
+          depends = [
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
+            ];
+          buildable = true;
+          };
+        };
+      tests = {
+        "tasty" = {
+          depends = [
+            (hsPkgs."contravariant-extras" or (errorHandler.buildDepError "contravariant-extras"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."hasql".components.sublibs.testing-utils or (errorHandler.buildDepError "hasql:testing-utils"))
+            (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+            ];
+          buildable = true;
+          };
+        "threads-test" = {
+          depends = [
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
+            ];
+          buildable = true;
+          };
+        "profiling" = {
+          depends = [
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
+            ];
+          buildable = true;
+          };
+        };
+      benchmarks = {
+        "benchmarks" = {
+          depends = [
+            (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
+            (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
+            (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
+            ];
+          buildable = true;
+          };
+        };
+      };
+    }
